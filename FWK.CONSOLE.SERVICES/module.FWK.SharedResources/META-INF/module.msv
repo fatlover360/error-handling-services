@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<msv:DocumentRoot xmlns:msv="http://tns.tibco.com/bw/model/core/moduleSV">
+  <moduleSharedVariables>
+    <moduleSharedVariable name="ErrorHandlerSharedVariable" type="{http://Polarising/Shared/Resources/ErrorHandler}T_EAI_ERROR_SERVICE" initialValueMode="none"/>
+    <moduleSharedVariable name="ServicesConfig" type="{http://Polarising/Shared/Resources/Services}Services" initialValueMode="none"/>
+  </moduleSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://Polarising/Shared/Resources/ErrorHandler" location="../Schemas/ErrorManagement/ErrorHandler.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://Polarising/Shared/Resources/Services" location="../Schemas/Catalog/Services.xsd"/>
+</msv:DocumentRoot>

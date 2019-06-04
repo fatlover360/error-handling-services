@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://ns.corelio.be/common/in/1.0"
+	xmlns:Q1="http://ns.corelio.be/common/envelope/1.0"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://ns.corelio.be/common/in/1.0" version="1.0"
+	xmlns:pref="http://www.tibco.com/CLEver/Log" xmlns:Q2="http://ns.corelio.be/common/logical/1.0">
+
+
+
+    <xs:import namespace="http://ns.corelio.be/common/logical/1.0"></xs:import>
+    <xs:import schemaLocation="Clever/Log.xsd"
+		namespace="http://www.tibco.com/CLEver/Log">
+	</xs:import>
+	<xs:import schemaLocation="CommonTypes.xsd" namespace="http://ns.corelio.be/common/envelope/1.0"></xs:import>
+	<xs:complexType name="In">
+		<xs:sequence>
+			<xs:element name="header" type="Q1:Header" />
+			<xs:element name="recoveryInfo" type="xs:string" />
+			<xs:element name="process" type="Process" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Process">
+		<xs:sequence>
+			<xs:element name="processName" type="xs:string" />
+			<xs:element name="componentName" type="xs:string" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="in" type="In" />
+
+	<xs:complexType name="InErrorLog">
+		<xs:sequence>
+			<xs:element minOccurs="0" name="context" type="Q1:Context" />
+			<xs:element minOccurs="0" name="severety" type="xs:string" />
+			<xs:element minOccurs="0" name="category" type="xs:string" />
+			<xs:element minOccurs="0" name="type" type="xs:string" />
+			<xs:element minOccurs="0" name="code" type="xs:string" />
+			<xs:element minOccurs="1" name="message" type="xs:string" />
+			<xs:element minOccurs="0" name="status" type="xs:string" />
+			<xs:element minOccurs="0" name="exception" type="Exception" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="inErrorlog" type="InErrorLog" />
+
+	<xs:complexType name="Exception">
+		<xs:sequence>
+			<xs:any maxOccurs="unbounded" minOccurs="0" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="InLog">
+		<xs:sequence>
+			<xs:element name="context" type="Q1:Context" />
+			<xs:element name="logDetail" type="pref:LogDetail" />
+			<xs:element name="input" type="Q2:INPUT"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="inlog" type="InLog" />
+
+	<xs:complexType name="InLogWriteToFile">
+		<xs:sequence>
+			<xs:element name="context" type="Q1:Context" />
+			<xs:element ref="pref:Role" />
+			<xs:element name="messagecode" type="xs:string" />
+			<xs:element name="logMessage" type="pref:LogMessage" />
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="inlogwritetofile" type="InLogWriteToFile" />
+</xs:schema>

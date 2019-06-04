@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://module.Framework.Shared.Resources.ServiceDescriptors.EAI.Shared.Resources.logging.1.0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"  name="EAI.Shared.Resources.logging.1.0" targetNamespace="http://module.Framework.Shared.Resources.ServiceDescriptors.EAI.Shared.Resources.logging.1.0" xmlns:xsd2="http://ns.corelio.be/common/envelope/1.0">
+    <wsdl:types>
+    <xsd:schema targetNamespace="http://module.Framework.Shared.Resources.ServiceDescriptors.EAI.Shared.Resources.logging.1.0">
+	<xsd:element name="Operation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OperationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+        </xsd:schema>
+    	<xsd:schema>
+    		<xsd:import namespace="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging" schemaLocation="../Schemas/EAIMessaging/Logging.xsd">
+    		</xsd:import>
+    		<xsd:import
+    			namespace="http://ns.corelio.be/common/envelope/1.0"
+    			schemaLocation="../Schemas/Logging/CommonTypes.xsd">
+    		</xsd:import></xsd:schema>
+    <xsd:schema>
+    	<xsd:import namespace="http://ns.corelio.be/common/envelope/1.0"
+    		schemaLocation="../Schemas/Logging/CommonTypes.xsd">
+    	</xsd:import></xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="OperationRequest">
+		<wsdl:part element="xsd1:Data" name="parameters"/>
+	</wsdl:message>
+    <wsdl:message name="OperationResponse">
+    	<wsdl:part name="parameters" type="xsd2:Result" />
+    </wsdl:message>
+    <wsdl:portType name="EAI.Shared.Resources.logging.1.0">
+    	<wsdl:operation name="Operation">
+    		<wsdl:input message="tns:OperationRequest"/>
+    		<wsdl:output message="tns:OperationResponse"/>
+    	</wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

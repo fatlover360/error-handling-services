@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ERROR_HANDLING/EAI_ERROR_CODE" xmlns:tns="ERROR_HANDLING/EAI_ERROR_CODE" elementFormDefault="qualified">
+
+    <element name="ErrorCode" type="tns:ErrorCode"></element>
+    
+    <complexType name="ErrorCode">
+    	<sequence>
+    		<element name="EAI_ERROR_CODE_ID" type="int" minOccurs="0" maxOccurs="1"></element>
+    		<element name="EAI_ERROR_CODE" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="EAI_ERROR_CODE_DESC" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="IS_ERROR" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+
+
+    <complexType name="ErrorCodeArray">
+    	<sequence>
+    		<element ref="tns:ErrorCode" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ErrorCodeArray" type="tns:ErrorCodeArray"></element>
+
+    <complexType name="ErrorCodeRequest">
+    	<sequence>
+    		<element name="EAI_ERROR_CODE" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="EAI_ERROR_CODE_DESC" type="string" minOccurs="1" maxOccurs="1"></element>
+    		<element name="IS_ERROR" type="string" minOccurs="1" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ErrorCodeRequest" type="tns:ErrorCodeRequest"></element>
+</schema>

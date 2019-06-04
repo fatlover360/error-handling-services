@@ -1,0 +1,65 @@
+{
+    "records": [{
+        "name": "Cloud",
+        "items": [],
+        "url": "https://integration.cloud.tibco.com:443"
+    }],
+    "resources": [
+        {
+            "location": "Service Descriptors/catalog.Catalog-Catalog.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWL.Console.Services.Catalog.Catalog-Catalog.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.Catalog.Catalog-Catalog.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.Catalog.Starter-Catalog.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ErrorService.ErrorService-ErrorService.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ErrorService.Starter-ErrorService.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ErrorCode.Starter-Starter.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ErrorCode.Starter-ErrorCode.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ControlSequence.ControlSequence-ControlSequence.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ControlSequence.Starter-ControlSequence.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ControlData.ControlData-ControlData.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.ControlData.Starter-ControlData.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.Configuration.Configuration-Configuration.json",
+            "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.Configuration.Starter-Configuration.json",
+            "type": "generated"
+        }
+    ]
+}

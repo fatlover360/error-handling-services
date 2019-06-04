@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="ERROR_HANDLING/EAI_CATALOG" elementFormDefault="qualified" targetNamespace="ERROR_HANDLING/EAI_CATALOG">
+
+    <element name="Catalog" type="tns:Catalog"/>
+    
+    <complexType name="Catalog">
+    	<sequence>
+    		<element maxOccurs="1" minOccurs="0" name="EAI_CATALOG_ID"
+    			type="int" />
+    		<element maxOccurs="1" minOccurs="1" name="SYSTEM"
+    			type="string" />
+            <element name="SERVICE_NAME" type="string" minOccurs="1" maxOccurs="1"></element>
+            <element maxOccurs="1" minOccurs="1" name="APPLICATION_NAME" type="string" />
+            <element maxOccurs="1" minOccurs="1" name="SERVICE_TYPE"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="SERVICE_FUNCTION"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="SERVICE_OPERATION"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="SERVICE_VERSION"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="RECEIVER_TYPE"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1"
+    			name="RECEIVER_DESTINATION" type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="HAS_HANDLING">
+    			<simpleType>
+    				<restriction base="string">
+
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="HAS_SEQUENCE">
+    			<simpleType>
+    				<restriction base="string">
+
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+    <complexType name="CatalogArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="Catalog" type="tns:Catalog"/>
+    </sequence>
+  </complexType>
+    <element name="CatalogArray" type="tns:CatalogArray"/>
+
+    <complexType name="CatalogRequest">
+    <sequence>
+
+    		<element maxOccurs="1" minOccurs="1" name="SYSTEM"
+    			type="string" />
+            <element name="SERVICE_NAME" type="string" minOccurs="1" maxOccurs="1"></element>
+            <element maxOccurs="1" minOccurs="1" name="APPLICATION_NAME" type="string" />
+            <element maxOccurs="1" minOccurs="1" name="SERVICE_TYPE"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="SERVICE_FUNCTION"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="SERVICE_OPERATION"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="SERVICE_VERSION"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="RECEIVER_TYPE"
+    			type="string" />
+    		<element maxOccurs="1" minOccurs="1"
+    			name="RECEIVER_DESTINATION" type="string" />
+    		<element maxOccurs="1" minOccurs="1" name="HAS_HANDLING">
+    			<simpleType>
+    				<restriction base="string">
+
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    		<element maxOccurs="1" minOccurs="1" name="HAS_SEQUENCE">
+    			<simpleType>
+    				<restriction base="string">
+
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+
+    	</sequence>
+    </complexType>
+
+    <element name="CatalogRequest" type="tns:CatalogRequest"></element>
+</schema>

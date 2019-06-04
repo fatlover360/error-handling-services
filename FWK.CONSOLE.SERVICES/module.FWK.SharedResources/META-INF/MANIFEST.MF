@@ -1,0 +1,56 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Module Framework Shared Resources Module
+Bundle-SymbolicName: module.FWK.SharedResources
+Bundle-Version: 1.0.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: TIBCO Software Inc.
+TIBCO-BW-Edition: bwe
+TIBCO-BW-JobSharedVariables: META-INF/module.jsv
+TIBCO-BW-SharedModule: META-INF/module.bwm
+TIBCO-BW-Version: 6.5.0 V63 2018-08-08
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Provide-Capability: com.tibco.bw.module; name="module.FWK.SharedResources"; version:Version="1.0.0",
+ com.tibco.bw.schemas; ns="http://Polarising/Shared/Resources/ErrorHandler",
+ com.tibco.bw.schemas; ns="http://Polarising/SharedResources/Schemas/DynamicProperties",
+ com.tibco.bw.schemas; ns="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize",
+ com.tibco.bw.schemas; ns="http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize",
+ com.tibco.bw.schemas; ns="http://Polarising/SharedResources/Schemas/EAIMessaging/JMSProperties",
+ com.tibco.bw.schemas; ns="http://Polarising/SharedResources/Schemas/EAIMessaging/Main",
+ com.tibco.bw.schemas; ns="http://Polarising/SharedResources/Schemas/EAIMessaging/Sequence",
+ com.tibco.bw.schemas; ns="http://be.mediahuis.icc/mapping/2.0",
+ com.tibco.bw.schemas; ns="http://http://module.Framework.Shared.Resources.Shemas.EAIMessaging.MultiThreadService",
+ com.tibco.bw.schemas; ns="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging",
+ com.tibco.bw.schemas; ns="http://ns.corelio.be/common/envelope/1.0",
+ com.tibco.bw.schemas; ns="http://ns.corelio.be/common/in/1.0",
+ com.tibco.bw.schemas; ns="http://ns.corelio.be/common/logical/1.0",
+ com.tibco.bw.schemas; ns="http://www.example.org/schema/1544622770833",
+ com.tibco.bw.schemas; ns="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/ErrorReport.xsd",
+ com.tibco.bw.schemas; ns="http://www.tibco.com/CLEver/Exception",
+ com.tibco.bw.schemas; ns="http://www.tibco.com/CLEver/ExtraTypes",
+ com.tibco.bw.schemas; ns="http://www.tibco.com/CLEver/Log",
+ com.tibco.bw.schemas; ns="http://www.tibco.com/namespaces/tnt/plugins/timer",
+ com.tibco.bw.schemas; ns="http://Polarising/Shared/Resources/AuxSchema",
+ com.tibco.bw.schemas; ns="http://Polarising/Shared/Resources/Services",
+ com.tibco.bw.wsdls; ns="http://EAI.SharedResources.Main.1.0/",
+ com.tibco.bw.wsdls; ns="http://EAI/ExceptionHandling/CheckErrorCode/1/0/",
+ com.tibco.bw.wsdls; ns="http://EAI/SharedResources/Finalize/1/0/",
+ com.tibco.bw.wsdls; ns="http://EAI/SharedResources/Initialize/1/0",
+ com.tibco.bw.wsdls; ns="http://EAI/SharedResources/OnStartup/1/0",
+ com.tibco.bw.wsdls; ns="http://module.Framework.Shared.Resources.ServiceDescriptors.DummyLogical/",
+ com.tibco.bw.wsdls; ns="http://module.Framework.Shared.Resources.ServiceDescriptors.DummyStarter",
+ com.tibco.bw.wsdls; ns="http://module.Framework.Shared.Resources.ServiceDescriptors.EAI.Exception.Handling.success.1.0/",
+ com.tibco.bw.wsdls; ns="http://module.Framework.Shared.Resources.ServiceDescriptors.EAI.Shared.Resources.logging.1.0",
+ com.tibco.bw.processes; name="Framework.Resources",
+ com.tibco.bw.resources; name="Transports.JMS.DATA",
+ com.tibco.bw.processes; name="Internal.Variables",
+ com.tibco.bw.resources; name="Transports.Notify",
+ com.tibco.bw.resources; name="Transports.JDBC.EAI"
+TIBCO-BW-ConfigProfile: META-INF/default.substvar
+TIBCO-BW-ModuleSharedVariables: META-INF/module.msv
+Require-Capability: com.tibco.bw.model; filter:="(name=bwext)",
+ com.tibco.bw.palette; filter:="(name=bw.generalactivities)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jdbc)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jmsconnection)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.jndiconfiguration)",
+ com.tibco.bw.sharedresource.model; filter:="(name=bw.notifyconfiguration)"

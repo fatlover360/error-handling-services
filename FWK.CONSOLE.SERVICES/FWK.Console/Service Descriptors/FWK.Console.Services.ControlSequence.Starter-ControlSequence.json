@@ -1,0 +1,351 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "REST Service for Control Sequence",
+    "description" : "REST Service for Control Sequence"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/controlsequence" : {
+      "post" : {
+        "summary" : "Add new Control Sequence",
+        "description" : "",
+        "operationId" : "post-controlsequence",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ControlSequenceRequest"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "204" : {
+            "description" : "No Content",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "Get all Control Sequence",
+        "description" : "",
+        "operationId" : "get-controlsequence",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a ControlSequenceArray to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ControlSequenceArray"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "204" : {
+            "description" : "No Content",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update one Control Sequence by Service",
+        "description" : "",
+        "operationId" : "put-controlsequence",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ControlSequence"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "204" : {
+            "description" : "No Content",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete one Control Sequence",
+        "description" : "",
+        "operationId" : "delete-controlsequence",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "controlsequenceid",
+          "in" : "query",
+          "description" : "",
+          "type" : "integer",
+          "format" : "int32",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "204" : {
+            "description" : "No Content",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ControlSequenceRequest" : {
+      "type" : "object",
+      "required" : [ "INSERT_DATETIME", "SEQUENCE_KEY", "UPDATE_DATETIME", "EAI_CATALOG_ID" ],
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "SEQUENCE_KEY" : {
+          "type" : "string"
+        },
+        "INSERT_DATETIME" : {
+          "type" : "string"
+        },
+        "UPDATE_DATETIME" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ControlSequence" : {
+      "type" : "object",
+      "required" : [ "INSERT_DATETIME", "SEQUENCE_KEY", "UPDATE_DATETIME", "EAI_CATALOG_ID" ],
+      "properties" : {
+        "EH_CONTROL_SEQUENCE_ID" : {
+          "type" : "string"
+        },
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "SEQUENCE_KEY" : {
+          "type" : "string"
+        },
+        "INSERT_DATETIME" : {
+          "type" : "string"
+        },
+        "UPDATE_DATETIME" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ControlSequenceArray" : {
+      "type" : "object",
+      "properties" : {
+        "ControlSequence" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ControlSequence",
+            "uniqueItems" : false
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jms="http://xsd.tns.tibco.com/bw/models/sharedresource/jms" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmi:id="_6LrBEeD2EeinY5_FHN32lg" name="Transports.JMS.DATA.DATAJNDIConfiguration" type="jms:JNDIConnection">
+  <jndi:configuration xsi:type="jms:JNDIConnectionConfiguration" xmi:id="_6L0LAOD2EeinY5_FHN32lg">
+    <substitutionBindings xmi:id="_72VzIOD2EeinY5_FHN32lg" template="initialContextFactory" propName="/SharedVariables/Transports/JMS/DATA/InitialContextFactory"/>
+    <substitutionBindings xmi:id="_oLcgYOD3EeinY5_FHN32lg" template="providerUrl" propName="/SharedVariables/Transports/JMS/DATA/ProviderURL"/>
+    <userCredentials xmi:id="_RP-AsOP4Eei_kf8ZMY3pzQ">
+      <substitutionBindings xmi:id="_RzHxEOP4Eei_kf8ZMY3pzQ" template="username" propName="/SharedVariables/Transports/JMS/DATA/Username"/>
+      <substitutionBindings xmi:id="_TL6wAOP4Eei_kf8ZMY3pzQ" template="password" propName="/SharedVariables/Transports/JMS/DATA/Password"/>
+    </userCredentials>
+  </jndi:configuration>
+</jndi:namedResource>

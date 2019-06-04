@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize" 
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize" 
+	elementFormDefault="qualified" 
+	xmlns:log="http://ns.corelio.be/common/in/1.0">
+	
+
+    <import namespace="http://ns.corelio.be/common/in/1.0"></import>
+    <element name="In" type="tns:In"></element>
+       
+    <complexType name="In">
+    	<sequence>
+    		<element ref="log:inlog"></element>  		
+    	</sequence>
+    </complexType>
+</schema>

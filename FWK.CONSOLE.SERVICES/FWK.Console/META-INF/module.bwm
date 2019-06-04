@@ -1,0 +1,394 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sca:composite xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:BW="http://xsd.tns.tibco.com/amf/models/sca/implementationtype/BW" xmlns:XMLSchema="http://www.w3.org/2001/XMLSchema" xmlns:compositeext="http://schemas.tibco.com/amx/3.0/compositeext" xmlns:property="http://ns.tibco.com/bw/property" xmlns:rest="http://xsd.tns.tibco.com/bw/models/binding/rest" xmlns:sca="http://www.osoa.org/xmlns/sca/1.0" xmlns:scact="http://xsd.tns.tibco.com/amf/models/sca/componentType" xmlns:scaext="http://xsd.tns.tibco.com/amf/models/sca/extensions" xmi:id="_QWgZQCntEemBKr8QxwEOAA" targetNamespace="http://tns.tibco.com/bw/composite/FWK.Console" name="FWK.Console" compositeext:version="1.0.0" compositeext:formatVersion="2">
+  <sca:service xmi:id="_VNPscCnyEemBKr8QxwEOAA" name="catalog" promote="ComponentCatalog/catalog">
+    <sca:interface.wsdl xmi:id="_VNXoQCnyEemBKr8QxwEOAA" interface="http://xmlns.example.com/20190206103358PLT#wsdl.interface(catalog)" scaext:wsdlLocation="../Processes/catalog/Catalog.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_VNnf4CnyEemBKr8QxwEOAA" name="RestService" path="/catalog" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Catalog" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/catalog.Catalog-Catalog.json" enforceBWServiceResponse="true" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_VNs_cCnyEemBKr8QxwEOAA" operationName="post" nickname="post-catalog" httpMethod="POST" responseStyle="element">
+        <responseStatus xmi:id="_j0zVkDmyEemp4ZrFerTt2Q" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_U_Y2IDnWEemp4ZrFerTt2Q" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_TvTIADpqEem-g-9n6ogooQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_T2-dUDpqEem-g-9n6ogooQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_T5iCEDpqEem-g-9n6ogooQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_T8VecDpqEem-g-9n6ogooQ" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_T-_w4DpqEem-g-9n6ogooQ" statusCode="301" reasonPhrase="Moved Permanently" dataType="string"/>
+        <responseStatus xmi:id="_UFezYDpqEem-g-9n6ogooQ" statusCode="303" reasonPhrase="See Other" dataType="string"/>
+        <responseStatus xmi:id="_UNsUMDpqEem-g-9n6ogooQ" statusCode="304" reasonPhrase="Not Modified" dataType="string"/>
+        <responseStatus xmi:id="_Uv5CUDpqEem-g-9n6ogooQ" statusCode="307" reasonPhrase="Temporary Redirect" dataType="string"/>
+        <responseStatus xmi:id="_U2zioDpqEem-g-9n6ogooQ" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_U8PcQDpqEem-g-9n6ogooQ" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_VNs_cSnyEemBKr8QxwEOAA" operationName="get" nickname="get-catalog" httpMethod="GET" responseStyle="element" useEmptyValuesForNullResponse="true">
+        <responseStatus xmi:id="__b4e8Dm1Eemp4ZrFerTt2Q" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_AZPfEDm2Eemp4ZrFerTt2Q" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_A0sE8Dm2Eemp4ZrFerTt2Q" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_A7cNMDm2Eemp4ZrFerTt2Q" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_BC9KcDm2Eemp4ZrFerTt2Q" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_VNs_cinyEemBKr8QxwEOAA" operationName="put" nickname="put-catalog" httpMethod="PUT" responseStyle="element">
+        <responseStatus xmi:id="_i998sDqNEem-g-9n6ogooQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_jLNHcDqNEem-g-9n6ogooQ" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <responseStatus xmi:id="_lV_kADqNEem-g-9n6ogooQ" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_mQ4e8DqNEem-g-9n6ogooQ" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_mS8UcDqNEem-g-9n6ogooQ" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_mVAxADqNEem-g-9n6ogooQ" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_uZ3_UDqNEem-g-9n6ogooQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_VNs_cynyEemBKr8QxwEOAA" operationName="delete" nickname="delete-catalog" httpMethod="DELETE" responseStyle="element">
+        <parameters xmi:id="_esvOIDBzEembyJ7eKuIpmQ">
+          <parameterMapping xmi:id="_esvOITBzEembyJ7eKuIpmQ" parameterName="catalogid" parameterType="Query" dataType="integer#int32"/>
+        </parameters>
+        <responseStatus xmi:id="_cFwFgDp-Eem-g-9n6ogooQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_coPukDp-Eem-g-9n6ogooQ" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_cqGIsDp-Eem-g-9n6ogooQ" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_VO9jsCnyEemBKr8QxwEOAA"/>
+      <advancedConfig xmi:id="_VNqjMCnyEemBKr8QxwEOAA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_VNs_dCnyEemBKr8QxwEOAA" bindingName="RestService"/>
+  </sca:service>
+  <sca:service xmi:id="_xKkiQDQfEemkkuSub-YhHA" name="errorservice" promote="ComponentErrorService/errorservice">
+    <sca:interface.wsdl xmi:id="_xO1XMDQfEemkkuSub-YhHA" interface="http://xmlns.example.com/20190219092425PLT#wsdl.interface(errorservice)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ErrorService/ErrorService.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_xPrEsDQfEemkkuSub-YhHA" name="RestService1" path="/errorservice" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ErrorService" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ErrorService.ErrorService-ErrorService.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_xPs54DQfEemkkuSub-YhHA" operationName="post" nickname="post-errorservice" httpMethod="POST" responseStyle="element">
+        <responseStatus xmi:id="_a1ZAQEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_a3U58EopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_a4qWsEopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_a6Dd0EopEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_bGhMgEopEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_bH5skEopEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_bJNUIEopEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_bMeDgEopEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_bQ0_EEopEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_xPs54TQfEemkkuSub-YhHA" operationName="get" nickname="get-errorservice" httpMethod="GET" responseStyle="element" useEmptyValuesForNullResponse="true">
+        <responseStatus xmi:id="_fJNl4EopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_fKle4EopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_fL9X4EopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_fNVQ4EopEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_fTfjQEopEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_fUsdIEopEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_fWAEsEopEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_fefSUEopEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_fizxoEopEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_xPs54jQfEemkkuSub-YhHA" operationName="put" nickname="put-errorservice" httpMethod="PUT" responseStyle="element">
+        <responseStatus xmi:id="_pQPgQEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_pS7n4EopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_pVtPEEopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_pXTKgEopEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_pglCUEopEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_piEQEEopEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_plIyMEopEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_ppg74EopEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_pvAf4EopEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_xPs54zQfEemkkuSub-YhHA" operationName="delete" nickname="delete-errorservice" httpMethod="DELETE" responseStyle="element">
+        <parameters xmi:id="_ydcMcDQsEemKYsizTPVenw">
+          <parameterMapping xmi:id="_ydcMcTQsEemKYsizTPVenw" parameterName="error_code_id" parameterType="Query" dataType="integer#int32" required="true"/>
+          <parameterMapping xmi:id="_Lh85IDQ1EemKYsizTPVenw" parameterName="eai_catalog_id" parameterType="Query" dataType="integer#int32"/>
+        </parameters>
+        <responseStatus xmi:id="_vkWioEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_vorpAEopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_vqSykEopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_vrvkEEopEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_vy4t4EopEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_v7NjcEopEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_v9SnEEopEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_wBNdwEopEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_wQ5fkEopEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_xPznkDQfEemkkuSub-YhHA"/>
+      <advancedConfig xmi:id="_xPrEsTQfEemkkuSub-YhHA" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_xPtg8DQfEemkkuSub-YhHA" bindingName="RestService1"/>
+  </sca:service>
+  <sca:service xmi:id="_91PWsDQiEemKYsizTPVenw" name="errorcode" promote="ComponentStarter/errorcode">
+    <sca:interface.wsdl xmi:id="_95b6MDQiEemKYsizTPVenw" interface="http://xmlns.example.com/20190219094719PLT#wsdl.interface(errorcode)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ErrorCode/Starter.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_95hZwDQiEemKYsizTPVenw" name="RestService2" path="/errorcode" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ErrorCode" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ErrorCode.Starter-Starter.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_95jO8DQiEemKYsizTPVenw" operationName="post" nickname="post-errorcode" httpMethod="POST" responseStyle="element">
+        <responseStatus xmi:id="_3EtZwDqTEem-g-9n6ogooQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_3G2HwDqTEem-g-9n6ogooQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_3JQikDqTEem-g-9n6ogooQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_3Z94EDqTEem-g-9n6ogooQ" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_4A58QDqTEem-g-9n6ogooQ" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_4FC1YDqTEem-g-9n6ogooQ" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_4HNYkDqTEem-g-9n6ogooQ" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_4aW-EDqTEem-g-9n6ogooQ" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_6jiREDqTEem-g-9n6ogooQ" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_95jO8TQiEemKYsizTPVenw" operationName="get" nickname="get-errorcode" httpMethod="GET" responseStyle="element" useEmptyValuesForNullResponse="true">
+        <responseStatus xmi:id="_5oqSUDqVEem-g-9n6ogooQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_5qwkEDqVEem-g-9n6ogooQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_5sykYDqVEem-g-9n6ogooQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_5u0ksDqVEem-g-9n6ogooQ" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <responseStatus xmi:id="_6RIAgDqVEem-g-9n6ogooQ" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_6TSjsDqVEem-g-9n6ogooQ" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_6VgxQDqVEem-g-9n6ogooQ" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_6kS0IDqVEem-g-9n6ogooQ" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_95jO8jQiEemKYsizTPVenw" operationName="put" nickname="put-errorcode" httpMethod="PUT" responseStyle="element">
+        <responseStatus xmi:id="_PIv9YDqbEemdAvT5-XuxSg" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_POLP8DqbEemdAvT5-XuxSg" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_PRwvcDqbEemdAvT5-XuxSg" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_PVYEIDqbEemdAvT5-XuxSg" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <responseStatus xmi:id="_PjoikDqbEemdAvT5-XuxSg" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_PmHO0DqbEemdAvT5-XuxSg" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_PoVcYDqbEemdAvT5-XuxSg" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_PwFqMDqbEemdAvT5-XuxSg" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_95jO8zQiEemKYsizTPVenw" operationName="delete" nickname="delete-errorcode" httpMethod="DELETE" responseStyle="element">
+        <parameters xmi:id="_BPQxEDQkEemKYsizTPVenw">
+          <parameterMapping xmi:id="_BPQxETQkEemKYsizTPVenw" parameterName="errorcodeid" parameterType="Query" dataType="string" required="true"/>
+        </parameters>
+        <responseStatus xmi:id="_Vz1K4EopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_V1wdgEopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_V3FTMEopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_V4Zh0EopEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_WN8UAEopEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_WSjHMEopEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_WYQtoEopEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_Wd7QwEopEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_WjTgAEopEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_95p8oDQiEemKYsizTPVenw"/>
+      <advancedConfig xmi:id="_95hZwTQiEemKYsizTPVenw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_95jO9DQiEemKYsizTPVenw" bindingName="RestService2"/>
+  </sca:service>
+  <sca:service xmi:id="_AC4-YTRBEemKYsizTPVenw" name="controlsequence" promote="ComponentControlSequence/controlsequence">
+    <sca:interface.wsdl xmi:id="_AC4-ZTRBEemKYsizTPVenw" interface="http://xmlns.example.com/20190219132218PLT#wsdl.interface(controlsequence)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlSequence/ControlSequence.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ADA6MDRBEemKYsizTPVenw" name="RestService3" path="/controlsequence" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ControlSequence" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlSequence.ControlSequence-ControlSequence.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_ADCIUDRBEemKYsizTPVenw" operationName="post" nickname="post-controlsequence" httpMethod="POST" responseStyle="element">
+        <responseStatus xmi:id="_1lbJsEooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_1nHy0EooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_1oiIEEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_1qGOUEooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_1xJRgEooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_1yfVUEooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_1z64sEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_11T_0EooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_2PmvIEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ADCIUTRBEemKYsizTPVenw" operationName="get" nickname="get-controlsequence" httpMethod="GET" responseStyle="element">
+        <responseStatus xmi:id="_5T8C0EooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_5WDisEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_5XyBAEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_5Za_wEooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_5k2zsEooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_5mvDAEooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_5obsIEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_5r0-YEooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_56lzIEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ADCIUjRBEemKYsizTPVenw" operationName="put" nickname="put-controlsequence" httpMethod="PUT" responseStyle="element">
+        <responseStatus xmi:id="_-AOy0EooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_-CCJoEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_-DrIYEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_-FS5AEooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_-Xv68EooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_-ZckEEooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_-bRwEEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_-fSGUEooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_-jDMAEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_ADCIUzRBEemKYsizTPVenw" operationName="delete" nickname="delete-controlsequence" httpMethod="DELETE" responseStyle="element">
+        <parameters xmi:id="_6m1WoDRGEemKYsizTPVenw">
+          <parameterMapping xmi:id="_6m1WoTRGEemKYsizTPVenw" parameterName="controlsequenceid" parameterType="Query" dataType="integer#int32" required="true"/>
+        </parameters>
+        <responseStatus xmi:id="_CQPPcEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_CUD_gEopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_CW2NwEopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_CYksEEopEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_CfnIMEopEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_Cgxl0EopEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_CiCKEEopEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_CnqQ8EopEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_Cu0B0EopEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_ADGZwDRBEemKYsizTPVenw"/>
+      <advancedConfig xmi:id="_ADA6MTRBEemKYsizTPVenw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_ADCIVDRBEemKYsizTPVenw" bindingName="RestService3"/>
+  </sca:service>
+  <sca:service xmi:id="_oYWv0jRNEemKYsizTPVenw" name="controldata" promote="ComponentControlData/controldata">
+    <sca:interface.wsdl xmi:id="_oYWv1jRNEemKYsizTPVenw" interface="http://xmlns.example.com/20190219145243PLT#wsdl.interface(controldata)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/ControlData.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_oYc2cDRNEemKYsizTPVenw" name="RestService4" path="/controldata" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ControlData" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlData.ControlData-ControlData.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_oYeEkDRNEemKYsizTPVenw" operationName="post" nickname="post-controldata" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_oYeEkTRNEemKYsizTPVenw" operationName="get" nickname="get-controldata" httpMethod="GET" responseStyle="element" useEmptyValuesForNullResponse="true">
+        <responseStatus xmi:id="_KhprAEo0Eem7k64P3T6mEQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_KjtggEo0Eem7k64P3T6mEQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_Kllv0Eo0Eem7k64P3T6mEQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_KnRK0Eo0Eem7k64P3T6mEQ" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_K2mAQEo0Eem7k64P3T6mEQ" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_K4FOAEo0Eem7k64P3T6mEQ" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_LrqnEEo0Eem7k64P3T6mEQ" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_Lv4YsEo0Eem7k64P3T6mEQ" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_LxYNgEo0Eem7k64P3T6mEQ" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_oYeEkjRNEemKYsizTPVenw" operationName="put" nickname="put-controldata" httpMethod="PUT" responseStyle="element" requestStyle="element">
+        <responseStatus xmi:id="_w0KaIEooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_w12cMEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_w3HAcEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_w4hVsEooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_w-xHoEooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_xCWnIEooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_xF9UwEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_xHZfMEooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_xKkvAEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_oYeEkzRNEemKYsizTPVenw" operationName="delete" nickname="delete-controldata" httpMethod="DELETE" responseStyle="element">
+        <parameters xmi:id="_ynaSkDWyEemBAdaSsLBiDg">
+          <parameterMapping xmi:id="_ynaSkTWyEemBAdaSsLBiDg" parameterName="controldataid" parameterType="Query" dataType="string" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_oYgg0DRNEemKYsizTPVenw"/>
+      <advancedConfig xmi:id="_oYc2cTRNEemKYsizTPVenw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_oYeElDRNEemKYsizTPVenw" bindingName="RestService4"/>
+  </sca:service>
+  <sca:service xmi:id="_fobYsDW1EemPyoX1o5CRxg" name="configuration" promote="ComponentConfiguration/configuration">
+    <sca:interface.wsdl xmi:id="_fohfUDW1EemPyoX1o5CRxg" interface="http://xmlns.example.com/20190221094843PLT#wsdl.interface(configuration)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Configuration/Configuration.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_foqCMDW1EemPyoX1o5CRxg" name="RestService5" path="/configuration" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Configuration" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.Configuration.Configuration-Configuration.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+      <operation xmi:id="_foqCMjW1EemPyoX1o5CRxg" operationName="post" nickname="post-configuration" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <responseStatus xmi:id="_V3XcgEooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_WAT9IEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_WEAxYEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_WIFZEEooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_Wlr7EEooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_Wo5nIEooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_WtDuYEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_XInB8EooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_cARUcEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_foqCMzW1EemPyoX1o5CRxg" operationName="get" nickname="get-configuration" httpMethod="GET" responseStyle="element">
+        <responseStatus xmi:id="_lZV8oEooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_lcxEEEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_leWYcEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_lgE2wEooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_lnZmwEooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_louccEooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_lqMcEEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_lrp0oEooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <responseStatus xmi:id="_pUIXMEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_fotskDW1EemPyoX1o5CRxg" operationName="put" nickname="put-configuration" httpMethod="PUT" responseStyle="element" requestStyle="element">
+        <responseStatus xmi:id="_qhm28EooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <responseStatus xmi:id="_qjGEsEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
+        <responseStatus xmi:id="_qkucYEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>
+        <responseStatus xmi:id="_qmUX0EooEemXI9sJmHLgkw" statusCode="204" reasonPhrase="No Content" dataType="string"/>
+        <responseStatus xmi:id="_qqz2QEooEemXI9sJmHLgkw" statusCode="500" reasonPhrase="Internal Server Error" dataType="string"/>
+        <responseStatus xmi:id="_qtcTgEooEemXI9sJmHLgkw" statusCode="400" reasonPhrase="Bad Request" dataType="string"/>
+        <responseStatus xmi:id="_qu324EooEemXI9sJmHLgkw" statusCode="401" reasonPhrase="Unauthorized" dataType="string"/>
+        <responseStatus xmi:id="_qxV8EEooEemXI9sJmHLgkw" statusCode="403" reasonPhrase="Forbidden" dataType="string"/>
+        <responseStatus xmi:id="_qy9ssEooEemXI9sJmHLgkw" statusCode="404" reasonPhrase="Not Found" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <operation xmi:id="_fotskTW1EemPyoX1o5CRxg" operationName="delete" nickname="delete-configuration" httpMethod="DELETE" responseStyle="element">
+        <parameters xmi:id="_CyBYoDW2EemPyoX1o5CRxg">
+          <parameterMapping xmi:id="_CyBYoTW2EemPyoX1o5CRxg" parameterName="catalogid" parameterType="Query" dataType="string" required="true"/>
+          <parameterMapping xmi:id="_FujbMDW2EemPyoX1o5CRxg" parameterName="errocodeid" parameterType="Query" dataType="string" required="true"/>
+        </parameters>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_fowI0DW1EemPyoX1o5CRxg"/>
+      <advancedConfig xmi:id="_foqCMTW1EemPyoX1o5CRxg" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_fotskjW1EemPyoX1o5CRxg" bindingName="RestService5"/>
+  </sca:service>
+  <sca:property xmi:id="_R_MOUCntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_R_nFECntEemBKr8QxwEOAA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_R_vA4CntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SAG0UCntEemBKr8QxwEOAA" name="BW.HOST.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SAPXMCntEemBKr8QxwEOAA" name="BW.DOMAIN.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SAZvQCntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SAjgQCntEemBKr8QxwEOAA" name="BW.APPSPACE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SAufYCntEemBKr8QxwEOAA" name="BW.MODULE.VERSION" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_SA3pUCntEemBKr8QxwEOAA" name="BW.MODULE.NAME" type="XMLSchema:string" scalable="true"/>
+  <sca:property xmi:id="_bAetACoLEemBKr8QxwEOAA" name="/HTTP/port" type="XMLSchema:int" scaext:simpleValue="0" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_oPlLkCoLEemBKr8QxwEOAA" name="/JDBC/connection_name" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_x2_8UCoMEemBKr8QxwEOAA" name="/JDBC/username" type="XMLSchema:string" publicAccess="true" scalable="true"/>
+  <sca:property xmi:id="_zlO_wCoMEemBKr8QxwEOAA" name="/JDBC/password" type="property:password" scaext:simpleValue="#!PqnFHNBLNcgAFIy1xtNZ3A==" publicAccess="true" scalable="true"/>
+  <sca:component xmi:id="_VNDfMCnyEemBKr8QxwEOAA" name="ComponentCatalog" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_VNDfMSnyEemBKr8QxwEOAA" processName="FWK.Console.Services.Catalog.Starter"/>
+    <sca:service xmi:id="_VNKM4CnyEemBKr8QxwEOAA" name="catalog">
+      <sca:interface.wsdl xmi:id="_VNLbACnyEemBKr8QxwEOAA" interface="http://xmlns.example.com/20190206103358PLT#wsdl.interface(catalog)" scaext:wsdlLocation="../Processes/catalog/Catalog.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_xKVRsDQfEemkkuSub-YhHA" name="ComponentErrorService" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_xKVRsTQfEemkkuSub-YhHA" processName="FWK.Console.Services.ErrorService.Starter"/>
+    <sca:service xmi:id="_xKdNgDQfEemkkuSub-YhHA" name="errorservice">
+      <sca:interface.wsdl xmi:id="_xKfCsDQfEemkkuSub-YhHA" interface="http://xmlns.example.com/20190219092425PLT#wsdl.interface(errorservice)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ErrorService/ErrorService.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_91E-oDQiEemKYsizTPVenw" name="ComponentStarter" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_91E-oTQiEemKYsizTPVenw" processName="FWK.Console.Services.ErrorCode.Starter"/>
+    <sca:service xmi:id="_91KeMDQiEemKYsizTPVenw" name="errorcode">
+      <sca:interface.wsdl xmi:id="_91LFQDQiEemKYsizTPVenw" interface="http://xmlns.example.com/20190219094719PLT#wsdl.interface(errorcode)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ErrorCode/Starter.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_ACze0DRBEemKYsizTPVenw" name="ComponentControlSequence" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_ACze0TRBEemKYsizTPVenw" processName="FWK.Console.Services.ControlSequence.Starter"/>
+    <sca:service xmi:id="_AC4XUDRBEemKYsizTPVenw" name="controlsequence">
+      <sca:interface.wsdl xmi:id="_AC4-YDRBEemKYsizTPVenw" interface="http://xmlns.example.com/20190219132218PLT#wsdl.interface(controlsequence)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlSequence/ControlSequence.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_oYTsgDRNEemKYsizTPVenw" name="ComponentControlData" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_oYTsgTRNEemKYsizTPVenw" processName="FWK.Console.Services.ControlData.Starter"/>
+    <sca:service xmi:id="_oYWv0DRNEemKYsizTPVenw" name="controldata">
+      <sca:interface.wsdl xmi:id="_oYWv0TRNEemKYsizTPVenw" interface="http://xmlns.example.com/20190219145243PLT#wsdl.interface(controldata)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/ControlData.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_foRAoDW1EemPyoX1o5CRxg" name="ComponentConfiguration" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_foRAoTW1EemPyoX1o5CRxg" processName="FWK.Console.Services.Configuration.Starter"/>
+    <sca:service xmi:id="_foXuUDW1EemPyoX1o5CRxg" name="configuration">
+      <sca:interface.wsdl xmi:id="_foXuUTW1EemPyoX1o5CRxg" interface="http://xmlns.example.com/20190221094843PLT#wsdl.interface(configuration)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Configuration/Configuration.bwp"/>
+    </sca:service>
+  </sca:component>
+</sca:composite>

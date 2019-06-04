@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://EAI/SharedResources/Initialize/1/0" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EAI.SharedResources.Initialize.1.0" targetNamespace="http://EAI/SharedResources/Initialize/1/0" xmlns:xsd1="http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize">
+  <wsdl:types>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  	<xsd:import
+  		namespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize"
+  		schemaLocation="../Schemas/EAIMessaging/Initialize.xsd">
+  	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="OperationRequest">
+    <wsdl:part element="xsd1:initialize" name="parameters"/>
+  </wsdl:message>
+  <wsdl:message name="OperationResponse">
+    <wsdl:part element="xsd1:initialize" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="EAI.SharedResources.Initialize.1.0">
+    <wsdl:operation name="Operation">
+      <wsdl:input message="tns:OperationRequest"/>
+      <wsdl:output message="tns:OperationResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>>
+</wsdl:definitions>

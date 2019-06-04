@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ERROR_HANDLING/EH_CONTROL_DATA" xmlns:tns="ERROR_HANDLING/EH_CONTROL_DATA" elementFormDefault="qualified">
+
+    <complexType name="ControlData">
+    	<sequence>
+    		<element name="EH_CONTROL_DATA_ID" type="string"></element>
+    		<element name="EAI_CATALOG_ID" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EH_CONTROL_SEQUENCE_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="TRANSACTION_ID" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EAI_ERROR_CODE" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EH_RETRY" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EH_STATUS" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EH_PUBLISH_DATE" type="dateTime" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SERVICE_START_MSG" type="string"></element>
+    		<element name="HEADERS" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="INSERT_DATETIME" type="dateTime"></element>
+    		<element name="UPDATE_DATETIME" type="dateTime"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="ControlData" type="tns:ControlData"></element>
+
+    <complexType name="ControlDataArray">
+    	<sequence>
+    		<element ref="tns:ControlData" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ControlDataArray" type="tns:ControlDataArray"></element>
+
+    <complexType name="ControlDataUpdate">
+    	<sequence>
+            <element name="EH_CONTROL_DATA_ID" type="string"></element>
+            <element name="EH_STATUS" type="string"></element>
+            <element name="SERVICE_START_MSG" type="string" minOccurs="0" maxOccurs="1"></element>
+            <element name="HEADERS" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ControlDataUpdate" type="tns:ControlDataUpdate"></element>
+</schema>

@@ -1,0 +1,308 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "REST service for Error Codes",
+    "description" : "REST service for Error Codes"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/errorcode" : {
+      "post" : {
+        "summary" : "Add new Error Code",
+        "description" : "",
+        "operationId" : "post-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ErrorCodeRequest"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "204" : {
+            "description" : "No Content",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "Access current error codes values",
+        "description" : "",
+        "operationId" : "get-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a ErrorCodeArray to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorCodeArray"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "Update Error Code",
+        "description" : "",
+        "operationId" : "put-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ErrorCode"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "401" : {
+            "description" : "Unauthorized",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "403" : {
+            "description" : "Forbidden",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "404" : {
+            "description" : "Not Found",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "500" : {
+            "description" : "Internal Server Error",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "201" : {
+            "description" : "Created",
+            "schema" : {
+              "type" : "string"
+            }
+          },
+          "202" : {
+            "description" : "Accepted",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "Delete Error Code",
+        "description" : "",
+        "operationId" : "delete-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "errorcodeid",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            },
+            "headers" : { }
+          },
+          "400" : {
+            "description" : "Bad Request"
+          },
+          "401" : {
+            "description" : "Unauthorized"
+          },
+          "403" : {
+            "description" : "Forbidden"
+          },
+          "404" : {
+            "description" : "Not Found"
+          },
+          "500" : {
+            "description" : "Internal Server Error"
+          },
+          "201" : {
+            "description" : "Created"
+          },
+          "202" : {
+            "description" : "Accepted"
+          },
+          "204" : {
+            "description" : "No Content"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ErrorCodeArray" : {
+      "type" : "object",
+      "properties" : {
+        "ErrorCode" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ErrorCode",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "ErrorCodeRequest" : {
+      "type" : "object",
+      "required" : [ "EAI_ERROR_CODE_DESC", "IS_ERROR", "EAI_ERROR_CODE" ],
+      "properties" : {
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE_DESC" : {
+          "type" : "string"
+        },
+        "IS_ERROR" : {
+          "type" : "string"
+        }
+      }
+    },
+    "ErrorCode" : {
+      "type" : "object",
+      "required" : [ "EAI_ERROR_CODE_DESC", "IS_ERROR", "EAI_ERROR_CODE" ],
+      "properties" : {
+        "EAI_ERROR_CODE_ID" : {
+          "type" : "integer"
+        },
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE_DESC" : {
+          "type" : "string"
+        },
+        "IS_ERROR" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

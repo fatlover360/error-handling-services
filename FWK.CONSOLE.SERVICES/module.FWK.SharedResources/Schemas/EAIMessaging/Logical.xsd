@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://ns.corelio.be/common/logical/1.0" xmlns:env="http://ns.corelio.be/common/envelope/1.0" xmlns:log="http://www.tibco.com/CLEver/Log" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ns.corelio.be/common/logical/1.0" xmlns:Q1="http://http://module.Framework.Shared.Resources.Shemas.EAIMessaging.MultiThreadService" xmlns:Q2="http://Polarising/Shared/Resources/Services">
+
+    <xs:import namespace="http://Polarising/Shared/Resources/Services"></xs:import>
+    <xs:import namespace="http://http://module.Framework.Shared.Resources.Shemas.EAIMessaging.MultiThreadService"></xs:import>
+    <xs:import namespace="http://ns.corelio.be/common/envelope/1.0" schemaLocation="../Logging/CommonTypes.xsd">
+	</xs:import>
+	<xs:import namespace="http://www.tibco.com/CLEver/Log" schemaLocation="../Logging/Clever/Log.xsd"/>
+	
+	
+	
+	<xs:element name="input">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="header"/>
+				<xs:element minOccurs="0" ref="body"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="output">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="header"/>
+				<xs:element minOccurs="0" ref="body"/>
+				<xs:element minOccurs="0" ref="log:Attachments"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="skip"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="header" type="env:Header"/>
+	<xs:element name="INPUT" type="INPUT"/>
+		<xs:complexType name="INPUT">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="header"/>
+			<xs:element minOccurs="0" ref="body"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:complexType name="Group">
+		<xs:sequence>
+			<xs:element name="context" type="env:Context"></xs:element>
+			<xs:element name="header" type="env:Header"></xs:element>
+			<xs:element name="ServiceConfig" type="Q2:ServiceType" minOccurs="0"></xs:element>
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:element name="group" type="Group"></xs:element>
+</xs:schema>

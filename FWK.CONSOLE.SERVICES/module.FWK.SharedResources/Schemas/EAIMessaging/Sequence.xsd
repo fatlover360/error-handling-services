@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Sequence" 
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/Sequence" 
+	elementFormDefault="qualified"> 
+
+    <element name="In" type="tns:In"></element>
+       
+    <complexType name="In">
+    	<sequence>
+    		<element name="EhControlSequenceId" minOccurs="0" type="string"/>
+    		<element name="EaiCatalogId" minOccurs="0" type="int"/>	
+    		<element name="SequenceKey" minOccurs="0" type="string"/>
+    		<element name="EhControlDataId" minOccurs="0" type="string"/>	
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:errReport="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/ErrorReport.xsd"
+	 targetNamespace="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/ErrorReport.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+
+	<!--
+/**************************************************************************************************
+  Name:			ErrorReport
+  Description:	In the event of a failure specifies detailed info about the error.
+
+  Ver.		Date			Author(s)			Description
+  _____________________________________________________________________
+   0.1		10-09-2012		Polarising			Creation
+**************************************************************************************************/
+-->
+	<!--
+Declaration of types
+-->
+	<xs:complexType name="Data">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="skip" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<!--
+Declaration of elements
+-->
+	<xs:element name="ErrorReport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="StackTrace" type="xs:string"/>
+				<xs:element name="Msg" type="xs:string"/>
+				<xs:element name="FullClass" type="xs:string"/>
+				<xs:element name="Class" type="xs:string"/>
+				<xs:element name="ProcessStack" type="xs:string"/>
+				<xs:element name="MsgCode" type="xs:string" minOccurs="0"/>
+				<xs:element name="Data" type="errReport:Data" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

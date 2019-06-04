@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns="http://ns.corelio.be/common/envelope/1.0"
+	 xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:clever="http://www.tibco.com/CLEver/ExtraTypes"
+	 targetNamespace="http://ns.corelio.be/common/envelope/1.0"
+	 version="1.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+
+	<!--
+    03/01/2012 - PEDK01 - Add subproduct and productCategory in the header.
+    		Changes on products enumeration
+    02/01/2012 - PEDK01 - Add enumeration values to domains and products
+    01/03/2018 - CSPA01 - Add enumeration values to domains
+    -->
+
+	<xs:import namespace="http://www.tibco.com/CLEver/ExtraTypes" schemaLocation="Clever/ExtraTypes.xsd"/>
+
+	<!-- Elements -->
+	<xs:element name="envelope">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="header"/>
+				<xs:element ref="body" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="context" type="Context"/>
+	<xs:element name="header" type="Header"/>
+	<xs:element name="body" type="Body"/>
+	<xs:element name="result" type="Result"/>
+	<xs:element name="native" type="Native"/>
+	
+	<xs:element name="recoveryInfo">
+		<xs:complexType>
+			<xs:group ref="RecoveryInfo"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ackMessage" type="AckMessage"/>
+	<xs:element name="fileMessage" type="FileMessage"/>
+	<xs:element name="reloadAttributeValuesRequest" type="ReloadAttributeValuesRequest"/>
+	<xs:element name="uploadAttributeValuesRequest" type="UploadAttributeValuesRequest"/>
+	<xs:element name="attributeValues" type="AttributeValues"/>
+	<xs:element name="attributeValuesUpdated" type="AttributeValuesUpdate"/>
+	
+
+	
+	<!-- Complex Types -->
+	<xs:complexType name="Body">
+		<xs:sequence>
+			<xs:any namespace="##any" processContents="lax" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+		<xs:anyAttribute namespace="##other" processContents="lax"/>
+	</xs:complexType>
+	<xs:complexType name="Header">
+		<xs:sequence>
+			<xs:element name="architectureLayer" type="ArchitectureLayer">
+				<xs:annotation>
+					<xs:appinfo source="Clever">TechnicalDomain</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="functionalDomain" type="FunctionalDomain">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessDomain</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="product" type="Product" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessRef</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="subproduct" type="xs:string" minOccurs="0"/>
+			<xs:element name="productCategory" type="xs:string" minOccurs="0"/>
+			<xs:element name="media" type="Media" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessRef</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="service" type="Service" minOccurs="0"/>
+			<xs:element name="application" type="Application" minOccurs="0"/>
+			<xs:element name="concept" type="Concept" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessRef as "@type = text()".</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="transactionId" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessRef</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="publishingBrand" type="Identifier" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For example: DS, BS, VA, JA.</xs:documentation>
+					<xs:appinfo source="Clever">BusinessRef</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="salesBrand" type="xs:string" minOccurs="0" maxOccurs="unbounded">
+				<xs:annotation>
+					<xs:documentation>For example: PP, PP Regie, Scripta, JobAt.</xs:documentation>
+					<xs:appinfo source="Clever">BusinessRef</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="company" type="xs:string" minOccurs="0">
+				<xs:annotation>
+					<xs:documentation>For example: MH, EDA.</xs:documentation>
+					<xs:appinfo source="Clever">BusinessRef</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="handling" minOccurs="0" type="Handling"/>
+			<xs:element name="result" minOccurs="0" type="Result"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="FileMessage">
+		<xs:sequence>
+			<xs:element name="fileInfo" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="fullName" type="xs:string" minOccurs="0"/>
+						<xs:element name="fileName" type="xs:string" minOccurs="0"/>
+						<xs:element name="location" type="xs:string" minOccurs="0"/>
+						<xs:element name="fileDelimiter" type="xs:string" minOccurs="0"/>
+						<xs:element name="fmsStreamFullName" type="xs:string" minOccurs="0"/>
+						<xs:element name="fmsStreamFileName" type="xs:string" minOccurs="0"/>
+						<xs:element name="fmsStreamLocation" type="xs:string" minOccurs="0"/>
+						<xs:element name="fmsStreamDestinationLocation" type="xs:string" minOccurs="0"/>
+						<xs:element name="configuredFileLocation" type="xs:string" minOccurs="0"/>
+						<xs:element name="type" type="xs:string" minOccurs="0"/>
+						<xs:element name="readProtected" type="xs:boolean" minOccurs="0"/>
+						<xs:element name="writeProtected" type="xs:boolean" minOccurs="0"/>
+						<xs:element name="size" type="xs:int" minOccurs="0"/>
+						<xs:element name="lastModified" type="xs:dateTime" minOccurs="0"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+			<xs:element name="content" minOccurs="0">
+				<xs:complexType>
+					<xs:choice>
+						<xs:element name="textContent" type="xs:string"/>
+
+						<!-- FMSStream always sends and receives binary data -->
+						<xs:element name="binaryContent" type="xs:base64Binary"/>
+					</xs:choice>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attribute name="schemaVersion" type="xs:string" fixed="1.0.0" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="Concept">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="Identifier" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Application">
+		<xs:sequence>
+			<xs:element name="sender" type="Identifier" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessRefs</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="receiver" type="Identifier" minOccurs="0">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessRefs</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Service">
+		<xs:sequence>
+			<xs:element name="serviceName" type="Identifier">
+				<xs:annotation>
+					<xs:appinfo source="Clever">ServiceName</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="serviceOperation" type="Identifier">
+				<xs:annotation>
+					<xs:appinfo source="Clever">BusinessOperation</xs:appinfo>
+				</xs:annotation>
+			</xs:element>
+			<xs:element name="parameters" minOccurs="0">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element name="parameter" type="Parameter" minOccurs="0" maxOccurs="unbounded"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Parameter">
+		<xs:sequence>
+			<xs:element name="Name" type="xs:string"/>
+			<xs:element name="Value" type="xs:string" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AckMessage">
+		<xs:sequence>
+			<xs:element name="correlationId" type="xs:string"/>
+			<xs:element name="businessId" type="xs:string"/>
+			<xs:element name="success" type="xs:boolean"/>
+			<xs:element name="errors" type="xs:string" nillable="true" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="KeyedIdentifier">
+		<xs:annotation>
+			<xs:documentation>
+                A common identifier, this incudes both a machine readable key (which should be
+                catalogued) and a human readable value, the value (i.e. text content) should
+                *not* be relied upon for integration purposes.
+            </xs:documentation>
+		</xs:annotation>
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="key" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="Checkpoint">
+		<xs:sequence>
+			<xs:element name="checkpoint" type="xs:boolean" default="false" minOccurs="0"/>
+			<xs:element name="duplicateKey" type="xs:normalizedString" minOccurs="0"/>
+			<xs:element name="failOnDuplicateDetected" type="xs:boolean" default="false" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="EMS">
+		<xs:sequence>
+			<xs:element name="recoveryQueue" type="DestinationName" minOccurs="0"/>
+			<xs:element name="recoveryTopic" type="DestinationName" minOccurs="0"/>
+			<xs:element name="replyDestination" type="DestinationName" minOccurs="0"/>
+			<xs:element name="input" type="xs:string" minOccurs="0"/>
+
+			<!-- In case the envelope can't be parsed, this information can be filled in to preserve the EMS headers -->
+			<xs:element name="senderApplication" type="xs:string" minOccurs="0"/>
+			<xs:element name="receiverApplication" type="xs:string" minOccurs="0"/>
+			<xs:element name="publishingBrand" type="xs:string" minOccurs="0"/>
+			<xs:element name="salesBrand" type="xs:string" minOccurs="0"/>
+			<xs:element name="company" type="xs:string" minOccurs="0"/>
+			<xs:element name="routingKey" type="xs:string" minOccurs="0"/>
+			<xs:element name="JMSExpiration" type="xs:int" minOccurs="0"/>
+
+			<!-- NOT WORKING -->
+			<xs:element name="JMSPriority" type="xs:int" minOccurs="0"/>
+			<xs:element name="JMSDeliveryMode" type="xs:int" minOccurs="0"/>
+
+			<!-- NOT WORKING -->
+			<xs:element name="JMSType" type="xs:int" minOccurs="0"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="Context">
+		<xs:complexContent>
+			<xs:extension base="clever:ProcessContext">
+				<xs:group ref="RecoveryInfo"/>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="ReloadAttributeValuesRequest">
+		<xs:sequence>
+			<xs:element name="application" type="xs:string"/>
+			<xs:element name="attribute" type="xs:string"/>
+			<xs:element name="username" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="UploadAttributeValuesRequest">
+		<xs:complexContent>
+			<xs:extension base="ReloadAttributeValuesRequest">
+				<xs:sequence>
+					<xs:element name="attributeValueData" type="xs:string">
+						<xs:annotation>
+							<xs:documentation>Data passed in from a file upload operation. CSV format.</xs:documentation>
+						</xs:annotation>
+					</xs:element>
+				</xs:sequence>
+			</xs:extension>
+		</xs:complexContent>
+	</xs:complexType>
+	<xs:complexType name="AttributeValues">
+		<xs:sequence>
+			<xs:element name="value" type="KeyedIdentifier" minOccurs="0" maxOccurs="unbounded"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="AttributeValuesUpdate">
+		<xs:sequence>
+			<xs:element name="value" maxOccurs="unbounded">
+				<xs:complexType>
+					<xs:simpleContent>
+						<xs:extension base="xs:string">
+							<xs:attribute name="action" type="AttributeMappingUpdateAction" default="Update"/>
+						</xs:extension>
+					</xs:simpleContent>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Result">
+		<xs:sequence>
+			<xs:element minOccurs="1" name="resultCode" type="xs:string"/>
+			<xs:element minOccurs="0" name="resultDescription" type="xs:string"/>
+			<xs:element minOccurs="1" name="isError" type="xs:boolean"/>
+			<xs:element maxOccurs="1" minOccurs="0" name="native">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element minOccurs="0" name="nativeResultCode" type="xs:string"/>
+						<xs:element minOccurs="0" name="nativeResultDescription" type="xs:string"/>
+						<xs:element minOccurs="0" name="nativeApplifcation" type="xs:string"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Native">
+			<xs:sequence>
+						<xs:element minOccurs="0" name="nativeResultCode" type="xs:string"/>
+						<xs:element minOccurs="0" name="nativeResultDescription" type="xs:string"/>
+						<xs:element minOccurs="0" name="nativeApplifcation" type="xs:string"/>
+					</xs:sequence>
+	</xs:complexType>
+	
+	<xs:complexType name="Handling">
+			<xs:sequence>
+				<xs:element name="errorId" type="xs:string" minOccurs="0"/>		
+				<xs:element name="retryNumber" type="xs:integer" minOccurs="0"/>					
+			</xs:sequence>
+	</xs:complexType>
+
+
+
+	<!-- Groups -->
+	<xs:group name="RecoveryInfo">
+		<xs:sequence>
+			<xs:element name="failOnError" type="xs:boolean" default="true" minOccurs="0"/>
+			<xs:element name="checkpoint" type="Checkpoint" minOccurs="0"/>
+			<xs:element name="ems" type="EMS" minOccurs="0"/>
+		</xs:sequence>
+		<!-- RecoveryInfo is a group so that it may be used in-line in the Context type. -->
+	</xs:group>
+	<xs:simpleType name="ArchitectureLayer">
+		<xs:annotation>
+			<xs:documentation>Based on the Archimate layer model.</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Business"/>
+			<xs:enumeration value="Application"/>
+			<xs:enumeration value="Technical"/>
+		</xs:restriction>
+		<!-- Simple Types -->
+	</xs:simpleType>
+	<xs:simpleType name="AttributeMappingUpdateAction">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="Insert"/>
+			<xs:enumeration value="Update"/>
+			<xs:enumeration value="Delete"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Product">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="News"/>
+			<xs:enumeration value="Magazine"/>
+			<xs:enumeration value="Freesheet"/>
+			<xs:enumeration value="Ads"/>
+
+			<!-- Added - 02/01/2012 - PEDK01 -->
+			<xs:enumeration value="Ads.DisplayAd"/>
+			<xs:enumeration value="Ads.Classified"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Media">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="All"/>
+			<xs:enumeration value="Paper"/>
+			<xs:enumeration value="Web"/>
+			<xs:enumeration value="Tablet"/>
+			<xs:enumeration value="Mobile"/>
+			<xs:enumeration value="Digital"/>
+			<xs:enumeration value="Television"/>
+			<xs:enumeration value="Radio"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="FunctionalDomain">
+		<xs:restriction base="xs:string">
+			<!-- Removed 12 JAN 2016 -->
+			<!-- xs:enumeration value="CustomerRelations"/ -->
+
+			<xs:enumeration value="Publishing"/>
+			<xs:enumeration value="Financial"/>
+			<xs:enumeration value="HumanResources"/>
+			<xs:enumeration value="Marketing"/>
+			<xs:enumeration value="Ordering"/>
+			<xs:enumeration value="Production"/>
+			<xs:enumeration value="Sales"/>
+			<xs:enumeration value="Integration"/>
+			<xs:enumeration value="Publication"><!-- Added - 02/01/2012 - PEDK01 --></xs:enumeration>
+			<xs:enumeration value="CRM"><!-- Added - 12 JAN 2016 --></xs:enumeration>
+			<xs:enumeration value="Subscription"><!-- Added - 01 MAR 2018 - CSPA01 --></xs:enumeration>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="DestinationName">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="(AQ|Q|T)(\.[a-zA-Z][a-zA-Z0-9]*)+"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="Identifier">
+		<xs:annotation>
+			<xs:documentation>
+            A common identifier, these should always be catalogued whenever they are used.
+        </xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+</xs:schema>

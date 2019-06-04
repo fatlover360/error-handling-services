@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://Polarising/Shared/Resources/Services" xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    attributeFormDefault="unqualified" elementFormDefault="qualified" 
+    targetNamespace="http://Polarising/Shared/Resources/Services">
+	
+	
+	<xs:element name="Service" type="ServiceType"/>	
+	<xs:complexType name="ServiceType">
+		<xs:sequence>
+			<xs:element minOccurs="0" ref="Classification"/>
+			<xs:element minOccurs="0" ref="Configuration"/>
+		</xs:sequence>
+	</xs:complexType>
+
+	<xs:element name="Services">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" maxOccurs="unbounded" ref="Classification"/>	
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Catalog">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="Service"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Configuration">
+		<xs:complexType>
+			<xs:attribute name="databaseRole" type="xs:string"/>
+			<xs:attribute name="fileRole" type="xs:string"/>
+			<xs:attribute name="application" type="xs:string"/>
+			<xs:attribute name="timeSLA" type="xs:string"/>
+			<xs:attribute name="activeFlag" type="xs:boolean"/>
+			<xs:attribute name="languageCode" type="xs:string"/>
+			<xs:attribute name="hasEvent" type="xs:boolean"/>
+			<xs:attribute name="hasInternalCall" type="xs:boolean"/>
+			<xs:attribute name="hasLogical" type="xs:boolean"/>
+			<xs:attribute name="hasStarter" type="xs:boolean"/>
+			<xs:attribute name="hasHandling" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Classification">
+		<xs:complexType>
+		    <xs:attribute name="EAICatalogId" type="xs:int"/>
+			<xs:attribute name="ApplicationName" type="xs:string"/>
+			<xs:attribute name="Type" type="xs:string"/>
+			<xs:attribute name="Function" type="xs:string"/>
+			<xs:attribute name="Operation" type="xs:string"/>
+			<xs:attribute name="Version" type="xs:string"/>
+			<xs:attribute name="HasHandling" type="xs:boolean"/>
+			<xs:attribute name="HasSequence" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Engine">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="Catalog"/>
+			</xs:sequence>
+			<xs:attribute name="engineName" type="xs:string"/>
+			<xs:attribute name="hostName" type="xs:string"/>
+			<xs:attribute name="hostIP" type="xs:string"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

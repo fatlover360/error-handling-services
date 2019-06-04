@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/JMSProperties" 
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/JMSProperties" 
+	elementFormDefault="qualified"> 
+
+    <element name="JmsProperties" type="tns:JmsPropertiesType"></element>
+       
+    <complexType name="JmsPropertiesType">
+    	<sequence>
+    		<element name="PropertyName" minOccurs="0" type="string"/>
+    		<element name="Type" minOccurs="0" type="string"/>	
+    		<element name="Cardinality" minOccurs="0" type="string"/>
+    	</sequence>
+    </complexType>
+</schema>

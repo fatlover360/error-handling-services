@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:logical="http://ns.corelio.be/common/logical/1.0" 
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/Main" 
+	elementFormDefault="qualified" 
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Main" 
+	xmlns:dynamic="http://Polarising/SharedResources/Schemas/DynamicProperties">
+    <import namespace="http://Polarising/SharedResources/Schemas/DynamicProperties"></import>
+    <import namespace="http://ns.corelio.be/common/logical/1.0"></import>
+    
+    <element name="In" type="tns:In"></element>
+    <element name="Out" type="tns:Out"></element>
+    
+    <complexType name="In">
+    	<sequence>
+    		<element ref="logical:input"></element>
+    		<element ref="dynamic:DynamicProperties"></element>
+    	</sequence>
+    </complexType>
+     <complexType name="Out">
+    	<sequence>
+    		<element ref="logical:output"></element>
+    		<element ref="dynamic:DynamicProperties"></element>
+    	</sequence>
+    </complexType>
+</schema>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema 	xmlns="http://Polarising/Shared/Resources/ErrorHandler" 
+			xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+    		attributeFormDefault="unqualified" 
+    		elementFormDefault="qualified" 
+    		targetNamespace="http://Polarising/Shared/Resources/ErrorHandler">
+       		
+
+	<xs:element name="T_EH_CONFIGURATION">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="EH_CONFIGURATION"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EH_CONFIGURATION">
+		<xs:complexType>
+			<xs:attribute name="EAI_CATALOG_ID" type="xs:int"/>
+			<xs:attribute name="EAI_ERROR_CODE" type="xs:string"/>
+			<xs:attribute name="MAX_RETRY" type="xs:int"/>
+			<xs:attribute name="WAIT_TIME_SECS" type="xs:int"/>
+			<xs:attribute name="DELTA_TIME_SECS" type="xs:int"/>
+			<xs:attribute name="DELTA_PERCENTAGE" type="xs:int"/>
+		</xs:complexType>
+	</xs:element>
+	
+	<xs:element name="T_EAI_ERROR_SERVICE">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0" ref="EAI_ERROR_SERVICE"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="EAI_ERROR_SERVICE">
+		<xs:complexType>
+			<xs:attribute name="APPLICATION_NAME" type="xs:string"/>
+			<xs:attribute name="EAI_CATALOG_ID" type="xs:int"/>
+			<xs:attribute name="SYSTEM_NATIVE_CODE" type="xs:string"/>
+			<xs:attribute name="EAI_ERROR_CODE" type="xs:string"/>
+			<xs:attribute name="EAI_ERROR_CODE_DESCRIPTION" type="xs:string"/>
+			<xs:attribute name="IS_ERROR" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

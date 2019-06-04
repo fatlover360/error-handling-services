@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ERROR_HANDLING/EAI_ERROR_SERVICE" xmlns:tns="ERROR_HANDLING/EAI_ERROR_SERVICE" elementFormDefault="qualified">
+
+    <element name="ErrorService" type="tns:ErrorService"></element>
+    
+    <complexType name="ErrorService">
+    	<sequence>
+    		<element name="APPLICATION_NAME" type="string" maxOccurs="1" minOccurs="0"></element>
+    		<element name="EAI_CATALOG_ID" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="SYSTEM_NATIVE_CODE" type="string" maxOccurs="1" minOccurs="1"></element>
+    		<element name="EAI_ERROR_CODE_ID" type="int" maxOccurs="1" minOccurs="0"></element>
+    		<element name="IS_ERROR" maxOccurs="1" minOccurs="1">
+    			<simpleType>
+    				<restriction base="string">
+    					<length value="1"></length>
+    				</restriction>
+    			</simpleType>
+    		</element>
+    	</sequence>
+    </complexType>
+
+    
+
+    <complexType name="ErrorServiceArray">
+    	<sequence>
+    		<element ref="tns:ErrorService" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ErrorServiceArray" type="tns:ErrorServiceArray"></element>
+</schema>

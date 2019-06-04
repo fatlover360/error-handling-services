@@ -1,0 +1,118 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "REST Service for FWK Configuration",
+    "description" : "REST Service for FWK Configuration"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/configuration" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-configuration",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Configuration"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-configuration",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "put-configuration",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/Configuration"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "delete-configuration",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Configuration" : {
+      "type" : "object",
+      "required" : [ "DELTA_TIME_SECS", "MAX_RETRIES", "EAI_ERROR_CODE_ID", "WAIT_TIME_SECS", "EAI_CATALOG_ID" ],
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "EAI_ERROR_CODE_ID" : {
+          "type" : "integer"
+        },
+        "MAX_RETRIES" : {
+          "type" : "integer"
+        },
+        "WAIT_TIME_SECS" : {
+          "type" : "integer"
+        },
+        "DELTA_TIME_SECS" : {
+          "type" : "integer"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,22 @@
+{"records": [
+    {
+        "jsonSchemaLocation": "/FWK.Console/Service Descriptors/catalog.Catalog-Catalog.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "ERROR_HANDLING/EAI_CATALOG"
+    },
+    {
+        "jsonSchemaLocation": "/FWK.Console/Service Descriptors/catalog.Catalog-Catalog.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://xmlns.example.com/Catalog/parameters"
+    },
+    {
+        "jsonSchemaLocation": "/FWK.Console/Service Descriptors/FWK.Console.Services.ControlData.ControlData-ControlData.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "ERROR_HANDLING/EH_CONTROL_DATA"
+    },
+    {
+        "jsonSchemaLocation": "/FWK.Console/Service Descriptors/FWK.Console.Services.Configuration.Configuration-Configuration.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "ERROR_HANDLING/EH_CONFIGURATION"
+    }
+]}

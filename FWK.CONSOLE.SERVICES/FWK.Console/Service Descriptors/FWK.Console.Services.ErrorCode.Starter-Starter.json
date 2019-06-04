@@ -1,0 +1,133 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "REST service for Error Codes",
+    "description" : "REST service for Error Codes"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/errorcode" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ErrorCode"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a ErrorCodeArray to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/ErrorCodeArray"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "put-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ErrorCode"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "delete-errorcode",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "errorcodeid",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ErrorCodeArray" : {
+      "type" : "object",
+      "properties" : {
+        "ErrorCode" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ErrorCode",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "ErrorCode" : {
+      "type" : "object",
+      "required" : [ "EAI_ERROR_CODE_DESC", "IS_ERROR", "EAI_ERROR_CODE_ID", "EAI_ERROR_CODE" ],
+      "properties" : {
+        "EAI_ERROR_CODE_ID" : {
+          "type" : "integer"
+        },
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE_DESC" : {
+          "type" : "string"
+        },
+        "IS_ERROR" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}

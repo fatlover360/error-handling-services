@@ -1,0 +1,139 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "REST Service for Control Data",
+    "description" : "REST Service for Control Data"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/controldata" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-controldata",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ControlData"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-controldata",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "put-controldata",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ControlData"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "delete-controldata",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ControlData" : {
+      "type" : "object",
+      "required" : [ "EH_CONTROL_SEQUENCE_ID", "INSERT_DATETIME", "SYSTEM_START_MSG", "EH_PUBLISH_DATE", "HEADERS", "EH_CONTROL_ID", "EH_STATUS", "EAI_ERROR_CODE", "UPDATE_DATETIME", "EAI_CATALOG_ID", "TRANSACTION_ID", "EH_RETRY" ],
+      "properties" : {
+        "EH_CONTROL_ID" : {
+          "type" : "integer"
+        },
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "EH_CONTROL_SEQUENCE_ID" : {
+          "type" : "integer"
+        },
+        "TRANSACTION_ID" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EH_RETRY" : {
+          "type" : "integer"
+        },
+        "EH_STATUS" : {
+          "type" : "string"
+        },
+        "EH_PUBLISH_DATE" : {
+          "type" : "string"
+        },
+        "SYSTEM_START_MSG" : {
+          "type" : "string"
+        },
+        "HEADERS" : {
+          "type" : "string"
+        },
+        "INSERT_DATETIME" : {
+          "type" : "string"
+        },
+        "UPDATE_DATETIME" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

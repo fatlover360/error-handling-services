@@ -1,0 +1,144 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "EAI Catalog REST Service",
+    "description" : "EAI Catalog REST Service"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/catalog" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-catalog",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "get" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "get-catalog",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a CatalogArray to be returned",
+            "schema" : {
+              "$ref" : "#/definitions/CatalogArray"
+            }
+          }
+        }
+      },
+      "put" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "put-catalog",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "type" : "string",
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      },
+      "delete" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "delete-catalog",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "CatalogArray" : {
+      "type" : "object",
+      "properties" : {
+        "Catalog" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/Catalog",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "Catalog" : {
+      "type" : "object",
+      "required" : [ "SYSTEM", "SYSTEM_FUNCTION", "SYSTEM_VERSION", "RECEIVER_DESTINATION", "HAS_SEQUENCE", "HAS_HANDLING", "SYSTEM_TYPE", "RECEIVER_TYPE", "EAI_CATALOG_ID", "APPLICATION_NAME", "SYSTEM_OPERATION" ],
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "APPLICATION_NAME" : {
+          "type" : "string"
+        },
+        "SYSTEM" : {
+          "type" : "string"
+        },
+        "SYSTEM_TYPE" : {
+          "type" : "string"
+        },
+        "SYSTEM_FUNCTION" : {
+          "type" : "string"
+        },
+        "SYSTEM_OPERATION" : {
+          "type" : "string"
+        },
+        "SYSTEM_VERSION" : {
+          "type" : "string"
+        },
+        "RECEIVER_TYPE" : {
+          "type" : "string"
+        },
+        "RECEIVER_DESTINATION" : {
+          "type" : "string"
+        },
+        "HAS_HANDLING" : {
+          "type" : "boolean"
+        },
+        "HAS_SEQUENCE" : {
+          "type" : "boolean"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ERROR_HANDLING/EH_CONFIGURATION" xmlns:tns="ERROR_HANDLING/EH_CONFIGURATION" elementFormDefault="qualified">
+
+    <complexType name="Configuration">
+    	<sequence>
+    		<element name="EAI_CATALOG_ID" type="int"></element>
+    		<element name="EAI_ERROR_CODE_ID" type="int"></element>
+    		<element name="MAX_RETRIES" type="int"></element>
+    		<element name="WAIT_TIME_SECS" type="int"></element>
+    		<element name="DELTA_TIME_SECS" type="int"></element>
+    		<element name="DELTA_PERCENTAGE" type="int"></element>
+    	</sequence>
+    </complexType>
+    
+    <element name="Configuration" type="tns:Configuration"></element>
+
+    <complexType name="ConfigurationArray">
+    	<sequence>
+    		<element ref="tns:Configuration" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="ConfigurationArray" type="tns:ConfigurationArray"></element>
+</schema>

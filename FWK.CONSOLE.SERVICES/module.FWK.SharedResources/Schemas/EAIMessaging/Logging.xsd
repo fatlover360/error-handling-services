@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema xmlns="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging" xmlns:GUID="java://GUID" xmlns:Q1="http://www.tibco.com/CLEver/Log" xmlns:Q2="http://ns.corelio.be/common/inlog/1.0" xmlns:ns="http://www.tibco.com/pe/DeployedVarsType" xmlns:ns1="http://www.tibco.com/pe/EngineTypes" xmlns:pd="http://xmlns.tibco.com/bw/process/2003" xmlns:pfx3="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/ErrorReport.xsd" xmlns:pfx4="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/Header.xsd" xmlns:pref="http://ns.corelio.be/common/in/1.0" xmlns:tib="http://www.tibco.com/bw/xslt/custom-functions" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsl="http://www.w3.org/1999/XSL/Transform" attributeFormDefault="unqualified" elementFormDefault="unqualified" targetNamespace="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging" xmlns:Q3="http://ns.corelio.be/common/logical/1.0">
+
+
+    <xsd:import namespace="http://ns.corelio.be/common/logical/1.0"></xsd:import>
+    <xsd:import namespace="http://ns.corelio.be/common/in/1.0" schemaLocation="../Logging/In.xsd"/>
+	<xsd:element name="Data">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" name="inLog"
+					type="pref:InLog">
+
+				</xsd:element>
+
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
