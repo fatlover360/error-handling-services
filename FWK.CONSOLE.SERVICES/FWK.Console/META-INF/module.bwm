@@ -56,7 +56,7 @@
   </sca:service>
   <sca:service xmi:id="_xKkiQDQfEemkkuSub-YhHA" name="errorservice" promote="ComponentErrorService/errorservice">
     <sca:interface.wsdl xmi:id="_xO1XMDQfEemkkuSub-YhHA" interface="http://xmlns.example.com/20190219092425PLT#wsdl.interface(errorservice)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ErrorService/ErrorService.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_xPrEsDQfEemkkuSub-YhHA" name="RestService1" path="/errorservice" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ErrorService" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ErrorService.ErrorService-ErrorService.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_xPrEsDQfEemkkuSub-YhHA" name="RestService1" path="/errorservice" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ErrorService" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ErrorService.ErrorService-ErrorService.json" enforceBWServiceResponse="true" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
       <operation xmi:id="_xPs54DQfEemkkuSub-YhHA" operationName="post" nickname="post-errorservice" httpMethod="POST" responseStyle="element">
         <responseStatus xmi:id="_a1ZAQEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_a3U58EopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
@@ -120,7 +120,7 @@
   </sca:service>
   <sca:service xmi:id="_91PWsDQiEemKYsizTPVenw" name="errorcode" promote="ComponentStarter/errorcode">
     <sca:interface.wsdl xmi:id="_95b6MDQiEemKYsizTPVenw" interface="http://xmlns.example.com/20190219094719PLT#wsdl.interface(errorcode)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ErrorCode/Starter.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_95hZwDQiEemKYsizTPVenw" name="RestService2" path="/errorcode" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ErrorCode" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ErrorCode.Starter-Starter.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_95hZwDQiEemKYsizTPVenw" name="RestService2" path="/errorcode" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ErrorCode" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ErrorCode.Starter-Starter.json" enforceBWServiceResponse="true" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
       <operation xmi:id="_95jO8DQiEemKYsizTPVenw" operationName="post" nickname="post-errorcode" httpMethod="POST" responseStyle="element">
         <responseStatus xmi:id="_3EtZwDqTEem-g-9n6ogooQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_3G2HwDqTEem-g-9n6ogooQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
@@ -181,7 +181,7 @@
   </sca:service>
   <sca:service xmi:id="_AC4-YTRBEemKYsizTPVenw" name="controlsequence" promote="ComponentControlSequence/controlsequence">
     <sca:interface.wsdl xmi:id="_AC4-ZTRBEemKYsizTPVenw" interface="http://xmlns.example.com/20190219132218PLT#wsdl.interface(controlsequence)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlSequence/ControlSequence.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ADA6MDRBEemKYsizTPVenw" name="RestService3" path="/controlsequence" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ControlSequence" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlSequence.ControlSequence-ControlSequence.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_ADA6MDRBEemKYsizTPVenw" name="RestService3" path="/controlsequence" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ControlSequence" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlSequence.ControlSequence-ControlSequence.json" enforceBWServiceResponse="true" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
       <operation xmi:id="_ADCIUDRBEemKYsizTPVenw" operationName="post" nickname="post-controlsequence" httpMethod="POST" responseStyle="element">
         <responseStatus xmi:id="_1lbJsEooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_1nHy0EooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
@@ -244,7 +244,7 @@
   </sca:service>
   <sca:service xmi:id="_oYWv0jRNEemKYsizTPVenw" name="controldata" promote="ComponentControlData/controldata">
     <sca:interface.wsdl xmi:id="_oYWv1jRNEemKYsizTPVenw" interface="http://xmlns.example.com/20190219145243PLT#wsdl.interface(controldata)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/ControlData.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_oYc2cDRNEemKYsizTPVenw" name="RestService4" path="/controldata" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ControlData" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlData.ControlData-ControlData.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_oYc2cDRNEemKYsizTPVenw" name="RestService4" path="/controldata" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="ControlData" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlData.ControlData-ControlData.json" enforceBWServiceResponse="true" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
       <operation xmi:id="_oYeEkDRNEemKYsizTPVenw" operationName="post" nickname="post-controldata" httpMethod="POST" responseStyle="element" requestStyle="element">
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
@@ -289,7 +289,7 @@
   </sca:service>
   <sca:service xmi:id="_fobYsDW1EemPyoX1o5CRxg" name="configuration" promote="ComponentConfiguration/configuration">
     <sca:interface.wsdl xmi:id="_fohfUDW1EemPyoX1o5CRxg" interface="http://xmlns.example.com/20190221094843PLT#wsdl.interface(configuration)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Configuration/Configuration.bwp"/>
-    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_foqCMDW1EemPyoX1o5CRxg" name="RestService5" path="/configuration" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Configuration" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.Configuration.Configuration-Configuration.json" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_foqCMDW1EemPyoX1o5CRxg" name="RestService5" path="/configuration" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Configuration" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.Configuration.Configuration-Configuration.json" enforceBWServiceResponse="true" policySets="fwk.console.BasicAuthentication" scaext:policySetLocations="BWRestHttpServiceBinding">
       <operation xmi:id="_foqCMjW1EemPyoX1o5CRxg" operationName="post" nickname="post-configuration" httpMethod="POST" responseStyle="element" requestStyle="element">
         <responseStatus xmi:id="_V3XcgEooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_WAT9IEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
