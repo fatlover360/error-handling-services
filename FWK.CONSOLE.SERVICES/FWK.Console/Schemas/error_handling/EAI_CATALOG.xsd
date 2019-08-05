@@ -49,33 +49,38 @@
     <element name="CatalogArray" type="tns:CatalogArray"/>
 
     <complexType name="CatalogRequest">
-    <sequence>
+    <sequence>
 
-    		<element maxOccurs="1" minOccurs="1" name="SYSTEM"
-    			type="string" />
-            <element name="SERVICE_NAME" type="string" minOccurs="1" maxOccurs="1"></element>
-            <element maxOccurs="1" minOccurs="1" name="APPLICATION_NAME" type="string" />
-            <element maxOccurs="1" minOccurs="1" name="SERVICE_TYPE"
-    			type="string" />
-    		<element maxOccurs="1" minOccurs="1" name="SERVICE_FUNCTION"
-    			type="string" />
-    		<element maxOccurs="1" minOccurs="1" name="SERVICE_OPERATION"
-    			type="string" />
-    		<element maxOccurs="1" minOccurs="1" name="SERVICE_VERSION"
-    			type="string" />
-    		<element maxOccurs="1" minOccurs="1" name="RECEIVER_TYPE"
-    			type="string" />
-    		<element maxOccurs="1" minOccurs="1"
-    			name="RECEIVER_DESTINATION" type="string" />
-    		<element maxOccurs="1" minOccurs="1" name="HAS_HANDLING"
-    			type="boolean">
 
-    		</element>
-    		<element maxOccurs="1" minOccurs="1" name="HAS_SEQUENCE"
-    			type="boolean">
+    	<element maxOccurs="1" minOccurs="1" name="SYSTEM"
+    		type="string" />
+    	<element name="SERVICE_NAME" type="string" minOccurs="1"
+    		maxOccurs="1">
+    	</element>
+    	<element maxOccurs="1" minOccurs="1" name="APPLICATION_NAME"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="SERVICE_TYPE"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="SERVICE_FUNCTION"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="SERVICE_OPERATION"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="SERVICE_VERSION"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="RECEIVER_TYPE"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="RECEIVER_DESTINATION"
+    		type="string" />
+    	<element maxOccurs="1" minOccurs="1" name="HAS_HANDLING"
+    		type="boolean">
 
-    		</element>
+    	</element>
+    	<element maxOccurs="1" minOccurs="1" name="HAS_SEQUENCE"
+    		type="boolean">
 
+    	</element>
+
+    	<element name="EAI_CATALOG_ID" type="int" minOccurs="0" maxOccurs="1"></element>
     </sequence>
     </complexType>
 

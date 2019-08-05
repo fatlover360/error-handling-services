@@ -153,7 +153,7 @@
           "in" : "body",
           "description" : "",
           "schema" : {
-            "$ref" : "#/definitions/Catalog"
+            "$ref" : "#/definitions/CatalogRequest"
           },
           "required" : true
         } ],
@@ -278,6 +278,9 @@
         },
         "HAS_SEQUENCE" : {
           "type" : "boolean"
+        },
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
         }
       }
     },
