@@ -274,10 +274,10 @@
           "type" : "string"
         },
         "HAS_HANDLING" : {
-          "type" : "string"
+          "type" : "boolean"
         },
         "HAS_SEQUENCE" : {
-          "type" : "string"
+          "type" : "boolean"
         }
       }
     },

@@ -67,24 +67,16 @@
     			type="string" />
     		<element maxOccurs="1" minOccurs="1"
     			name="RECEIVER_DESTINATION" type="string" />
-    		<element maxOccurs="1" minOccurs="1" name="HAS_HANDLING">
-    			<simpleType>
-    				<restriction base="string">
+    		<element maxOccurs="1" minOccurs="1" name="HAS_HANDLING"
+    			type="boolean">
 
-    					<length value="1"></length>
-    				</restriction>
-    			</simpleType>
     		</element>
-    		<element maxOccurs="1" minOccurs="1" name="HAS_SEQUENCE">
-    			<simpleType>
-    				<restriction base="string">
+    		<element maxOccurs="1" minOccurs="1" name="HAS_SEQUENCE"
+    			type="boolean">
 
-    					<length value="1"></length>
-    				</restriction>
-    			</simpleType>
     		</element>
 
-    	</sequence>
+    </sequence>
     </complexType>
 
     <element name="CatalogRequest" type="tns:CatalogRequest"></element>
