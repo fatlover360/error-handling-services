@@ -223,7 +223,7 @@
       </operation>
       <operation xmi:id="_ADCIUzRBEemKYsizTPVenw" operationName="delete" nickname="delete-controlsequence" httpMethod="DELETE" responseStyle="element">
         <parameters xmi:id="_6m1WoDRGEemKYsizTPVenw">
-          <parameterMapping xmi:id="_6m1WoTRGEemKYsizTPVenw" parameterName="controlsequenceid" parameterType="Query" dataType="integer#int32" required="true"/>
+          <parameterMapping xmi:id="_6m1WoTRGEemKYsizTPVenw" parameterName="controlsequenceid" parameterType="Query" dataType="string" required="true"/>
         </parameters>
         <responseStatus xmi:id="_CQPPcEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_CUD_gEopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
@@ -237,7 +237,6 @@
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
-      <parameters xmi:id="_ADGZwDRBEemKYsizTPVenw"/>
       <advancedConfig xmi:id="_ADA6MTRBEemKYsizTPVenw" blockingQueueSize="2147483647"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_ADCIVDRBEemKYsizTPVenw" bindingName="RestService3"/>

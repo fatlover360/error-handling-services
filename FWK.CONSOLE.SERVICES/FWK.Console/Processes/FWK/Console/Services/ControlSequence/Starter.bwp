@@ -10,6 +10,7 @@
     xmlns:ns1="ERROR_HANDLING/EH_CONTROL_SEQUENCE"
     xmlns:ns2="http://www.example.org/Results"
     xmlns:ns3="http://tns.tibco.com/bw/REST"
+    xmlns:ns4="http://xmlns.example.com/ControlSequence/parameters"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -1952,6 +1953,8 @@
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="ns"/>
+        <tibex:namespaceItem
+            namespace="http://xmlns.example.com/ControlSequence/parameters" prefix="tns2"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EH_CONTROL_SEQUENCE"/>
@@ -1981,7 +1984,8 @@
         <bpws:variable element="ns1:ControlSequence"
             name="LogicalPut-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:message" name="LogicalPut" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:ID" name="LogicalDelete-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns4:controlsequenceDeleteParameters"
+            name="LogicalDelete-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:message" name="LogicalDelete" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
@@ -2218,7 +2222,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/ControlSequence/parameters&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns:ID>&#xa;            &lt;xsl:value-of select=&quot;xsd:int($delete/parameters/tns2:controlsequenceDeleteParameters/tns2:controlsequenceid)&quot;/>&#xa;        &lt;/ns:ID>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/ControlSequence/parameters&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;delete&quot;/>&lt;xsl:template name=&quot;LogicalDelete-input&quot; match=&quot;/&quot;>&lt;tns2:controlsequenceDeleteParameters>&lt;tns2:controlsequenceid>&lt;xsl:value-of select=&quot;$delete/parameters/tns2:controlsequenceDeleteParameters/tns2:controlsequenceid&quot;/>&lt;/tns2:controlsequenceid>&lt;/tns2:controlsequenceDeleteParameters>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="LogicalDelete-input"
                                     name="LogicalDelete"
@@ -2233,7 +2237,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/ControlSequence/parameters&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;ns:ID>&#xa;            &lt;xsl:value-of select=&quot;xsd:int($delete.parameters/tns2:controlsequenceid)&quot;/>&#xa;        &lt;/ns:ID>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://xmlns.example.com/ControlSequence/parameters&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;delete.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalDelete-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:controlsequenceDeleteParameters>&#xa;            &lt;tns2:controlsequenceid>&#xa;                &lt;xsl:value-of select=&quot;$delete.parameters/tns2:controlsequenceid&quot;/>&#xa;            &lt;/tns2:controlsequenceid>&#xa;        &lt;/tns2:controlsequenceDeleteParameters>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="FWK.Console.Services.ControlSequence.LogicalDelete" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
