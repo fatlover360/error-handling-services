@@ -9,13 +9,7 @@
     		<element name="EAI_CATALOG_ID" type="int" maxOccurs="1" minOccurs="0"></element>
     		<element name="SYSTEM_NATIVE_CODE" type="string" maxOccurs="1" minOccurs="1"></element>
     		<element name="EAI_ERROR_CODE_ID" type="int" maxOccurs="1" minOccurs="0"></element>
-    		<element name="IS_ERROR" maxOccurs="1" minOccurs="1">
-    			<simpleType>
-    				<restriction base="string">
-    					<length value="1"></length>
-    				</restriction>
-    			</simpleType>
-    		</element>
+    		<element name="IS_ERROR" maxOccurs="1" minOccurs="1"  type="string"></element>
     	</sequence>
     </complexType>
 
