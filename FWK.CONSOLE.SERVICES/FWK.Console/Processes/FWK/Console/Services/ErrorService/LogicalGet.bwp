@@ -203,18 +203,54 @@
                             <complexType>
                                 <sequence>
                                     <element maxOccurs="1" minOccurs="0"
+                                    name="ID" nillable="false" type="integer"/>
+                                    <element maxOccurs="1" minOccurs="1"
+                                    name="EAI_CATALOG_ID" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SYSTEM" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_NAME"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
                                     name="APPLICATION_NAME"
                                     nillable="false" type="string"/>
                                     <element maxOccurs="1" minOccurs="0"
-                                    name="EAI_CATALOG_ID"
-                                    nillable="false" type="int"/>
+                                    name="SERVICE_TYPE"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_FUNCTION"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_OPERATION"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_VERSION"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="RECEIVER_TYPE"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="RECEIVER_DESTINATION"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="HAS_HANDLING"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="HAS_SEQUENCE"
+                                    nillable="false" type="string"/>
                                     <element maxOccurs="1" minOccurs="1"
                                     name="SYSTEM_NATIVE_CODE" type="string"/>
+                                    <element maxOccurs="1" minOccurs="1"
+                                    name="EAI_ERROR_CODE_ID" type="int"/>
+                                    <element maxOccurs="1" minOccurs="1"
+                                    name="EAI_ERROR_CODE" type="string"/>
                                     <element maxOccurs="1" minOccurs="0"
-                                    name="EAI_ERROR_CODE_ID"
-                                    nillable="false" type="int"/>
+                                    name="EAI_ERROR_CODE_DESCRIPTION"
+                                    nillable="false" type="string"/>
                                     <element maxOccurs="1" minOccurs="1"
                                     name="IS_ERROR" type="string"/>
+                                    <element maxOccurs="1" minOccurs="1"
+                                    name="IS_ERROR_ES" type="string"/>
                                 </sequence>
                             </complexType>
                         </element>
@@ -567,7 +603,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="109" width="757" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="208" width="757" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -711,7 +747,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="310" width="757" x="1"
+                    <layoutConstraint height="409" width="757" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -720,7 +756,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="362" width="1099" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="461" width="1099" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -788,6 +824,8 @@
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns2"/>
+        <tibex:namespaceItem namespace="ERROR_HANDLING/EAI_ERROR_CODE" prefix="tns3"/>
+        <tibex:namespaceItem namespace="ERROR_HANDLING/EAI_CATALOG" prefix="tns4"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EAI_ERROR_SERVICE"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
@@ -924,7 +962,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;tns:ErrorServiceArray>&lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&lt;tns:ErrorService>&lt;xsl:if test=&quot;APPLICATION_NAME&quot;>&lt;tns:APPLICATION_NAME>&lt;xsl:value-of select=&quot;APPLICATION_NAME&quot;/>&lt;/tns:APPLICATION_NAME>&lt;/xsl:if>&lt;xsl:if test=&quot;EAI_CATALOG_ID&quot;>&lt;tns:EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;EAI_CATALOG_ID&quot;/>&lt;/tns:EAI_CATALOG_ID>&lt;/xsl:if>&lt;tns:SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;SYSTEM_NATIVE_CODE&quot;/>&lt;/tns:SYSTEM_NATIVE_CODE>&lt;xsl:if test=&quot;EAI_ERROR_CODE_ID&quot;>&lt;tns:EAI_ERROR_CODE_ID>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE_ID&quot;/>&lt;/tns:EAI_ERROR_CODE_ID>&lt;/xsl:if>&lt;tns:IS_ERROR>&lt;xsl:value-of select=&quot;IS_ERROR&quot;/>&lt;/tns:IS_ERROR>&lt;/tns:ErrorService>&lt;/xsl:for-each>&lt;/tns:ErrorServiceArray>&lt;/tns2:message>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns4=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:tns3=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;tns:ErrorServiceArray>&lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&lt;tns:ErrorService>&lt;xsl:if test=&quot;APPLICATION_NAME&quot;>&lt;tns:APPLICATION_NAME>&lt;xsl:value-of select=&quot;APPLICATION_NAME&quot;/>&lt;/tns:APPLICATION_NAME>&lt;/xsl:if>&lt;tns:ID>&lt;xsl:value-of select=&quot;xsd:int(ID)&quot;/>&lt;/tns:ID>&lt;tns:SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;SYSTEM_NATIVE_CODE&quot;/>&lt;/tns:SYSTEM_NATIVE_CODE>&lt;tns:IS_ERROR>&lt;xsl:value-of select=&quot;IS_ERROR_ES&quot;/>&lt;/tns:IS_ERROR>&lt;tns:Catalog>&lt;tns4:EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;EAI_CATALOG_ID&quot;/>&lt;/tns4:EAI_CATALOG_ID>&lt;tns4:SYSTEM>&lt;xsl:value-of select=&quot;SYSTEM&quot;/>&lt;/tns4:SYSTEM>&lt;tns4:SERVICE_NAME>&lt;xsl:value-of select=&quot;SERVICE_NAME&quot;/>&lt;/tns4:SERVICE_NAME>&lt;tns4:APPLICATION_NAME>&lt;xsl:value-of select=&quot;APPLICATION_NAME&quot;/>&lt;/tns4:APPLICATION_NAME>&lt;tns4:SERVICE_TYPE>&lt;xsl:value-of select=&quot;SERVICE_TYPE&quot;/>&lt;/tns4:SERVICE_TYPE>&lt;tns4:SERVICE_FUNCTION>&lt;xsl:value-of select=&quot;SERVICE_FUNCTION&quot;/>&lt;/tns4:SERVICE_FUNCTION>&lt;tns4:SERVICE_OPERATION>&lt;xsl:value-of select=&quot;SERVICE_OPERATION&quot;/>&lt;/tns4:SERVICE_OPERATION>&lt;tns4:SERVICE_VERSION>&lt;xsl:value-of select=&quot;SERVICE_VERSION&quot;/>&lt;/tns4:SERVICE_VERSION>&lt;tns4:RECEIVER_TYPE>&lt;xsl:value-of select=&quot;RECEIVER_TYPE&quot;/>&lt;/tns4:RECEIVER_TYPE>&lt;tns4:RECEIVER_DESTINATION>&lt;xsl:value-of select=&quot;RECEIVER_DESTINATION&quot;/>&lt;/tns4:RECEIVER_DESTINATION>&lt;tns4:HAS_HANDLING>&lt;xsl:value-of select=&quot;HAS_HANDLING&quot;/>&lt;/tns4:HAS_HANDLING>&lt;tns4:HAS_SEQUENCE>&lt;xsl:value-of select=&quot;HAS_SEQUENCE&quot;/>&lt;/tns4:HAS_SEQUENCE>&lt;/tns:Catalog>&lt;tns:ErrorCode>&lt;tns3:EAI_ERROR_CODE_ID>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE_ID&quot;/>&lt;/tns3:EAI_ERROR_CODE_ID>&lt;tns3:EAI_ERROR_CODE>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE&quot;/>&lt;/tns3:EAI_ERROR_CODE>&lt;tns3:EAI_ERROR_CODE_DESC>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE_DESCRIPTION&quot;/>&lt;/tns3:EAI_ERROR_CODE_DESC>&lt;tns3:IS_ERROR>&lt;xsl:value-of select=&quot;IS_ERROR&quot;/>&lt;/tns3:IS_ERROR>&lt;/tns:ErrorCode>&lt;/tns:ErrorService>&lt;/xsl:for-each>&lt;/tns:ErrorServiceArray>&lt;/tns2:message>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -954,7 +992,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce60155b-17e8-4bec-af36-c8fa5928cad4+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns5=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+ce60155b-17e8-4bec-af36-c8fa5928cad4+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns5:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -967,25 +1005,76 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT *&#xa;  FROM [dbo].[T_EAI_ERROR_SERVICE]&#xa;"
+                                    sqlStatement="SELECT ROW_NUMBER() OVER(ORDER BY (SELECT NULL)) as ID &#xa;&#x9;  ,k.*&#xa;      ,[SYSTEM_NATIVE_CODE],&#xa;&#x9;  e.*&#xa;      ,x.[IS_ERROR] AS IS_ERROR_ES&#xa;  FROM [advantage].[dbo].[T_EAI_ERROR_SERVICE] x JOIN [advantage].[dbo].[T_EAI_CATALOG] k ON x.EAI_CATALOG_ID = k.EAI_CATALOG_ID&#xa;  JOIN [advantage].[dbo].T_EAI_ERROR_CODE e ON x.EAI_ERROR_CODE_ID = e.EAI_ERROR_CODE_ID&#xa;"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    <columnMetadata columnName="ID"
+                                    dataType="-5"
+                                    status="OptionalElement" typeName="bigint"/>
+                                    <columnMetadata
+                                    columnName="EAI_CATALOG_ID"
+                                    dataType="4" typeName="int"/>
+                                    <columnMetadata
+                                    columnName="SYSTEM"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_NAME"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
                                     <columnMetadata
                                     columnName="APPLICATION_NAME"
                                     dataType="12"
                                     status="OptionalElement" typeName="varchar"/>
                                     <columnMetadata
-                                    columnName="EAI_CATALOG_ID"
-                                    dataType="4"
-                                    status="OptionalElement" typeName="int"/>
+                                    columnName="SERVICE_TYPE"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_FUNCTION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_OPERATION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_VERSION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="RECEIVER_TYPE"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="RECEIVER_DESTINATION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="HAS_HANDLING"
+                                    dataType="1"
+                                    status="OptionalElement" typeName="char"/>
+                                    <columnMetadata
+                                    columnName="HAS_SEQUENCE"
+                                    dataType="1"
+                                    status="OptionalElement" typeName="char"/>
                                     <columnMetadata
                                     columnName="SYSTEM_NATIVE_CODE"
                                     dataType="12" typeName="varchar"/>
                                     <columnMetadata
                                     columnName="EAI_ERROR_CODE_ID"
-                                    dataType="4"
-                                    status="OptionalElement" typeName="int"/>
+                                    dataType="4" typeName="int"/>
+                                    <columnMetadata
+                                    columnName="EAI_ERROR_CODE"
+                                    dataType="12" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="EAI_ERROR_CODE_DESCRIPTION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
                                     <columnMetadata
                                     columnName="IS_ERROR"
+                                    dataType="1" typeName="char"/>
+                                    <columnMetadata
+                                    columnName="IS_ERROR_ES"
                                     dataType="1" typeName="char"/>
                                     </value>
                                 </properties>

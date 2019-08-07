@@ -60,6 +60,10 @@
         {
             "location": "Service Descriptors/FWK.Console.Services.Configuration.Starter-Configuration.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.Catalog.Application-Application.json",
+            "type": "generated"
         }
     ]
 }

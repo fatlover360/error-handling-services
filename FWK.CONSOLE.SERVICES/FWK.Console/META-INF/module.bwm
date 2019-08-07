@@ -341,6 +341,19 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_fotskjW1EemPyoX1o5CRxg" bindingName="RestService5"/>
   </sca:service>
+  <sca:service xmi:id="_aZ5MALlDEem-p9zG_pB9jw" name="application" promote="ComponentApplication/application">
+    <sca:interface.wsdl xmi:id="_ac41oLlDEem-p9zG_pB9jw" interface="http://xmlns.example.com/20190807204438PLT#wsdl.interface(application)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Catalog/Application.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_adkLELlDEem-p9zG_pB9jw" name="RestService6" path="/application" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Application" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.Catalog.Application-Application.json" enforceBWServiceResponse="true">
+      <operation xmi:id="_adlZMLlDEem-p9zG_pB9jw" operationName="get" nickname="get-application" httpMethod="GET" responseStyle="array">
+        <responseStatus xmi:id="_m8n6gLlIEem5S7S1-Y0oqA" statusCode="200" reasonPhrase="OK" dataType="string"/>
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_ae0IQLlDEem-p9zG_pB9jw"/>
+      <advancedConfig xmi:id="_adkLEblDEem-p9zG_pB9jw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_admAQLlDEem-p9zG_pB9jw" bindingName="RestService6"/>
+  </sca:service>
   <sca:property xmi:id="_R_MOUCntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_R_nFECntEemBKr8QxwEOAA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_R_vA4CntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -388,6 +401,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_foRAoTW1EemPyoX1o5CRxg" processName="FWK.Console.Services.Configuration.Starter"/>
     <sca:service xmi:id="_foXuUDW1EemPyoX1o5CRxg" name="configuration">
       <sca:interface.wsdl xmi:id="_foXuUTW1EemPyoX1o5CRxg" interface="http://xmlns.example.com/20190221094843PLT#wsdl.interface(configuration)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Configuration/Configuration.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_aWB_sLlDEem-p9zG_pB9jw" name="ComponentApplication" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_aWCmwLlDEem-p9zG_pB9jw" processName="FWK.Console.Services.Catalog.Application"/>
+    <sca:service xmi:id="_aZ2vwLlDEem-p9zG_pB9jw" name="application">
+      <sca:interface.wsdl xmi:id="_aZ3W0LlDEem-p9zG_pB9jw" interface="http://xmlns.example.com/20190807204438PLT#wsdl.interface(application)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Catalog/Application.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

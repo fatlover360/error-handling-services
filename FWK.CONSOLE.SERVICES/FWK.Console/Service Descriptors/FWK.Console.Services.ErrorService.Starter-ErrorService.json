@@ -281,19 +281,40 @@
   "definitions" : {
     "ErrorService" : {
       "type" : "object",
-      "required" : [ "SYSTEM_NATIVE_CODE", "IS_ERROR" ],
+      "required" : [ "SYSTEM_NATIVE_CODE", "IS_ERROR", "ErrorCode", "Catalog" ],
       "properties" : {
         "APPLICATION_NAME" : {
           "type" : "string"
         },
-        "EAI_CATALOG_ID" : {
+        "ID" : {
           "type" : "integer"
         },
         "SYSTEM_NATIVE_CODE" : {
           "type" : "string"
         },
+        "IS_ERROR" : {
+          "type" : "string"
+        },
+        "Catalog" : {
+          "$ref" : "#/definitions/Catalog"
+        },
+        "ErrorCode" : {
+          "$ref" : "#/definitions/ErrorCode"
+        }
+      }
+    },
+    "ErrorCode" : {
+      "type" : "object",
+      "required" : [ "EAI_ERROR_CODE_DESC", "IS_ERROR", "EAI_ERROR_CODE" ],
+      "properties" : {
         "EAI_ERROR_CODE_ID" : {
           "type" : "integer"
+        },
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE_DESC" : {
+          "type" : "string"
         },
         "IS_ERROR" : {
           "type" : "string"
@@ -309,6 +330,48 @@
             "$ref" : "#/definitions/ErrorService",
             "uniqueItems" : false
           }
+        }
+      }
+    },
+    "Catalog" : {
+      "type" : "object",
+      "required" : [ "SYSTEM", "SERVICE_NAME", "RECEIVER_DESTINATION", "SERVICE_FUNCTION", "HAS_SEQUENCE", "HAS_HANDLING", "SERVICE_TYPE", "SERVICE_VERSION", "RECEIVER_TYPE", "APPLICATION_NAME", "SERVICE_OPERATION" ],
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "SYSTEM" : {
+          "type" : "string"
+        },
+        "SERVICE_NAME" : {
+          "type" : "string"
+        },
+        "APPLICATION_NAME" : {
+          "type" : "string"
+        },
+        "SERVICE_TYPE" : {
+          "type" : "string"
+        },
+        "SERVICE_FUNCTION" : {
+          "type" : "string"
+        },
+        "SERVICE_OPERATION" : {
+          "type" : "string"
+        },
+        "SERVICE_VERSION" : {
+          "type" : "string"
+        },
+        "RECEIVER_TYPE" : {
+          "type" : "string"
+        },
+        "RECEIVER_DESTINATION" : {
+          "type" : "string"
+        },
+        "HAS_HANDLING" : {
+          "type" : "string"
+        },
+        "HAS_SEQUENCE" : {
+          "type" : "string"
         }
       }
     }
