@@ -273,7 +273,6 @@
     },
     "ErrorCodeRequest" : {
       "type" : "object",
-      "required" : [ "EAI_ERROR_CODE_DESC", "IS_ERROR", "EAI_ERROR_CODE" ],
       "properties" : {
         "EAI_ERROR_CODE" : {
           "type" : "string"
@@ -288,7 +287,6 @@
     },
     "ErrorCode" : {
       "type" : "object",
-      "required" : [ "EAI_ERROR_CODE_DESC", "IS_ERROR", "EAI_ERROR_CODE" ],
       "properties" : {
         "EAI_ERROR_CODE_ID" : {
           "type" : "integer"

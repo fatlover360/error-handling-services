@@ -244,7 +244,6 @@
   "definitions" : {
     "CatalogRequest" : {
       "type" : "object",
-      "required" : [ "SYSTEM", "SERVICE_NAME", "RECEIVER_DESTINATION", "SERVICE_FUNCTION", "HAS_SEQUENCE", "HAS_HANDLING", "SERVICE_TYPE", "SERVICE_VERSION", "RECEIVER_TYPE", "APPLICATION_NAME", "SERVICE_OPERATION" ],
       "properties" : {
         "SYSTEM" : {
           "type" : "string"
@@ -298,7 +297,6 @@
     },
     "Catalog" : {
       "type" : "object",
-      "required" : [ "SYSTEM", "SERVICE_NAME", "RECEIVER_DESTINATION", "SERVICE_FUNCTION", "HAS_SEQUENCE", "HAS_HANDLING", "SERVICE_TYPE", "SERVICE_VERSION", "RECEIVER_TYPE", "APPLICATION_NAME", "SERVICE_OPERATION" ],
       "properties" : {
         "EAI_CATALOG_ID" : {
           "type" : "integer"

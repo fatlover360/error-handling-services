@@ -16,7 +16,13 @@
         "operationId" : "get-application",
         "consumes" : [ "application/json" ],
         "produces" : [ "application/json" ],
-        "parameters" : [ ],
+        "parameters" : [ {
+          "name" : "name",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        } ],
         "responses" : {
           "200" : {
             "description" : "a APPLICATIONS to be returned",
