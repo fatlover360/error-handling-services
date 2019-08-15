@@ -235,6 +235,24 @@
           "format" : "int32",
           "required" : false
         }, {
+          "name" : "system_native_code",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "application_name",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
+          "name" : "iserror",
+          "in" : "query",
+          "description" : "",
+          "type" : "string",
+          "required" : false
+        }, {
           "name" : "error_code_id",
           "in" : "query",
           "description" : "",

@@ -100,6 +100,9 @@
         <parameters xmi:id="_ydcMcDQsEemKYsizTPVenw">
           <parameterMapping xmi:id="_ydcMcTQsEemKYsizTPVenw" parameterName="error_code_id" parameterType="Query" dataType="integer#int32" required="true"/>
           <parameterMapping xmi:id="_Lh85IDQ1EemKYsizTPVenw" parameterName="eai_catalog_id" parameterType="Query" dataType="integer#int32"/>
+          <parameterMapping xmi:id="_xz7akL9DEemx34bcIUWoew" parameterName="application_name" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_0HpwsL9DEemx34bcIUWoew" parameterName="system_native_code" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_4ZfZUL9DEemx34bcIUWoew" parameterName="iserror" parameterType="Query" dataType="string"/>
         </parameters>
         <responseStatus xmi:id="_vkWioEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_vorpAEopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
