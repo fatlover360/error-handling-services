@@ -8,7 +8,7 @@
     <complexType name="ErrorService">
     	<sequence>
     		<element name="APPLICATION_NAME" type="string" maxOccurs="1"
-    			minOccurs="0">
+    			minOccurs="0" nillable="true">
     		</element>
     		<element name="ID" type="int" maxOccurs="1"
     			minOccurs="0">
@@ -19,8 +19,8 @@
     		<element name="IS_ERROR" maxOccurs="1" minOccurs="1"
     			type="string">
     		</element>
-    		<element name="Catalog" type="Q1:Catalog"></element>
-    		<element name="ErrorCode" type="Q2:ErrorCode"></element>
+    		<element name="Catalog" type="Q1:Catalog" nillable="true"></element>
+    		<element name="ErrorCode" type="Q2:ErrorCode" nillable="true"></element>
     	</sequence>
     </complexType>
 
@@ -33,4 +33,25 @@
     </complexType>
 
     <element name="ErrorServiceArray" type="tns:ErrorServiceArray"></element>
+
+    <complexType name="ErrorServiceUpdate">
+    	<sequence>
+    		<element ref="tns:ErrorService"></element>
+    		<element name="CATALOG_ID_UPD" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ERROR_ID_UPD" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ISERROR_UPD" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="NATIVE_UPD" type="string" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="APP_NAME_UPD" type="string" minOccurs="0" maxOccurs="1"></element>
+    	</sequence>
+    </complexType>
+
+    <element name="UpdateErrorService" type="tns:ErrorServiceUpdate"></element>
 </schema>

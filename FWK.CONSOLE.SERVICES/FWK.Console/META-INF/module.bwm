@@ -84,6 +84,13 @@
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_xPs54jQfEemkkuSub-YhHA" operationName="put" nickname="put-errorservice" httpMethod="PUT" responseStyle="element">
+        <parameters xmi:id="_FTxEAMDcEemT8KpJbBYDmA">
+          <parameterMapping xmi:id="_FTxEAcDcEemT8KpJbBYDmA" parameterName="aplication_name" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_IPGMsMDcEemT8KpJbBYDmA" parameterName="native_code" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_JKjIUMDcEemT8KpJbBYDmA" parameterName="is_error" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_LuGDIMDcEemT8KpJbBYDmA" parameterName="eai_catalog_id" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_NnRLQMDcEemT8KpJbBYDmA" parameterName="error_code_id" parameterType="Query" dataType="string"/>
+        </parameters>
         <responseStatus xmi:id="_pQPgQEopEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_pS7n4EopEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
         <responseStatus xmi:id="_pVtPEEopEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>

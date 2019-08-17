@@ -200,6 +200,12 @@
                         <element maxOccurs="1" minOccurs="1"
                             name="EAI_ERROR_CODE_ID_TO_UPDATE"
                             nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="APP_NAME_TO_UPDATE" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="NATIVE_TO_UPDATE" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="IS_ERROR_TO_UPDATE" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -406,7 +412,7 @@
         productVersion="6.5.0 V63 2018-08-08" scalable="true"
         singleton="true" stateless="false" type="IT"/>
     <tibex:ProcessInterface context=""
-        input="{ERROR_HANDLING/EAI_ERROR_SERVICE}ErrorService" output="{http://tns.tibco.com/bw/REST}message"/>
+        input="{ERROR_HANDLING/EAI_ERROR_SERVICE}UpdateErrorService" output="{http://tns.tibco.com/bw/REST}message"/>
     <tibex:ProcessTemplateConfigurations/>
     <notation:Diagram measurementUnit="Pixel" type="BWProcess"
         xmlns:bwnotation="http://tns.tibco.com/bw/runtime/BWNotation"
@@ -924,8 +930,6 @@
         <bpws:variable element="ns2:ActivityErrorData"
             name="_error_JDBCUpdate" sca-bpel:internal="true"/>
         <bpws:variable element="ns:ErrorReport" name="_error" sca-bpel:internal="true"/>
-        <bpws:variable element="ns3:ErrorService" name="Start"
-            sca-bpel:internal="true" tibex:parameter="in"/>
         <bpws:variable element="ns6:message" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
         <bpws:variable element="ns5:ActivityInput" name="LogStart-input" sca-bpel:internal="true"/>
@@ -935,6 +939,8 @@
         <bpws:variable element="ns5:ActivityInput" name="LogError-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:message" name="Mapper-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns6:message" name="Mapper" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:UpdateErrorService" name="Start"
+            sca-bpel:internal="true" tibex:parameter="in"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1078,7 +1084,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+1131ad92-00bc-43ac-99f1-2168011ef38e+input&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns4=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:tns6=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns:jdbcUpdateActivityInput>&lt;APPLICATION_NAME>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:APPLICATION_NAME)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:APPLICATION_NAME&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/APPLICATION_NAME>&lt;EAI_CATALOG_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:Catalog/tns4:EAI_CATALOG_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:Catalog/tns4:EAI_CATALOG_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_CATALOG_ID>&lt;SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$Start/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/SYSTEM_NATIVE_CODE>&lt;EAI_ERROR_CODE_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_ERROR_CODE_ID>&lt;IS_ERROR>&lt;xsl:value-of select=&quot;$Start/tns1:IS_ERROR&quot;/>&lt;/IS_ERROR>&lt;EAI_CATALOG_ID_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:Catalog/tns4:EAI_CATALOG_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:Catalog/tns4:EAI_CATALOG_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_CATALOG_ID_TO_UPDATE>&lt;EAI_ERROR_CODE_ID_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_ERROR_CODE_ID_TO_UPDATE>&lt;/tns:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+1131ad92-00bc-43ac-99f1-2168011ef38e+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns6=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; xmlns:tns4=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns:jdbcUpdateActivityInput>&lt;APPLICATION_NAME>&lt;xsl:copy-of select=&quot;$Start/tns1:ErrorService/tns1:APPLICATION_NAME/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:APPLICATION_NAME&quot;/>&lt;/APPLICATION_NAME>&lt;EAI_CATALOG_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ErrorService/tns1:Catalog/tns4:EAI_CATALOG_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:Catalog/tns4:EAI_CATALOG_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_CATALOG_ID>&lt;SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/SYSTEM_NATIVE_CODE>&lt;EAI_ERROR_CODE_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ErrorService/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_ERROR_CODE_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;$Start/tns1:ErrorService/tns1:IS_ERROR = &amp;quot;true&amp;quot;&quot;>&lt;IS_ERROR>&lt;xsl:value-of select=&quot;'Y'&quot;/>&lt;/IS_ERROR>&lt;/xsl:when>&lt;xsl:otherwise>&lt;IS_ERROR>&lt;xsl:value-of select=&quot;'N'&quot;/>&lt;/IS_ERROR>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;EAI_CATALOG_ID_TO_UPDATE>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:CATALOG_ID_UPD)&quot;/>&lt;/EAI_CATALOG_ID_TO_UPDATE>&lt;EAI_ERROR_CODE_ID_TO_UPDATE>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:ERROR_ID_UPD)&quot;/>&lt;/EAI_ERROR_CODE_ID_TO_UPDATE>&lt;APP_NAME_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:APP_NAME_UPD)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:APP_NAME_UPD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/APP_NAME_TO_UPDATE>&lt;NATIVE_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:NATIVE_UPD)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:NATIVE_UPD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/NATIVE_TO_UPDATE>&lt;IS_ERROR_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ISERROR_UPD)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ISERROR_UPD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/IS_ERROR_TO_UPDATE>&lt;/tns:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1091,7 +1097,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="UPDATE [dbo].[T_EAI_ERROR_SERVICE]&#xa;   SET [APPLICATION_NAME] = ?&#xa;      ,[EAI_CATALOG_ID] = ?&#xa;      ,[SYSTEM_NATIVE_CODE] = ?&#xa;      ,[EAI_ERROR_CODE_ID] = ?&#xa;      ,[IS_ERROR] = ?&#xa; WHERE EAI_CATALOG_ID = ? and EAI_ERROR_CODE_ID = ?"
+                                    sqlStatement="UPDATE [dbo].[T_EAI_ERROR_SERVICE]&#xa;   SET [APPLICATION_NAME] = ?&#xa;      ,[EAI_CATALOG_ID] = ?&#xa;      ,[SYSTEM_NATIVE_CODE] = ?&#xa;      ,[EAI_ERROR_CODE_ID] = ?&#xa;      ,[IS_ERROR] = ?&#xa; WHERE EAI_CATALOG_ID = ? and EAI_ERROR_CODE_ID = ? and APPLICATION_NAME = ? and&#xa; SYSTEM_NATIVE_CODE = ? and IS_ERROR = ?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
                                     <PreparedParameters
                                     DataType="12"
@@ -1110,6 +1116,15 @@
                                     DataTypeDisplayValue="INTEGER" ParameterName="EAI_CATALOG_ID_TO_UPDATE"/>
                                     <PreparedParameters DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="EAI_ERROR_CODE_ID_TO_UPDATE"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="APP_NAME_TO_UPDATE"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="NATIVE_TO_UPDATE"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="IS_ERROR_TO_UPDATE"/>
                                     </value>
                                 </properties>
                             </activityConfig>
@@ -1195,7 +1210,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns4=&quot;ERROR_HANDLING/EAI_CATALOG&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;JDBCUpdate&quot;/>&lt;xsl:template name=&quot;Mapper-input&quot; match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$JDBCUpdate/noOfUpdates > 0&quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Control Sequence with ID: &amp;quot;, xsd:string($Start/tns1:Catalog/tns4:EAI_CATALOG_ID ), &amp;quot; updated with success.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:otherwise>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;404&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Control Sequence with ID: &amp;quot;, xsd:string($Start/tns1:Catalog/tns4:EAI_CATALOG_ID ), &amp;quot; doesn't exist.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns4=&quot;ERROR_HANDLING/EAI_CATALOG&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;JDBCUpdate&quot;/>&lt;xsl:template name=&quot;Mapper-input&quot; match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$JDBCUpdate/noOfUpdates > 0&quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with Catalog ID: &amp;quot;, $Start/tns1:CATALOG_ID_UPD , &amp;quot; updated with success.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:otherwise>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;404&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with ID: &amp;quot;, $Start/tns1:CATALOG_ID_UPD, &amp;quot; doesn't exist.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity

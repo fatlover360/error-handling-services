@@ -227,6 +227,8 @@
                 <wsdl:part element="custom:ErrorService" name="item" tibex:hasMultipleNamespaces="false"/>
                 <wsdl:part element="extns:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
+                <wsdl:part element="extns1:errorservicePutParameters"
+                    name="parameters" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="putResponse">
                 <wsdl:part name="item"
@@ -1256,7 +1258,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2/@activity/@activity/@activities.2"/>
 
                                     <layoutConstraint
-                                    x="245"
+                                    x="259"
                                     xsi:type="notation:Bounds" y="10"/>
                                     </children>
 
@@ -1310,8 +1312,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2/@activity/@activity/@activities.3"/>
 
                                     <layoutConstraint
-                                    x="101"
-                                    xsi:type="notation:Bounds" y="3"/>
+                                    x="137"
+                                    xsi:type="notation:Bounds" y="10"/>
                                     </children>
 
                                     <styles xsi:type="notation:DrawerStyle"/>
@@ -1337,10 +1339,8 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2/@activity/@activity"/>
 
                                     <layoutConstraint
-                                    height="108"
-                                    width="400"
-                                    x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    height="99"
+                                    width="392" xsi:type="notation:Bounds"/>
                                     </children>
 
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1361,10 +1361,9 @@
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2/@activity"/>
 
                                     <layoutConstraint
-                                    height="-45"
-                                    width="-76"
-                                    x="30"
-                                    xsi:type="notation:Bounds" y="20"/>
+                                    height="99"
+                                    width="395"
+                                    x="15" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1377,7 +1376,9 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2/@activity"/>
 
-                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    <layoutConstraint
+                                    height="123"
+                                    width="435" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -1440,8 +1441,10 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2"/>
                                     <layoutConstraint
-                                    height="140"
-                                    width="485" xsi:type="notation:Bounds"/>
+                                    height="142"
+                                    width="497"
+                                    x="2"
+                                    xsi:type="notation:Bounds" y="282"/>
                                     </children>
                                     <children type="4011">
                                     <children type="3012">
@@ -1761,9 +1764,7 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
                                     <layoutConstraint
-                                    height="598" width="561"
-                                    x="20"
-                                    xsi:type="notation:Bounds" y="20"/>
+                                    height="598" width="516" xsi:type="notation:Bounds"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1777,9 +1778,8 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="108"
-                                    width="400" x="2"
-                                    xsi:type="notation:Bounds" y="2"/>
+                                    <layoutConstraint height="642"
+                                    width="526" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
                                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1789,8 +1789,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="365" width="444"
-                                x="30" xsi:type="notation:Bounds" y="20"/>
+                            <layoutConstraint height="642" width="529" xsi:type="notation:Bounds"/>
                         </children>
                         <styles xsi:type="notation:SortingStyle"/>
                         <styles xsi:type="notation:FilteringStyle"/>
@@ -1800,7 +1799,8 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="409" width="519" xsi:type="notation:Bounds"/>
+                    <layoutConstraint height="666" width="529" x="1"
+                        xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
                 <styles xsi:type="notation:FilteringStyle"/>
@@ -1808,7 +1808,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="718" width="860" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="718" width="871" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -1907,6 +1907,8 @@
         <tibex:namespaceItem
             namespace="ERROR_HANDLING/EAI_ERROR_SERVICE" prefix="tns1"/>
         <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns2"/>
+        <tibex:namespaceItem
+            namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://xmlns.example.com/ErrorService/parameters"/>
@@ -1933,7 +1935,7 @@
             name="LogicalPost-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:message" name="LogicalPost" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:message" name="LogicalGet" sca-bpel:internal="true"/>
-        <bpws:variable element="ns1:ErrorService"
+        <bpws:variable element="ns1:UpdateErrorService"
             name="LogicalPut-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns4:message" name="LogicalPut" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:errorserviceDeleteParameters"
@@ -2008,7 +2010,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post&quot;/>&lt;xsl:template name=&quot;LogicalPost-input&quot; match=&quot;/&quot;>&lt;tns1:ErrorService>&lt;xsl:if test=&quot;$post/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;>&lt;tns1:APPLICATION_NAME>&lt;xsl:value-of select=&quot;$post/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;/>&lt;/tns1:APPLICATION_NAME>&lt;/xsl:if>&lt;tns1:SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$post/item/tns1:ErrorService/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/tns1:SYSTEM_NATIVE_CODE>&lt;xsl:choose>&lt;xsl:when test=&quot;$post/item/tns1:ErrorService/tns1:IS_ERROR = 'true'&quot;>&lt;tns1:IS_ERROR>&lt;xsl:value-of select=&quot;'Y'&quot;/>&lt;/tns1:IS_ERROR>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns1:IS_ERROR>&lt;xsl:value-of select=&quot;'N'&quot;/>&lt;/tns1:IS_ERROR>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:copy-of select=&quot;$post/item/tns1:ErrorService/tns1:Catalog&quot;/>&lt;xsl:copy-of select=&quot;$post/item/tns1:ErrorService/tns1:ErrorCode&quot;/>&lt;/tns1:ErrorService>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalPost-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ErrorService>&#xa;            &lt;xsl:if test=&quot;$post/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;>&#xa;                &lt;tns1:APPLICATION_NAME>&#xa;                    &lt;xsl:copy-of select=&quot;$post/item/tns1:ErrorService/tns1:APPLICATION_NAME/@xsi:nil&quot;/>&#xa;                    &lt;xsl:value-of select=&quot;$post/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;/>&#xa;                &lt;/tns1:APPLICATION_NAME>&#xa;            &lt;/xsl:if>&#xa;            &lt;tns1:SYSTEM_NATIVE_CODE>&#xa;                &lt;xsl:value-of select=&quot;$post/item/tns1:ErrorService/tns1:SYSTEM_NATIVE_CODE&quot;/>&#xa;            &lt;/tns1:SYSTEM_NATIVE_CODE>&#xa;            &lt;xsl:choose>&#xa;                &lt;xsl:when test=&quot;$post/item/tns1:ErrorService/tns1:IS_ERROR = 'true'&quot;>&#xa;                    &lt;tns1:IS_ERROR>&#xa;                        &lt;xsl:value-of select=&quot;'Y'&quot;/>&#xa;                    &lt;/tns1:IS_ERROR>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:otherwise>&#xa;                    &lt;tns1:IS_ERROR>&#xa;                        &lt;xsl:value-of select=&quot;'N'&quot;/>&#xa;                    &lt;/tns1:IS_ERROR>&#xa;                &lt;/xsl:otherwise>&#xa;            &lt;/xsl:choose>&#xa;            &lt;xsl:copy-of select=&quot;$post/item/tns1:ErrorService/tns1:Catalog&quot;/>&#xa;            &lt;xsl:copy-of select=&quot;$post/item/tns1:ErrorService/tns1:ErrorCode&quot;/>&#xa;        &lt;/tns1:ErrorService>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="LogicalPost-input"
                                     name="LogicalPost"
@@ -2023,7 +2025,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;post.item&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalPost-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ErrorService>&#xa;            &lt;xsl:if test=&quot;$post.item/tns1:APPLICATION_NAME&quot;>&#xa;                &lt;tns1:APPLICATION_NAME>&#xa;                    &lt;xsl:value-of select=&quot;$post.item/tns1:APPLICATION_NAME&quot;/>&#xa;                &lt;/tns1:APPLICATION_NAME>&#xa;            &lt;/xsl:if>&#xa;            &lt;tns1:SYSTEM_NATIVE_CODE>&#xa;                &lt;xsl:value-of select=&quot;$post.item/tns1:SYSTEM_NATIVE_CODE&quot;/>&#xa;            &lt;/tns1:SYSTEM_NATIVE_CODE>&#xa;            &lt;xsl:choose>&#xa;                &lt;xsl:when test=&quot;$post.item/tns1:IS_ERROR = 'true'&quot;>&#xa;                    &lt;tns1:IS_ERROR>&#xa;                        &lt;xsl:value-of select=&quot;'Y'&quot;/>&#xa;                    &lt;/tns1:IS_ERROR>&#xa;                &lt;/xsl:when>&#xa;                &lt;xsl:otherwise>&#xa;                    &lt;tns1:IS_ERROR>&#xa;                        &lt;xsl:value-of select=&quot;'N'&quot;/>&#xa;                    &lt;/tns1:IS_ERROR>&#xa;                &lt;/xsl:otherwise>&#xa;            &lt;/xsl:choose>&#xa;            &lt;xsl:copy-of select=&quot;$post.item/tns1:Catalog&quot;/>&#xa;            &lt;xsl:copy-of select=&quot;$post.item/tns1:ErrorCode&quot;/>&#xa;        &lt;/tns1:ErrorService>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;post.item&quot;/>&lt;xsl:template name=&quot;LogicalPost-input&quot; match=&quot;/&quot;>&lt;tns1:ErrorService>&lt;xsl:if test=&quot;$post.item/tns1:APPLICATION_NAME&quot;>&lt;tns1:APPLICATION_NAME>&lt;xsl:copy-of select=&quot;$post.item/tns1:APPLICATION_NAME/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$post.item/tns1:APPLICATION_NAME&quot;/>&lt;/tns1:APPLICATION_NAME>&lt;/xsl:if>&lt;tns1:SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$post.item/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/tns1:SYSTEM_NATIVE_CODE>&lt;xsl:choose>&lt;xsl:when test=&quot;$post.item/tns1:IS_ERROR = 'true'&quot;>&lt;tns1:IS_ERROR>&lt;xsl:value-of select=&quot;'Y'&quot;/>&lt;/tns1:IS_ERROR>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns1:IS_ERROR>&lt;xsl:value-of select=&quot;'N'&quot;/>&lt;/tns1:IS_ERROR>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;xsl:copy-of select=&quot;$post.item/tns1:Catalog&quot;/>&lt;xsl:copy-of select=&quot;$post.item/tns1:ErrorCode&quot;/>&lt;/tns1:ErrorService>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="FWK.Console.Services.ErrorService.LogicalPost" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -2126,7 +2128,7 @@
                             </bpws:reply>
                             <bpws:extensionActivity>
                                 <tibex:extActivity
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:tns2=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;put&quot;/>&lt;xsl:template name=&quot;LogicalPut-input&quot; match=&quot;/&quot;>&lt;tns1:ErrorService>&lt;xsl:if test=&quot;$put/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;>&lt;tns1:APPLICATION_NAME>&lt;xsl:value-of select=&quot;$put/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;/>&lt;/tns1:APPLICATION_NAME>&lt;/xsl:if>&lt;tns1:SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$put/item/tns1:ErrorService/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/tns1:SYSTEM_NATIVE_CODE>&lt;tns1:IS_ERROR>&lt;xsl:value-of select=&quot;$put/item/tns1:ErrorService/tns1:IS_ERROR&quot;/>&lt;/tns1:IS_ERROR>&lt;xsl:copy-of select=&quot;$put/item/tns1:ErrorService/tns1:Catalog&quot;/>&lt;xsl:copy-of select=&quot;$put/item/tns1:ErrorService/tns1:ErrorCode&quot;/>&lt;/tns1:ErrorService>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns=&quot;http://xmlns.example.com/ErrorService/parameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;put&quot;/>&lt;xsl:template name=&quot;LogicalPut-input&quot; match=&quot;/&quot;>&lt;tns1:UpdateErrorService>&lt;tns1:ErrorService>&lt;xsl:if test=&quot;$put/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;>&lt;tns1:APPLICATION_NAME>&lt;xsl:copy-of select=&quot;$put/item/tns1:ErrorService/tns1:APPLICATION_NAME/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$put/item/tns1:ErrorService/tns1:APPLICATION_NAME&quot;/>&lt;/tns1:APPLICATION_NAME>&lt;/xsl:if>&lt;tns1:SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$put/item/tns1:ErrorService/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/tns1:SYSTEM_NATIVE_CODE>&lt;tns1:IS_ERROR>&lt;xsl:value-of select=&quot;$put/item/tns1:ErrorService/tns1:IS_ERROR&quot;/>&lt;/tns1:IS_ERROR>&lt;xsl:copy-of select=&quot;$put/item/tns1:ErrorService/tns1:Catalog&quot;/>&lt;xsl:copy-of select=&quot;$put/item/tns1:ErrorService/tns1:ErrorCode&quot;/>&lt;/tns1:ErrorService>&lt;xsl:if test=&quot;$put/parameters/tns:errorservicePutParameters/tns:eai_catalog_id&quot;>&lt;tns1:CATALOG_ID_UPD>&lt;xsl:value-of select=&quot;$put/parameters/tns:errorservicePutParameters/tns:eai_catalog_id&quot;/>&lt;/tns1:CATALOG_ID_UPD>&lt;/xsl:if>&lt;xsl:if test=&quot;$put/parameters/tns:errorservicePutParameters/tns:error_code_id&quot;>&lt;tns1:ERROR_ID_UPD>&lt;xsl:value-of select=&quot;$put/parameters/tns:errorservicePutParameters/tns:error_code_id&quot;/>&lt;/tns1:ERROR_ID_UPD>&lt;/xsl:if>&lt;xsl:if test=&quot;$put/parameters/tns:errorservicePutParameters/tns:is_error&quot;>&lt;tns1:ISERROR_UPD>&lt;xsl:value-of select=&quot;$put/parameters/tns:errorservicePutParameters/tns:is_error&quot;/>&lt;/tns1:ISERROR_UPD>&lt;/xsl:if>&lt;xsl:if test=&quot;$put/parameters/tns:errorservicePutParameters/tns:native_code&quot;>&lt;tns1:NATIVE_UPD>&lt;xsl:value-of select=&quot;$put/parameters/tns:errorservicePutParameters/tns:native_code&quot;/>&lt;/tns1:NATIVE_UPD>&lt;/xsl:if>&lt;xsl:if test=&quot;$put/parameters/tns:errorservicePutParameters/tns:aplication_name&quot;>&lt;tns1:APP_NAME_UPD>&lt;xsl:value-of select=&quot;$put/parameters/tns:errorservicePutParameters/tns:aplication_name&quot;/>&lt;/tns1:APP_NAME_UPD>&lt;/xsl:if>&lt;/tns1:UpdateErrorService>&lt;/xsl:template>&lt;/xsl:stylesheet>"
                                     expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
                                     inputVariable="LogicalPut-input"
                                     name="LogicalPut"
@@ -2141,7 +2143,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:tns2=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;put.item&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalPut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:ErrorService>&#xa;            &lt;xsl:if test=&quot;$put.item/tns1:APPLICATION_NAME&quot;>&#xa;                &lt;tns1:APPLICATION_NAME>&#xa;                    &lt;xsl:value-of select=&quot;$put.item/tns1:APPLICATION_NAME&quot;/>&#xa;                &lt;/tns1:APPLICATION_NAME>&#xa;            &lt;/xsl:if>&#xa;            &lt;tns1:SYSTEM_NATIVE_CODE>&#xa;                &lt;xsl:value-of select=&quot;$put.item/tns1:SYSTEM_NATIVE_CODE&quot;/>&#xa;            &lt;/tns1:SYSTEM_NATIVE_CODE>&#xa;            &lt;tns1:IS_ERROR>&#xa;                &lt;xsl:value-of select=&quot;$put.item/tns1:IS_ERROR&quot;/>&#xa;            &lt;/tns1:IS_ERROR>&#xa;            &lt;xsl:copy-of select=&quot;$put.item/tns1:Catalog&quot;/>&#xa;            &lt;xsl:copy-of select=&quot;$put.item/tns1:ErrorCode&quot;/>&#xa;        &lt;/tns1:ErrorService>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns=&quot;http://xmlns.example.com/ErrorService/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;put.item&quot;/>&#xa;    &lt;xsl:param name=&quot;put.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalPut-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:UpdateErrorService>&#xa;            &lt;tns1:ErrorService>&#xa;                &lt;xsl:if test=&quot;$put.item/tns1:APPLICATION_NAME&quot;>&#xa;                    &lt;tns1:APPLICATION_NAME>&#xa;                        &lt;xsl:copy-of select=&quot;$put.item/tns1:APPLICATION_NAME/@xsi:nil&quot;/>&#xa;                        &lt;xsl:value-of select=&quot;$put.item/tns1:APPLICATION_NAME&quot;/>&#xa;                    &lt;/tns1:APPLICATION_NAME>&#xa;                &lt;/xsl:if>&#xa;                &lt;tns1:SYSTEM_NATIVE_CODE>&#xa;                    &lt;xsl:value-of select=&quot;$put.item/tns1:SYSTEM_NATIVE_CODE&quot;/>&#xa;                &lt;/tns1:SYSTEM_NATIVE_CODE>&#xa;                &lt;tns1:IS_ERROR>&#xa;                    &lt;xsl:value-of select=&quot;$put.item/tns1:IS_ERROR&quot;/>&#xa;                &lt;/tns1:IS_ERROR>&#xa;                &lt;xsl:copy-of select=&quot;$put.item/tns1:Catalog&quot;/>&#xa;                &lt;xsl:copy-of select=&quot;$put.item/tns1:ErrorCode&quot;/>&#xa;            &lt;/tns1:ErrorService>&#xa;            &lt;xsl:if test=&quot;$put.parameters/tns:eai_catalog_id&quot;>&#xa;                &lt;tns1:CATALOG_ID_UPD>&#xa;                    &lt;xsl:value-of select=&quot;$put.parameters/tns:eai_catalog_id&quot;/>&#xa;                &lt;/tns1:CATALOG_ID_UPD>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$put.parameters/tns:error_code_id&quot;>&#xa;                &lt;tns1:ERROR_ID_UPD>&#xa;                    &lt;xsl:value-of select=&quot;$put.parameters/tns:error_code_id&quot;/>&#xa;                &lt;/tns1:ERROR_ID_UPD>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$put.parameters/tns:is_error&quot;>&#xa;                &lt;tns1:ISERROR_UPD>&#xa;                    &lt;xsl:value-of select=&quot;$put.parameters/tns:is_error&quot;/>&#xa;                &lt;/tns1:ISERROR_UPD>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$put.parameters/tns:native_code&quot;>&#xa;                &lt;tns1:NATIVE_UPD>&#xa;                    &lt;xsl:value-of select=&quot;$put.parameters/tns:native_code&quot;/>&#xa;                &lt;/tns1:NATIVE_UPD>&#xa;            &lt;/xsl:if>&#xa;            &lt;xsl:if test=&quot;$put.parameters/tns:aplication_name&quot;>&#xa;                &lt;tns1:APP_NAME_UPD>&#xa;                    &lt;xsl:value-of select=&quot;$put.parameters/tns:aplication_name&quot;/>&#xa;                &lt;/tns1:APP_NAME_UPD>&#xa;            &lt;/xsl:if>&#xa;        &lt;/tns1:UpdateErrorService>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="FWK.Console.Services.ErrorService.LogicalPut" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
