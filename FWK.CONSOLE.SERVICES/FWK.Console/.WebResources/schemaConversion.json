@@ -23,5 +23,10 @@
         "jsonSchemaLocation": "/FWK.Console/Service Descriptors/FWK.Console.Services.Catalog.service-service.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "ERROR_HANDLING/EAI_CATALOG"
+    },
+    {
+        "jsonSchemaLocation": "/FWK.Console/Service Descriptors/FWK.Console.Services.ControlData.Republish-Republish.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "ERROR_HANDLING/EH_CONTROL_DATA"
     }
 ]}

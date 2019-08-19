@@ -387,6 +387,18 @@
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_cZhw4b0GEemDwMR8kHyQjQ" bindingName="RestService7"/>
   </sca:service>
+  <sca:service xmi:id="_p8QIFMKCEemSndHvgB2K6Q" name="republish" promote="ComponentRepublish/republish">
+    <sca:interface.wsdl xmi:id="_p_FZoMKCEemSndHvgB2K6Q" interface="http://xmlns.example.com/20190819151002PLT#wsdl.interface(republish)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/Republish.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_p_FZocKCEemSndHvgB2K6Q" name="RestService8" path="/republish" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Republish" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlData.Republish-Republish.json" enforceBWServiceResponse="true">
+      <operation xmi:id="_p_FZo8KCEemSndHvgB2K6Q" operationName="put" nickname="put-republish" httpMethod="PUT" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_p_PKoMKCEemSndHvgB2K6Q"/>
+      <advancedConfig xmi:id="_p_FZosKCEemSndHvgB2K6Q" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_p_FZpMKCEemSndHvgB2K6Q" bindingName="RestService8"/>
+  </sca:service>
   <sca:property xmi:id="_R_MOUCntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_R_nFECntEemBKr8QxwEOAA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_R_vA4CntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.NAME" type="XMLSchema:string" scalable="true"/>
@@ -446,6 +458,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_cTah0b0GEemDwMR8kHyQjQ" processName="FWK.Console.Services.Catalog.service"/>
     <sca:service xmi:id="_cWV6AL0GEemDwMR8kHyQjQ" name="service">
       <sca:interface.wsdl xmi:id="_cWV6Ab0GEemDwMR8kHyQjQ" interface="http://xmlns.example.com/20190812153817PLT#wsdl.interface(service)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Catalog/service.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_p8QIEMKCEemSndHvgB2K6Q" name="ComponentRepublish" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_p8QIEcKCEemSndHvgB2K6Q" processName="FWK.Console.Services.ControlData.Republish"/>
+    <sca:service xmi:id="_p8QIEsKCEemSndHvgB2K6Q" name="republish">
+      <sca:interface.wsdl xmi:id="_p8QIE8KCEemSndHvgB2K6Q" interface="http://xmlns.example.com/20190819151002PLT#wsdl.interface(republish)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/Republish.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

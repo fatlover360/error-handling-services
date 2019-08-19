@@ -19,8 +19,8 @@
     		<element name="IS_ERROR" maxOccurs="1" minOccurs="1"
     			type="string">
     		</element>
-    		<element name="Catalog" type="Q1:Catalog" nillable="true"></element>
-    		<element name="ErrorCode" type="Q2:ErrorCode" nillable="true"></element>
+    		<element name="Catalog" type="Q1:Catalog" nillable="true" minOccurs="0" maxOccurs="1"></element>
+    		<element name="ErrorCode" type="Q2:ErrorCode" nillable="true" minOccurs="0" maxOccurs="1"></element>
     	</sequence>
     </complexType>
 

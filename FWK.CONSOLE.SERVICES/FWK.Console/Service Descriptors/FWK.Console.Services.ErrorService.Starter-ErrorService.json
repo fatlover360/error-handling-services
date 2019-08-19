@@ -329,7 +329,7 @@
   "definitions" : {
     "ErrorService" : {
       "type" : "object",
-      "required" : [ "SYSTEM_NATIVE_CODE", "IS_ERROR", "ErrorCode", "Catalog" ],
+      "required" : [ "SYSTEM_NATIVE_CODE", "IS_ERROR" ],
       "properties" : {
         "APPLICATION_NAME" : {
           "type" : "string"

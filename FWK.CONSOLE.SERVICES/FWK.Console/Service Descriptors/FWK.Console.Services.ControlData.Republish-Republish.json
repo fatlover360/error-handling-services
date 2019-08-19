@@ -1,0 +1,141 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Summary about the new REST service.",
+    "description" : "Summary about the new REST service."
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/republish" : {
+      "put" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "put-republish",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/ControlDataUpdate"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "ControlDataUpdate" : {
+      "type" : "object",
+      "properties" : {
+        "ControlData" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ControlData",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "ControlData" : {
+      "type" : "object",
+      "properties" : {
+        "EH_CONTROL_DATA_ID" : {
+          "type" : "string"
+        },
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "EH_CONTROL_SEQUENCE_ID" : {
+          "type" : "string"
+        },
+        "TRANSACTION_ID" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EH_RETRY" : {
+          "type" : "integer"
+        },
+        "SERVICE_NAME" : {
+          "type" : "string"
+        },
+        "EH_STATUS" : {
+          "type" : "string"
+        },
+        "EH_PUBLISH_DATE" : {
+          "type" : "string"
+        },
+        "SERVICE_START_MSG" : {
+          "type" : "string"
+        },
+        "HEADERS" : {
+          "type" : "string"
+        },
+        "INSERT_DATETIME" : {
+          "type" : "string"
+        },
+        "UPDATE_DATETIME" : {
+          "type" : "string"
+        },
+        "Catalog" : {
+          "$ref" : "#/definitions/Catalog"
+        }
+      }
+    },
+    "Catalog" : {
+      "type" : "object",
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "SYSTEM" : {
+          "type" : "string"
+        },
+        "SERVICE_NAME" : {
+          "type" : "string"
+        },
+        "APPLICATION_NAME" : {
+          "type" : "string"
+        },
+        "SERVICE_TYPE" : {
+          "type" : "string"
+        },
+        "SERVICE_FUNCTION" : {
+          "type" : "string"
+        },
+        "SERVICE_OPERATION" : {
+          "type" : "string"
+        },
+        "SERVICE_VERSION" : {
+          "type" : "string"
+        },
+        "RECEIVER_TYPE" : {
+          "type" : "string"
+        },
+        "RECEIVER_DESTINATION" : {
+          "type" : "string"
+        },
+        "HAS_HANDLING" : {
+          "type" : "string"
+        },
+        "HAS_SEQUENCE" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

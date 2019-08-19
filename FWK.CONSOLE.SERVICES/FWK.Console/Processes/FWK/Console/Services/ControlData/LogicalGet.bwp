@@ -209,7 +209,7 @@
                                     nillable="false" type="int"/>
                                     <element maxOccurs="1" minOccurs="0"
                                     name="EH_CONTROL_SEQUENCE_ID"
-                                    nillable="false" type="string"/>
+                                    nillable="false" type="int"/>
                                     <element maxOccurs="1" minOccurs="0"
                                     name="TRANSACTION_ID"
                                     nillable="false" type="string"/>
@@ -232,6 +232,26 @@
                                     name="INSERT_DATETIME" type="dateTime"/>
                                     <element maxOccurs="1" minOccurs="1"
                                     name="UPDATE_DATETIME" type="dateTime"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SYSTEM" nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="APPLICATION_NAME"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_NAME"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_FUNCTION"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_OPERATION"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_TYPE"
+                                    nillable="false" type="string"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SERVICE_VERSION"
+                                    nillable="false" type="string"/>
                                 </sequence>
                             </complexType>
                         </element>
@@ -804,6 +824,7 @@
         <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns2"/>
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
+        <tibex:namespaceItem namespace="ERROR_HANDLING/EAI_CATALOG" prefix="tns3"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EH_CONTROL_DATA"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
@@ -940,7 +961,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns=&quot;ERROR_HANDLING/EH_CONTROL_DATA&quot; version=&quot;2.0&quot;>&lt;xsl:import-schema namespace=&quot;ERROR_HANDLING/EH_CONTROL_DATA&quot; schema-location=&quot;../../../../../Schemas/error_handling/EH_CONTROL_DATA.xsd&quot;/>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;End1-input&quot; match=&quot;/&quot;>&lt;tns2:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;tns:ControlDataArray>&lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&lt;tns:ControlData>&lt;tns:EH_CONTROL_DATA_ID>&lt;xsl:value-of select=&quot;EH_CONTROL_DATA_ID&quot;/>&lt;/tns:EH_CONTROL_DATA_ID>&lt;xsl:if test=&quot;EAI_CATALOG_ID&quot;>&lt;tns:EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;EAI_CATALOG_ID&quot;/>&lt;/tns:EAI_CATALOG_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_CONTROL_SEQUENCE_ID&quot;>&lt;tns:EH_CONTROL_SEQUENCE_ID>&lt;xsl:value-of select=&quot;EH_CONTROL_SEQUENCE_ID&quot;/>&lt;/tns:EH_CONTROL_SEQUENCE_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;TRANSACTION_ID&quot;>&lt;tns:TRANSACTION_ID>&lt;xsl:value-of select=&quot;TRANSACTION_ID&quot;/>&lt;/tns:TRANSACTION_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;EAI_ERROR_CODE&quot;>&lt;tns:EAI_ERROR_CODE>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE&quot;/>&lt;/tns:EAI_ERROR_CODE>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_RETRY&quot;>&lt;tns:EH_RETRY>&lt;xsl:value-of select=&quot;EH_RETRY&quot;/>&lt;/tns:EH_RETRY>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_STATUS&quot;>&lt;tns:EH_STATUS>&lt;xsl:value-of select=&quot;EH_STATUS&quot;/>&lt;/tns:EH_STATUS>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_PUBLISH_DATE&quot;>&lt;tns:EH_PUBLISH_DATE>&lt;xsl:value-of select=&quot;EH_PUBLISH_DATE&quot;/>&lt;/tns:EH_PUBLISH_DATE>&lt;/xsl:if>&lt;tns:SERVICE_START_MSG>&lt;xsl:value-of select=&quot;SERVICE_START_MSG&quot;/>&lt;/tns:SERVICE_START_MSG>&lt;xsl:if test=&quot;HEADERS&quot;>&lt;tns:HEADERS>&lt;xsl:value-of select=&quot;HEADERS&quot;/>&lt;/tns:HEADERS>&lt;/xsl:if>&lt;tns:INSERT_DATETIME>&lt;xsl:value-of select=&quot;INSERT_DATETIME&quot;/>&lt;/tns:INSERT_DATETIME>&lt;tns:UPDATE_DATETIME>&lt;xsl:value-of select=&quot;UPDATE_DATETIME&quot;/>&lt;/tns:UPDATE_DATETIME>&lt;/tns:ControlData>&lt;/xsl:for-each>&lt;/tns:ControlDataArray>&lt;/tns2:message>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:tns=&quot;ERROR_HANDLING/EH_CONTROL_DATA&quot; xmlns:tns3=&quot;ERROR_HANDLING/EAI_CATALOG&quot; version=&quot;2.0&quot;>&lt;xsl:import-schema namespace=&quot;ERROR_HANDLING/EH_CONTROL_DATA&quot; schema-location=&quot;../../../../../Schemas/error_handling/EH_CONTROL_DATA.xsd&quot;/>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;End1-input&quot; match=&quot;/&quot;>&lt;tns2:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;tns:ControlDataArray>&lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&lt;xsl:for-each select=&quot;.&quot;>&lt;tns:ControlData>&lt;tns:EH_CONTROL_DATA_ID>&lt;xsl:value-of select=&quot;EH_CONTROL_DATA_ID&quot;/>&lt;/tns:EH_CONTROL_DATA_ID>&lt;xsl:if test=&quot;EAI_CATALOG_ID&quot;>&lt;tns:EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;EAI_CATALOG_ID&quot;/>&lt;/tns:EAI_CATALOG_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_CONTROL_SEQUENCE_ID&quot;>&lt;tns:EH_CONTROL_SEQUENCE_ID>&lt;xsl:value-of select=&quot;EH_CONTROL_SEQUENCE_ID&quot;/>&lt;/tns:EH_CONTROL_SEQUENCE_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;TRANSACTION_ID&quot;>&lt;tns:TRANSACTION_ID>&lt;xsl:value-of select=&quot;TRANSACTION_ID&quot;/>&lt;/tns:TRANSACTION_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;EAI_ERROR_CODE&quot;>&lt;tns:EAI_ERROR_CODE>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE&quot;/>&lt;/tns:EAI_ERROR_CODE>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_RETRY&quot;>&lt;tns:EH_RETRY>&lt;xsl:value-of select=&quot;EH_RETRY&quot;/>&lt;/tns:EH_RETRY>&lt;/xsl:if>&lt;tns:SERVICE_NAME>&lt;xsl:value-of select=&quot;concat(SERVICE_TYPE,'.',SERVICE_FUNCTION,'.',SERVICE_OPERATION, '.',SERVICE_VERSION )&quot;/>&lt;/tns:SERVICE_NAME>&lt;xsl:if test=&quot;EH_STATUS&quot;>&lt;tns:EH_STATUS>&lt;xsl:value-of select=&quot;EH_STATUS&quot;/>&lt;/tns:EH_STATUS>&lt;/xsl:if>&lt;xsl:if test=&quot;EH_PUBLISH_DATE&quot;>&lt;tns:EH_PUBLISH_DATE>&lt;xsl:value-of select=&quot;EH_PUBLISH_DATE&quot;/>&lt;/tns:EH_PUBLISH_DATE>&lt;/xsl:if>&lt;tns:SERVICE_START_MSG>&lt;xsl:value-of select=&quot;SERVICE_START_MSG&quot;/>&lt;/tns:SERVICE_START_MSG>&lt;xsl:if test=&quot;HEADERS&quot;>&lt;tns:HEADERS>&lt;xsl:value-of select=&quot;HEADERS&quot;/>&lt;/tns:HEADERS>&lt;/xsl:if>&lt;tns:INSERT_DATETIME>&lt;xsl:value-of select=&quot;INSERT_DATETIME&quot;/>&lt;/tns:INSERT_DATETIME>&lt;tns:UPDATE_DATETIME>&lt;xsl:value-of select=&quot;UPDATE_DATETIME&quot;/>&lt;/tns:UPDATE_DATETIME>&lt;xsl:for-each select=&quot;.&quot;>&lt;tns:Catalog>&lt;xsl:if test=&quot;EAI_CATALOG_ID&quot;>&lt;tns3:EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;EAI_CATALOG_ID&quot;/>&lt;/tns3:EAI_CATALOG_ID>&lt;/xsl:if>&lt;xsl:if test=&quot;SYSTEM&quot;>&lt;tns3:SYSTEM>&lt;xsl:value-of select=&quot;SYSTEM&quot;/>&lt;/tns3:SYSTEM>&lt;/xsl:if>&lt;xsl:if test=&quot;SERVICE_NAME&quot;>&lt;tns3:SERVICE_NAME>&lt;xsl:value-of select=&quot;SERVICE_NAME&quot;/>&lt;/tns3:SERVICE_NAME>&lt;/xsl:if>&lt;xsl:if test=&quot;APPLICATION_NAME&quot;>&lt;tns3:APPLICATION_NAME>&lt;xsl:value-of select=&quot;APPLICATION_NAME&quot;/>&lt;/tns3:APPLICATION_NAME>&lt;/xsl:if>&lt;xsl:if test=&quot;SERVICE_TYPE&quot;>&lt;tns3:SERVICE_TYPE>&lt;xsl:value-of select=&quot;SERVICE_TYPE&quot;/>&lt;/tns3:SERVICE_TYPE>&lt;/xsl:if>&lt;xsl:if test=&quot;SERVICE_FUNCTION&quot;>&lt;tns3:SERVICE_FUNCTION>&lt;xsl:value-of select=&quot;SERVICE_FUNCTION&quot;/>&lt;/tns3:SERVICE_FUNCTION>&lt;/xsl:if>&lt;xsl:if test=&quot;SERVICE_OPERATION&quot;>&lt;tns3:SERVICE_OPERATION>&lt;xsl:value-of select=&quot;SERVICE_OPERATION&quot;/>&lt;/tns3:SERVICE_OPERATION>&lt;/xsl:if>&lt;xsl:if test=&quot;SERVICE_VERSION&quot;>&lt;tns3:SERVICE_VERSION>&lt;xsl:value-of select=&quot;SERVICE_VERSION&quot;/>&lt;/tns3:SERVICE_VERSION>&lt;/xsl:if>&lt;/tns:Catalog>&lt;/xsl:for-each>&lt;/tns:ControlData>&lt;/xsl:for-each>&lt;/xsl:for-each>&lt;/tns:ControlDataArray>&lt;/tns2:message>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -970,7 +991,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+ad03bb0a-7594-4c0c-9c61-dbdbcc51f637+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns4=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+ad03bb0a-7594-4c0c-9c61-dbdbcc51f637+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns4:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -981,9 +1002,9 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
-                                    <value maxRows="100"
+                                    <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT * FROM [dbo].[T_EH_CONTROL_DATA]"
+                                    sqlStatement="SELECT x.*,k.SYSTEM, k.APPLICATION_NAME, k.SERVICE_NAME, k.SERVICE_FUNCTION, k.SERVICE_OPERATION, k.SERVICE_TYPE, k.SERVICE_VERSION FROM [dbo].[T_EH_CONTROL_DATA] x JOIN [dbo].[T_EAI_CATALOG] k ON&#xd;&#xa; x.EAI_CATALOG_ID = k.EAI_CATALOG_ID"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
                                     <columnMetadata
                                     columnName="EH_CONTROL_DATA_ID"
@@ -994,8 +1015,8 @@
                                     status="OptionalElement" typeName="int"/>
                                     <columnMetadata
                                     columnName="EH_CONTROL_SEQUENCE_ID"
-                                    dataType="12"
-                                    status="OptionalElement" typeName="varchar"/>
+                                    dataType="4"
+                                    status="OptionalElement" typeName="int"/>
                                     <columnMetadata
                                     columnName="TRANSACTION_ID"
                                     dataType="12"
@@ -1029,6 +1050,34 @@
                                     <columnMetadata
                                     columnName="UPDATE_DATETIME"
                                     dataType="93" typeName="datetime"/>
+                                    <columnMetadata
+                                    columnName="SYSTEM"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="APPLICATION_NAME"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_NAME"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_FUNCTION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_OPERATION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_TYPE"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
+                                    <columnMetadata
+                                    columnName="SERVICE_VERSION"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
                                     </value>
                                 </properties>
                             </activityConfig>

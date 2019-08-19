@@ -199,25 +199,18 @@
   "definitions" : {
     "ControlDataUpdate" : {
       "type" : "object",
-      "required" : [ "EH_CONTROL_DATA_ID", "EH_STATUS" ],
       "properties" : {
-        "EH_CONTROL_DATA_ID" : {
-          "type" : "string"
-        },
-        "EH_STATUS" : {
-          "type" : "string"
-        },
-        "SERVICE_START_MSG" : {
-          "type" : "string"
-        },
-        "HEADERS" : {
-          "type" : "string"
+        "ControlData" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ControlData",
+            "uniqueItems" : false
+          }
         }
       }
     },
     "ControlData" : {
       "type" : "object",
-      "required" : [ "INSERT_DATETIME", "SERVICE_START_MSG", "EH_CONTROL_DATA_ID", "UPDATE_DATETIME" ],
       "properties" : {
         "EH_CONTROL_DATA_ID" : {
           "type" : "string"
@@ -237,6 +230,9 @@
         "EH_RETRY" : {
           "type" : "integer"
         },
+        "SERVICE_NAME" : {
+          "type" : "string"
+        },
         "EH_STATUS" : {
           "type" : "string"
         },
@@ -254,6 +250,9 @@
         },
         "UPDATE_DATETIME" : {
           "type" : "string"
+        },
+        "Catalog" : {
+          "$ref" : "#/definitions/Catalog"
         }
       }
     },
@@ -266,6 +265,47 @@
             "$ref" : "#/definitions/ControlData",
             "uniqueItems" : false
           }
+        }
+      }
+    },
+    "Catalog" : {
+      "type" : "object",
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "SYSTEM" : {
+          "type" : "string"
+        },
+        "SERVICE_NAME" : {
+          "type" : "string"
+        },
+        "APPLICATION_NAME" : {
+          "type" : "string"
+        },
+        "SERVICE_TYPE" : {
+          "type" : "string"
+        },
+        "SERVICE_FUNCTION" : {
+          "type" : "string"
+        },
+        "SERVICE_OPERATION" : {
+          "type" : "string"
+        },
+        "SERVICE_VERSION" : {
+          "type" : "string"
+        },
+        "RECEIVER_TYPE" : {
+          "type" : "string"
+        },
+        "RECEIVER_DESTINATION" : {
+          "type" : "string"
+        },
+        "HAS_HANDLING" : {
+          "type" : "string"
+        },
+        "HAS_SEQUENCE" : {
+          "type" : "string"
         }
       }
     }
