@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_CaDQ0Z7uEem8gqxBKVG-gg" name="Transports.JDBC.EH.JDBCConnectionResource" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_CbO8kJ7uEem8gqxBKVG-gg" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_CbO8kZ7uEem8gqxBKVG-gg">
+    <substitutionBindings xmi:id="_inOGcJ7vEemt8sXyGl7e7g" template="username" propName="/SharedVariables/Transports/JDBC/EH/User"/>
+    <substitutionBindings xmi:id="_kQ2WsJ7vEemt8sXyGl7e7g" template="password" propName="/SharedVariables/Transports/JDBC/EH/Password"/>
+    <substitutionBindings xmi:id="_vSopIJ7vEemt8sXyGl7e7g" template="maxConnections" propName="/SharedVariables/Transports/JDBC/EH/MaxConnections"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_CbO8kp7uEem8gqxBKVG-gg">
+      <substitutionBindings xmi:id="_l54xEJ7vEemt8sXyGl7e7g" template="jdbcDriver" propName="/SharedVariables/Transports/JDBC/EH/Driver"/>
+      <substitutionBindings xmi:id="_nl4_4J7vEemt8sXyGl7e7g" template="loginTimeout" propName="/SharedVariables/Transports/JDBC/EH/LoginTimeoutSec"/>
+      <substitutionBindings xmi:id="_pNJRkJ7vEemt8sXyGl7e7g" template="dbURL" propName="/SharedVariables/Transports/JDBC/EH/URL"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

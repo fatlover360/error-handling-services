@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xsd:schema
+	xmlns="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"
+	targetNamespace="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"
+	attributeFormDefault="unqualified" elementFormDefault="unqualified"
+	xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	xmlns:error="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/ErrorReport.xsd"
+	xmlns:finalize="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize"> 
+	
+    <xsd:import namespace="http://ns.corelio.be/common/in/1.0" schemaLocation="../Logging/In.xsd" />
+	<xsd:import schemaLocation="../ErrorManagement/ErrorReport.xsd" namespace="http://www.polarising.com/SharedResources/SchemaDefinitions/Framework/ErrorReport.xsd"/>
+	<xsd:import schemaLocation="Finalize.xsd" namespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize"/>
+	
+	<xsd:element name="Data">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element minOccurs="0" name="In" type="finalize:In">
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:complexType name="FaultDetails">
+		<xsd:all>
+			<xsd:element name="ActivityName" type="xsd:string"></xsd:element>
+			<xsd:element name="Data" type="error:Data" minOccurs="0"></xsd:element>
+			<xsd:element name="Msg" type="xsd:string"></xsd:element>
+			<xsd:element name="MsgCode" type="xsd:string"></xsd:element>		
+			<xsd:element name="FullClass" type="xsd:string"></xsd:element>
+			<xsd:element name="Class" type="xsd:string"></xsd:element>
+			<xsd:element name="ProcessStack" type="xsd:string"></xsd:element>
+			<xsd:element name="StackTrace" type="xsd:string"></xsd:element>
+		</xsd:all>
+	</xsd:complexType>
+	<xsd:element name="FaultDetails" type="FaultDetails"></xsd:element>
+	<xsd:complexType name="INFO">
+		<xsd:sequence>
+			<xsd:element name="data" type="error:Data" maxOccurs="1" minOccurs="0"></xsd:element>
+			<xsd:element name="logMessage" type="xsd:string"></xsd:element>
+		</xsd:sequence>
+	</xsd:complexType>
+	<xsd:element name="Info" type="INFO"></xsd:element>
+</xsd:schema>

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:tns="http://EAI/SharedResources/Logging/1/0" 
+   xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" 
+   xmlns:xsd="http://www.w3.org/2001/XMLSchema" 
+   xmlns:xsd1="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"  
+   name="EAI.Shared.Resources.logging.1.0" 
+   targetNamespace="http://EAI/SharedResources/Logging/1/0"
+    xmlns:xsd2="http://ns.corelio.be/common/envelope/1.0">
+    <wsdl:types>
+    	<xsd:schema>
+    		<xsd:import namespace="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging" schemaLocation="../Schemas/EAIMessaging/Logging.xsd">
+    		</xsd:import>
+    		<xsd:import
+    			namespace="http://ns.corelio.be/common/envelope/1.0"
+    			schemaLocation="../Schemas/Logging/CommonTypes.xsd">
+    		</xsd:import></xsd:schema>
+    <xsd:schema>
+    	<xsd:import namespace="http://ns.corelio.be/common/envelope/1.0"
+    		schemaLocation="../Schemas/Logging/CommonTypes.xsd">
+    	</xsd:import></xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="OperationRequest">
+		<wsdl:part element="xsd1:Data" name="parameters"/>
+	</wsdl:message>
+    <wsdl:message name="OperationResponse">
+    	<wsdl:part name="parameters" type="xsd2:Result" />
+    </wsdl:message>
+    <wsdl:portType name="EAI.Shared.Resources.Logging.1.0">
+    	<wsdl:operation name="Operation">
+    		<wsdl:input message="tns:OperationRequest"/>
+    		<wsdl:output message="tns:OperationResponse"/>
+    	</wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

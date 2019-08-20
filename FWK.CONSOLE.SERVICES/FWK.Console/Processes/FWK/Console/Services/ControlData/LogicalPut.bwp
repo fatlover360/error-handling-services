@@ -1147,7 +1147,7 @@
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc}JdbcDataSource" type="xsd:string">
             <bpws:from>
-                <bpws:literal>Transports.JDBC.EAI.JDBCConnectionResource</bpws:literal>
+                <bpws:literal>Transports.JDBC.EH.JDBCConnectionResource</bpws:literal>
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns0:jdbcUpdateActivityInput"
@@ -1329,8 +1329,7 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexToGlobal="false" tibex:xpdlId="cd9bd437-78f2-4b43-8cba-5a07e9906efb">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="cd9bd437-78f2-4b43-8cba-5a07e9906efb">
                 <bpws:targets>
                     <bpws:target linkName="LogStartToIterate"/>
                 </bpws:targets>

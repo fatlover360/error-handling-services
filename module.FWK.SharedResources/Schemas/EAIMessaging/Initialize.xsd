@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize" 
+	elementFormDefault="qualified" 
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize"
+	xmlns:env="http://ns.corelio.be/common/envelope/1.0"
+	xmlns:serv="http://Polarising/Shared/Resources/Services"
+	xmlns:dynamic="http://Polarising/SharedResources/Schemas/DynamicProperties">
+	
+	<import namespace="http://ns.corelio.be/common/envelope/1.0" schemaLocation="../Logging/CommonTypes.xsd"/>
+	<import namespace="http://Polarising/Shared/Resources/Services"/>
+	<import namespace="http://Polarising/SharedResources/Schemas/DynamicProperties"/>
+
+
+    <element name="initialize" type="tns:Initialize"></element>
+    <element name="group" type="tns:Group"></element>
+   
+
+    <complexType name="Initialize">
+    	<sequence>
+    		<element name="startTimestamp" type="string" minOccurs="0"/>
+    		<element name="activity" type="string" minOccurs="0"/>
+    		<element name="token" type="string" maxOccurs="unbounded" minOccurs="1"/>
+    		<element name="process" type="string"/>
+    		<element name="type" type="string"/>
+    		<element name="concept" type="string"/>
+    		<element name="service" type="string"/>
+    		<element name="deploymentUnit" type="string"/>
+    		<element name="moduleVersion" type="string"/>
+    		<element name="header" type="env:Header" minOccurs="0"/>
+    	</sequence>
+    </complexType>  
+    <complexType name="Group">
+		<sequence>
+			<element name="context" type="env:Context"/>
+			<element name="header" type="env:Header"/>
+			<element name="ServiceConfig" type="serv:ServiceType" minOccurs="0"/>
+			<element ref="dynamic:DynamicProperties" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="http://www.example.org/SQL_STATEMENT" xmlns:tns="http://www.example.org/SQL_STATEMENT" elementFormDefault="qualified">
+
+    <complexType name="SQLSTATEMENT">
+    	<sequence>
+    		<element name="select" type="string"></element>
+    		<element name="whereClause" type="string" maxOccurs="unbounded" minOccurs="0"></element>
+    	</sequence>
+    </complexType>
+
+
+    <element name="SQLSTATEMENT" type="tns:SQLSTATEMENT"></element>
+</schema>

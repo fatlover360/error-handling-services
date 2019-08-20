@@ -210,6 +210,8 @@
             <wsdl:message name="getRequest">
                 <wsdl:part element="extns1:httpHeaders"
                     name="httpHeaders" tibex:source="bw.rest"/>
+                <wsdl:part element="extns2:controldataGetParameters"
+                    name="parameters" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="getResponse">
                 <wsdl:part element="extns:ControlDataArray" name="item" tibex:hasMultipleNamespaces="false"/>
@@ -1870,6 +1872,8 @@
         <bpws:variable element="ns0:FaultDetail" name="FaultDetails" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ControlDataUpdate"
             name="LogicalPut-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns3:controldataGetParameters"
+            name="LogicalGet-input" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1965,7 +1969,11 @@
                                 <bpws:correlations/>
                             </bpws:reply>
                             <bpws:extensionActivity>
-                                <tibex:extActivity name="LogicalGet"
+                                <tibex:extActivity
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/ControlData/parameters&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;get&quot;/>&lt;xsl:template name=&quot;LogicalGet-input&quot; match=&quot;/&quot;>&lt;xsl:copy-of select=&quot;$get/parameters/tns:controldataGetParameters&quot;/>&lt;/xsl:template>&lt;/xsl:stylesheet>"
+                                    expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"
+                                    inputVariable="LogicalGet-input"
+                                    name="LogicalGet"
                                     outputVariable="LogicalGet"
                                     tibex:xpdlId="83a4f53c-c02e-49a4-a81e-17fbe1c64c1a"
                                     type="bw.generalactivities.callprocess" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
@@ -1975,6 +1983,10 @@
                                     <bpws:sources>
                                     <bpws:source linkName="LogicalGetTogetOut"/>
                                     </bpws:sources>
+                                    <tibex:inputBindings>
+                                    <tibex:inputBinding
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://xmlns.example.com/ControlData/parameters&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;get.parameters&quot;/>&#xa;    &lt;xsl:template name=&quot;LogicalGet-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:copy-of select=&quot;$get.parameters&quot;/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    </tibex:inputBindings>
                                     <tibex:CallProcess
                                     subProcessName="FWK.Console.Services.ControlData.LogicalGet" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
                                 </tibex:extActivity>

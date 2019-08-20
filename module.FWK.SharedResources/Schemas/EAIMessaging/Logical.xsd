@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://ns.corelio.be/common/logical/1.0" xmlns:env="http://ns.corelio.be/common/envelope/1.0" xmlns:log="http://www.tibco.com/CLEver/Log" xmlns:ser="http://Polarising/Shared/Resources/Services" xmlns:xs="http://www.w3.org/2001/XMLSchema" attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://ns.corelio.be/common/logical/1.0">
+
+    <xs:import namespace="http://Polarising/Shared/Resources/Services" schemaLocation="../Catalog/Services.xsd"/>
+    <xs:import namespace="http://ns.corelio.be/common/envelope/1.0" schemaLocation="../Logging/CommonTypes.xsd"/>
+	<xs:import namespace="http://www.tibco.com/CLEver/Log" schemaLocation="../Logging/Clever/Log.xsd"/>
+	
+	
+	
+	<xs:element name="input">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="header"/>
+				<xs:element minOccurs="0" ref="body"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="output">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="header"/>
+				<xs:element minOccurs="0" ref="body"/>
+				<xs:element minOccurs="0" ref="log:Attachments"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="outputlogical">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" ref="header"/>
+				<xs:element minOccurs="0" ref="body"/>
+				<xs:element minOccurs="0" ref="log:Attachments"/>
+				<xs:element minOccurs="1" ref="result"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="body">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:any maxOccurs="unbounded" minOccurs="0" namespace="##any" processContents="skip"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="header" type="env:Header"/>
+	<xs:element name="result" type="env:Result"/>
+	
+
+	<xs:complexType name="Group">
+		<xs:sequence>
+			<xs:element name="context" type="env:Context"/>
+			<xs:element name="header" type="env:Header"/>
+			<xs:element minOccurs="0" name="ServiceConfig" type="ser:ServiceType"/>
+		</xs:sequence>
+	</xs:complexType>
+
+    <xs:element name="group" type="Group"/>
+</xs:schema>

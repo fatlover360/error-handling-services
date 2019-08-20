@@ -171,7 +171,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources//FrameworkVersion</name>
-			<value>1.0</value>
+			<value>2.0</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -186,6 +186,22 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/TibcoSystemVersion</name>
+			<value>Tibco6NL</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/DefaultTimeoutMs</name>
+			<value>60000</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAI/LoginTimeoutSec</name>
 			<value>30</value>
 			<deploymentSettable>false</deploymentSettable>
@@ -195,7 +211,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAI/Password</name>
-			<value>#!1Pa1gpE1C3QQr+/3+L1VVDEFhSWqgQPs</value>
+			<value>#!oaG9WkYs32u13mlRAN3vjXIG6YaGlQCN</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
@@ -203,7 +219,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAI/URL</name>
-			<value>jdbc:sqlserver://localhost:1433;databaseName=advantage;</value>
+			<value>jdbc:sqlserver://localhost:1433;databaseName=tibcobw6-eai;</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -242,6 +258,118 @@
 			<isOverride>false</isOverride>
 		</globalVariable>
 		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/User</name>
+			<value>tst-ordering-ads-bw-data</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/URL</name>
+			<value>jdbc:sqlserver://grbtibsqla01.core.local\tibcotst;databaseName=tst-ordering-ads-bw-data;</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/DefaultTimeoutSec</name>
+			<value>60</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/Password</name>
+			<value>#!UVKGhLFu5oZqqg6fR6K0I/F5ej2to6nVT3mK3wezg8EYnWbYQ469P36+dWPYxMxglRhH3S4hKdynrq8QXF2+PA==</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/MaxConnections</name>
+			<value>10</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/LoginTimeoutSec</name>
+			<value>30</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EAIDataManager/Driver</name>
+			<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/Password</name>
+			<value>#!q6945bslN2jng+cBV6ZxAbTrs4e/HqCe</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/User</name>
+			<value>admin</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/URL</name>
+			<value>jdbc:sqlserver://localhost:1433;databaseName=tibcobw6-eh;</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/LoginTimeoutSec</name>
+			<value>30</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/Driver</name>
+			<value>com.microsoft.sqlserver.jdbc.SQLServerDriver</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/DefaultTimeoutSec</name>
+			<value>60</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JDBC/EH/MaxConnections</name>
+			<value>50</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/HTTP/Port</name>
 			<value>9069</value>
 			<deploymentSettable>false</deploymentSettable>
@@ -259,7 +387,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/DATA/Username</name>
-			<value>asedev</value>
+			<value>admin</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -267,7 +395,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/DATA/ProviderURL</name>
-			<value>tibjmsnaming://localhost:7222</value>
+			<value>tibjmsnaming://172.30.78.3:7322</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -283,7 +411,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/DATA/Password</name>
-			<value>#!/uMfnkfa+MQeftzBjKQurYGDS2aUd6zU</value>
+			<value>#!c8n9FXXSQwRM+YiOIt5mAHQiPScnp+jB</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Password</type>
@@ -300,6 +428,134 @@
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/DATA/QueueConnectionFactory</name>
 			<value>QueueConnectionFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/TRACE/TopicConnectionFactory</name>
+			<value>TopicConnectionFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/TRACE/QueueConnectionFactory</name>
+			<value>QueueConnectionFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/TRACE/Username</name>
+			<value>admin</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/TRACE/InitialContextFactory</name>
+			<value>com.tibco.tibjms.naming.TibjmsInitialContextFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/TRACE/Password</name>
+			<value>#!cZRVfonTevcS2gQ3lDi9a4cQkYIlX5Nt</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/JMS/TRACE/ProviderURL</name>
+			<value>tibjmsnaming://172.30.78.3:9522</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/JNDIContextUrl</name>
+			<value>tcp://172.30.78.3:7322</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/QueueConnectionFactory</name>
+			<value>QueueConnectionFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/ContextFactory</name>
+			<value>com.tibco.tibjms.naming.TibjmsInitialContextFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/CommandCenterUser</name>
+			<value>MFTCOMC</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/JmsPassword</name>
+			<value>#!lpqHlvLxrUACSUt9bBeKpaKVXLORuI6e</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/JmsUser</name>
+			<value>TMGDOrderServicestst</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/CommandCenterPassword</name>
+			<value>#!5E6rk8CVCIPCp8krJeIiGt+BZ8IbKbSj</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/TopicConnectionFactory</name>
+			<value>TopicConnectionFactory</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/ManagementRequestTimeoutSec</name>
+			<value>20</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Integer</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Transports/FTP/MFT/ManagementQueueName</name>
+			<value>Management</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
@@ -363,10 +619,122 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/SequenceConflict</name>
-			<value>&apos;T_TIB_005&apos;</value>
+			<value>T_TIB_005</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/MultipleFound</name>
+			<value>T_TIB_006</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/TimeOut</name>
+			<value>T_TIB_003</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/PartialSuccess</name>
+			<value>T_TIB_010</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/InvalidParameters</name>
+			<value>T_TIB_002</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/NotFound</name>
+			<value>T_TIB_004</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/Success</name>
+			<value>T_TIB_000</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/ServiceNotRegistered</name>
+			<value>T_TIB_999</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/ErrorCodes/UnknownError</name>
+			<value>T_TIB_001</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Policies/LDAP/UserSearchBaseDN</name>
+			<value>OU=Users,OU=Accounts,OU=CORE,DC=core,DC=local</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Policies/LDAP/UserAdminUsername</name>
+			<value>svc_crmtibco2@core.local</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Policies/LDAP/UserSearchExpression</name>
+			<value>(SamAccountName={0})</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Policies/LDAP/UserAttibuteGroupName</name>
+			<value>memberOf</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Policies/LDAP/ServerURL</name>
+			<value>ldap://grbictadcp01:389</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>String</type>
+			<isOverride>false</isOverride>
+		</globalVariable>
+		<globalVariable>
+			<name>//module.FWK.SharedResources///SharedVariables/Policies/LDAP/UserAdminPassword</name>
+			<value>#!dYTI468Ae6MYpm/zJLiIx/VQJ/adjbJLMqc96wtWLiE=</value>
+			<deploymentSettable>false</deploymentSettable>
+			<serviceSettable>false</serviceSettable>
+			<type>Password</type>
 			<isOverride>false</isOverride>
 		</globalVariable>
 	</globalVariables>

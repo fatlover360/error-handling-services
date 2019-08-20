@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/CallService"
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/CallService"
+	elementFormDefault="qualified"
+	xmlns:logical="http://ns.corelio.be/common/logical/1.0"> 
+
+    <import schemaLocation="Logical.xsd" namespace="http://ns.corelio.be/common/logical/1.0"/>
+	
+	<element name="In" type="tns:In"/>
+	<element name="Out" type="tns:Out"/>
+	<element name="Input" type="tns:Input"/>
+	
+
+	<complexType name="In">
+		<sequence>
+			<element name="Classification">
+				<complexType>
+					<sequence>
+						<element name="System" type="string"/>
+						<element name="ApplicationName" type="string"/>	    					   
+						<element name="ServiceType" type="string"/>
+						<element name="ServiceFunction" type="string"/>
+						<element name="ServiceOperation" type="string"/>
+						<element name="ServiceVersion" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element ref="logical:input" minOccurs="0"/>
+			<element name="TimeoutMs" type="int" minOccurs="0"/>
+			<element name="IsAsync" type="boolean" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Out">
+		<sequence>
+			<element ref="logical:output" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	
+	
+	<complexType name="Input">
+		<sequence>
+			<element name="BWDeploymentUnit">
+				<complexType>
+					<sequence>
+						<element name="Name" type="string"/>
+						<element name="Version" type="string"/>
+						<element name="ServiceName" type="string"/>
+					</sequence>
+				</complexType>
+			</element>
+			<element ref="logical:input" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	
+	
+	
+</schema>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://module.FWK.SharedResources.ServiceDescriptors.DummyLogical" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsd1="http://ns.corelio.be/common/logical/1.0" name="DummyLogical" targetNamespace="http://module.FWK.SharedResources.ServiceDescriptors.DummyLogical">
+    <wsdl:types>
+    
+    <xsd:schema>
+    	<xsd:import namespace="http://ns.corelio.be/common/logical/1.0" schemaLocation="../Schemas/EAIMessaging/Logical.xsd">
+    	</xsd:import>
+    	</xsd:schema>
+  </wsdl:types>
+    <wsdl:message name="operationRequest">
+    <wsdl:part element="xsd1:input" name="parameters"/>
+    </wsdl:message>
+    <wsdl:message name="operationResponse">
+    <wsdl:part element="xsd1:outputlogical" name="parameters" />
+    </wsdl:message>
+   
+    <wsdl:portType name="DummyLogical">
+    <wsdl:operation name="operation">
+      <wsdl:input message="tns:operationRequest" name="operationInput"/>
+      <wsdl:output message="tns:operationResponse" name="operationOutput"/>
+    </wsdl:operation>
+    </wsdl:portType>
+
+</wsdl:definitions>

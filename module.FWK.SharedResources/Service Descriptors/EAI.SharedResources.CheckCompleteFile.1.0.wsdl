@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EAI.SharedResources.CheckCompleteFile.1.0" targetNamespace="http://EAI/SharedResources/CheckCompleteFile/1/0/" xmlns:xsd1="http://Polarising/Schemas/Resources/CheckCompleteFile" xmlns:tns1="http://EAI/SharedResources/CheckCompleteFile/1/0/">
+   
+    <wsdl:types><xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" targetNamespace="http://EAI/SharedResources/CheckCompleteFile/1/0/">
+	<xsd:element name="Operation">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="in" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="OperationResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+
+				<xsd:element name="out" type="xsd:string"></xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element></xsd:schema>
+    	<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+    		<xsd:import
+    			namespace="http://Polarising/Schemas/Resources/CheckCompleteFile"
+    			schemaLocation="../Schemas/EAIMessaging/CheckCompleteFile.xsd">
+    		</xsd:import></xsd:schema></wsdl:types>
+    <wsdl:message name="OperationRequest">
+    	<wsdl:part name="parameters" element="xsd1:CheckFileCompleteInput"></wsdl:part>
+    </wsdl:message>
+    <wsdl:message name="OperationResponse">
+    	<wsdl:part name="parameters" element="xsd1:CheckFileCompleteOutput"></wsdl:part>
+    </wsdl:message>
+    <wsdl:portType name="EAI.SharedResources.CheckCompleteFile.1.0">
+    	<wsdl:operation name="Operation">
+    		<wsdl:input message="tns1:OperationRequest"></wsdl:input>
+    		<wsdl:output message="tns1:OperationResponse"></wsdl:output>
+    	</wsdl:operation>
+    </wsdl:portType>
+</wsdl:definitions>

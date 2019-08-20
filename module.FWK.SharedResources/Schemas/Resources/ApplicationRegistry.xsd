@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xsd:schema xmlns="http://Polarising/Schemas/Resources/ApplicationRegistry"
+	 xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 targetNamespace="http://Polarising/Schemas/Resources/ApplicationRegistry"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">	 
+	<xsd:element name="ApplicationRegistry">
+    <xsd:complexType>
+        <xsd:sequence>
+            <xsd:element ref="ApplicationRegistryList" minOccurs="1" maxOccurs="1"/>
+        </xsd:sequence>
+    </xsd:complexType>
+	</xsd:element>
+	<xsd:element name="ApplicationRegistryList">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element ref="BWDeploymentUnit" minOccurs="0" maxOccurs="unbounded"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="BWDeploymentUnit">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="Version" type="xsd:string" minOccurs="0"/>
+				<xsd:element name="Status" minOccurs="0">
+					<xsd:simpleType>
+						<xsd:restriction base="xsd:string">
+							<xsd:enumeration value="Registered"/>
+							<xsd:enumeration value="Unregistered"/>
+							<xsd:enumeration value="Running"/>
+							<xsd:enumeration value="Not Running"/>
+						</xsd:restriction>
+					</xsd:simpleType>				
+				</xsd:element>
+				<xsd:element name="StatusDateTime" type="xsd:dateTime" minOccurs="0"/>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

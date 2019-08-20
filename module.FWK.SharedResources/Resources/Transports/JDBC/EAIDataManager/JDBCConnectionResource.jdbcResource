@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jndi:namedResource xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:jdbc="http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc" xmlns:jndi="http://xsd.tns.tibco.com/amf/models/sharedresource/jndi" xmlns:subject="http://xsd.tns.tibco.com/trinity/models/identity/subject" xmi:id="_P8f5QaO8Eemi7J56PuFvbw" name="Transports.JDBC.EAIDataManager.JDBCConnectionResource" type="jdbc:JdbcDataSource">
+  <jndi:reference xmi:id="_P9sMEKO8Eemi7J56PuFvbw" key="subjectJndiName" type="subject:SubjectConfiguration" value=""/>
+  <jndi:configuration xsi:type="jdbc:JdbcDataSource" xmi:id="_P9sMEaO8Eemi7J56PuFvbw">
+    <substitutionBindings xmi:id="_zEndEKO9EemWSusG-pL5gw" template="username" propName="/SharedVariables/Transports/JDBC/EAIDataManager/User"/>
+    <substitutionBindings xmi:id="_0ugMAKO9EemWSusG-pL5gw" template="password" propName="/SharedVariables/Transports/JDBC/EAIDataManager/Password"/>
+    <connectionConfig xsi:type="jdbc:NonXaConnection" xmi:id="_P9sMEqO8Eemi7J56PuFvbw">
+      <substitutionBindings xmi:id="_2fuSAKO9EemWSusG-pL5gw" template="jdbcDriver" propName="/SharedVariables/Transports/JDBC/EAIDataManager/Driver"/>
+      <substitutionBindings xmi:id="_4znnQKO9EemWSusG-pL5gw" template="dbURL" propName="/SharedVariables/Transports/JDBC/EAIDataManager/URL"/>
+      <substitutionBindings xmi:id="_6ZCs8KO9EemWSusG-pL5gw" template="loginTimeout" propName="/SharedVariables/Transports/JDBC/EAIDataManager/LoginTimeoutSec"/>
+    </connectionConfig>
+  </jndi:configuration>
+</jndi:namedResource>

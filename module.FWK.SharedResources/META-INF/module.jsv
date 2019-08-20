@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jsv:DocumentRoot xmlns:jsv="http://tns.tibco.com/bw/model/core/jobSV">
+  <jobSharedVariables>
+    <jobSharedVariable name="JobData" type="{http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize}group" initialValueMode="none" initialValue=""/>
+  </jobSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://Polarising/Shared/Resources/Services" location="../Schemas/Catalog/Services.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://ns.corelio.be/common/logical/1.0" location="../Schemas/EAIMessaging/Logical.xsd"/>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Initialize" location="../Schemas/EAIMessaging/Initialize.xsd"/>
+</jsv:DocumentRoot>

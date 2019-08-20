@@ -795,7 +795,7 @@
             sca-bpel:privateProperty="true" sca-bpel:property="yes"
             sca-bpel:sharedResourceType="{http://xsd.tns.tibco.com/amf/models/sharedresource/jdbc}JdbcDataSource" type="xsd:string">
             <bpws:from>
-                <bpws:literal>Transports.JDBC.EAI.JDBCConnectionResource</bpws:literal>
+                <bpws:literal>Transports.JDBC.EH.JDBCConnectionResource</bpws:literal>
             </bpws:from>
         </bpws:variable>
         <bpws:variable element="ns0:jdbcQueryActivityInput"

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:cmap="http://be.mediahuis.icc/mapping/2.0"
+	 targetNamespace="http://be.mediahuis.icc/mapping/2.0"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="qualified">
+	<xs:annotation>
+		<xs:documentation>
+			Purpose: schema to handle mappings load from db
+			Owner: Mediahuis, ICC, cspa01-Carlos Pereira
+			Created/Modified: cspa01 - Carlos Pereira
+			Version: 2.0
+        		</xs:documentation>
+	</xs:annotation>
+	<xs:element name="mappings">
+		<xs:annotation>
+			<xs:documentation>root element</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="cmap:mapping" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="mapping">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="map" type="cmap:mapType" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attribute name="type" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="mapType">
+		<xs:attribute name="value" type="xs:string" use="required"/>
+		<xs:attribute name="company" type="xs:string"/>
+		<xs:attribute name="publishingBrand" type="xs:string"/>
+		<xs:attribute name="salesBrand" type="xs:string"/>
+	</xs:complexType>
+</xs:schema>

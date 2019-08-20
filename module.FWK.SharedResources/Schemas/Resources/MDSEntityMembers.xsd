@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!-- edited with XMLSpy v2012 rel. 2 sp1 (http://www.altova.com) by Carlos P (Corelio Publishing NV) -->
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+	 xmlns="http://ns.corelio.be/mds/EntityMembers.xsd"
+	 targetNamespace="http://ns.corelio.be/mds/EntityMembers.xsd"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xsd:element name="QueryRequest">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Entity">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Name" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Model">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Name" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Page">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Number" type="xsd:int"/>
+							<xsd:element name="Size" type="xsd:int"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Search" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Term" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Sort" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="ColumnName" type="xsd:string"/>
+							<xsd:element name="Direction" type="xsd:string" minOccurs="0"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+	<xsd:element name="QueryResponse">
+		<xsd:complexType>
+			<xsd:sequence>
+				<xsd:element name="Entity">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Name" type="xsd:string"/>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Members" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Member" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Attributes" minOccurs="0">
+											<xsd:complexType>
+												<xsd:sequence>
+													<xsd:element name="Attribute" minOccurs="0" maxOccurs="unbounded">
+														<xsd:complexType>
+															<xsd:sequence>
+																<xsd:element name="Name" type="xsd:string" minOccurs="0"/>
+																<xsd:element name="Value" type="xsd:string" minOccurs="0"/>
+																<xsd:element name="Type" type="xsd:string" minOccurs="0"/>
+															</xsd:sequence>
+														</xsd:complexType>
+													</xsd:element>
+												</xsd:sequence>
+											</xsd:complexType>
+										</xsd:element>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+				<xsd:element name="Errors" minOccurs="0">
+					<xsd:complexType>
+						<xsd:sequence>
+							<xsd:element name="Error" minOccurs="0" maxOccurs="unbounded">
+								<xsd:complexType>
+									<xsd:sequence>
+										<xsd:element name="Code" type="xsd:string" minOccurs="0"/>
+										<xsd:element name="Description" type="xsd:string" minOccurs="0"/>
+									</xsd:sequence>
+								</xsd:complexType>
+							</xsd:element>
+						</xsd:sequence>
+					</xsd:complexType>
+				</xsd:element>
+			</xsd:sequence>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>

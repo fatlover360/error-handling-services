@@ -2,10 +2,23 @@
 <xs:schema xmlns:source="bw.rest" xmlns:tns="http://xmlns.example.com/ControlData/parameters" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" targetNamespace="http://xmlns.example.com/ControlData/parameters">
   <xs:element name="controldataDeleteParameters">
     <xs:complexType>
-      <xs:sequence>
+      <xs:sequence>
+
                 <xs:element maxOccurs="1" minOccurs="0" name="controldataid" type="xs:string"/>
             </xs:sequence>
     </xs:complexType>
   </xs:element>
 
+    <xs:element name="controldataGetParameters">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element maxOccurs="1" minOccurs="0" name="transaction_id" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="error_code" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="status" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="application_name" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="from_date" type="xs:string"/>
+                <xs:element maxOccurs="1" minOccurs="0" name="to_date" type="xs:string"/>
+            </xs:sequence>
+    </xs:complexType>
+  </xs:element>
 </xs:schema>

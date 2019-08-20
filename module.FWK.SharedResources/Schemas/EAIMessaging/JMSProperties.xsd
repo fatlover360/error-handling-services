@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" 
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/JMSProperties" 
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/JMSProperties" 
+	elementFormDefault="qualified"> 
+
+    <element name="JmsProperties" type="tns:JmsPropertiesType"/>   
+       
+    <complexType name="JmsPropertiesType">
+    	<sequence>
+    		<element name="JMS_TIBCO_COMPRESS" minOccurs="0" type="string"/>
+    		<element name="JMS_TIBCO_PRESERVE_UNDELIVERED" minOccurs="1" type="string"/>	
+    		<element name="ServiceName" minOccurs="1" type="string"/> 		
+    		<element name="ServiceOperation" minOccurs="1" type="string"/>
+    		<element name="BusinessId" minOccurs="0" type="string"/>	
+    		<element name="SenderApplication" minOccurs="0" type="string"/>
+    		<element name="ReceiverApplication" minOccurs="0" type="string"/>
+    		<element name="PublishingBrand" minOccurs="0" type="string"/>	
+    		<element name="SalesBrand" minOccurs="0" type="string"/>
+    		<element name="Company" minOccurs="0" type="string"/>	
+    		<element name="RoutingKey" minOccurs="0" type="string"/>
+    	</sequence>
+    </complexType>
+</schema>

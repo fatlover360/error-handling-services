@@ -259,6 +259,14 @@
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_oYeEkTRNEemKYsizTPVenw" operationName="get" nickname="get-controldata" httpMethod="GET" responseStyle="element" useEmptyValuesForNullResponse="true">
+        <parameters xmi:id="_dlFFgMLOEem67Y4TMYa9Cg">
+          <parameterMapping xmi:id="_dlFFgcLOEem67Y4TMYa9Cg" parameterName="transaction_id" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_d37wEMLOEem67Y4TMYa9Cg" parameterName="error_code" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_evUrEMLOEem67Y4TMYa9Cg" parameterName="status" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_fBQvoMLOEem67Y4TMYa9Cg" parameterName="application_name" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_fWFwIMLOEem67Y4TMYa9Cg" parameterName="from_date" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_f6hS4MLOEem67Y4TMYa9Cg" parameterName="to_date" parameterType="Query" dataType="string"/>
+        </parameters>
         <responseStatus xmi:id="_KhprAEo0Eem7k64P3T6mEQ" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_KjtggEo0Eem7k64P3T6mEQ" statusCode="201" reasonPhrase="Created" dataType="string"/>
         <responseStatus xmi:id="_Kllv0Eo0Eem7k64P3T6mEQ" statusCode="202" reasonPhrase="Accepted" dataType="string"/>

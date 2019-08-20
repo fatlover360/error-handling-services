@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize"
+	xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/Finalize"
+	elementFormDefault="qualified"
+	xmlns:log="http://ns.corelio.be/common/in/1.0"
+	xmlns:logical="http://ns.corelio.be/common/logical/1.0" 
+	xmlns:logging="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging">
+
+    <import namespace="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"/>
+    <import namespace="http://ns.corelio.be/common/in/1.0"/>
+    <import schemaLocation="Logical.xsd" namespace="http://ns.corelio.be/common/logical/1.0"/>
+	
+	<element name="In" type="tns:In"/>
+
+	<complexType name="In">
+		<sequence>
+			<element ref="logical:input" minOccurs="0"/>
+			<element ref="logical:output" minOccurs="0"/>
+			<element name="Exception" type="log:Exception" maxOccurs="1" minOccurs="0"/>
+			<element name="InfoLog" type="logging:INFO" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	 xmlns:tmr="http://www.tibco.com/namespaces/tnt/plugins/timer"
+	 targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/timer"
+	 elementFormDefault="qualified"
+	 attributeFormDefault="unqualified">
+	<xs:complexType name="TimerOutputSchema">
+		<xs:sequence>
+			<xs:element name="Now" type="xs:long" form="unqualified"/>
+			<xs:element name="Hour" type="xs:int" form="unqualified"/>
+			<xs:element name="Minute" type="xs:int" form="unqualified"/>
+			<xs:element name="Second" type="xs:int" form="unqualified"/>
+			<xs:element name="Week" type="xs:int" form="unqualified"/>
+			<xs:element name="Month" type="xs:int" form="unqualified"/>
+			<xs:element name="Year" type="xs:int" form="unqualified"/>
+			<xs:element name="Date" type="xs:date" form="unqualified"/>
+			<xs:element name="Time" type="xs:string" form="unqualified"/>
+			<xs:element name="Day_Of_Month" type="xs:int" form="unqualified"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:element name="TimerOutputSchema" type="tmr:TimerOutputSchema"/>
+</xs:schema>

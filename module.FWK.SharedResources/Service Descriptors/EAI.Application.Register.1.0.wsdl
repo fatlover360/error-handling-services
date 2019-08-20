@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tns="http://EAI/Application/Register/1/0/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="EAI.Application.Register.1.0" targetNamespace="http://EAI/Application/Register/1/0/" xmlns:xsd1="http://Polarising/Schemas/Resources/ApplicationRegistry" xmlns:xsd2="http://ns.corelio.be/common/envelope/1.0">
+  <wsdl:types>
+  <xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  	<xsd:import
+  		namespace="http://Polarising/Schemas/Resources/ApplicationRegistry"
+  		schemaLocation="../Schemas/Resources/ApplicationRegistry.xsd">
+  	</xsd:import>
+  	<xsd:import namespace="http://ns.corelio.be/common/envelope/1.0"
+  		schemaLocation="../Schemas/Logging/CommonTypes.xsd">
+  	</xsd:import></xsd:schema></wsdl:types>
+  <wsdl:message name="OperationRequest">
+    <wsdl:part element="xsd1:BWDeploymentUnit" name="parameters" />
+  </wsdl:message>
+  <wsdl:message name="OperationResponse">
+    <wsdl:part element="xsd2:result" name="parameters"/>
+  </wsdl:message>
+  <wsdl:portType name="EAI.Application.Register.1.0">
+    <wsdl:operation name="Operation">
+      <wsdl:input message="tns:OperationRequest"/>
+      <wsdl:output message="tns:OperationResponse"/>
+    </wsdl:operation>
+  </wsdl:portType>
+</wsdl:definitions>

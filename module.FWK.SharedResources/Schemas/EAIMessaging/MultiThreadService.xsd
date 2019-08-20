@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"  
+xmlns:tns="http://Polarising/SharedResources/Schemas/EAIMessaging/MultiThreadService" 
+elementFormDefault="qualified" 
+targetNamespace="http://Polarising/SharedResources/Schemas/EAIMessaging/MultiThreadService"
+xmlns:log="http://ns.corelio.be/common/logical/1.0"
+xmlns:call="http://Polarising/SharedResources/Schemas/EAIMessaging/CallService">
+
+	<import namespace="http://ns.corelio.be/common/logical/1.0" schemaLocation="Logical.xsd"/>
+	<import namespace="http://Polarising/SharedResources/Schemas/EAIMessaging/CallService" schemaLocation="CallService.xsd"/>
+	
+	<element name="MultiThreadIn" type="tns:MultiThreadTypeIn"/>
+	<element name="MultiThreadOut" type="tns:MultiThreadTypeOut"/>
+	<element name="WaitIn" type="tns:WaitTypeIn"/>
+
+	<complexType name="MultiThreadTypeIn">
+		<sequence>
+			<element ref="call:In" minOccurs="0"/>
+			<element name="NotifyKey" type="string" maxOccurs="1" minOccurs="1"/>
+			<element name="TimeoutMs" type="int" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	
+	<complexType name="MultiThreadTypeOut">
+		<sequence>
+			<element ref="call:Out" minOccurs="0"/>
+		</sequence>
+	</complexType>
+
+	<element name="ServicesInfo" type="tns:ServicesInfoType"/>
+
+	<complexType name="ServicesInfoType">
+		<sequence>
+			<element maxOccurs="unbounded" minOccurs="0" ref="log:input"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="WaitTypeIn">
+		<sequence>
+			<element name="NotifyKey" type="string" maxOccurs="1" minOccurs="1"/>
+			<element name="TimeoutMs" type="int" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>

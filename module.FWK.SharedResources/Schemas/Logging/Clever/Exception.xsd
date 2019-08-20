@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<xs:schema xmlns="http://www.tibco.com/CLEver/Exception"
+	xmlns:ns0="http://www.tibco.com/CLEver/ExtraTypes"
+	xmlns:xs="http://www.w3.org/2001/XMLSchema"
+	attributeFormDefault="unqualified" elementFormDefault="qualified"
+	targetNamespace="http://www.tibco.com/CLEver/Exception">
+	<xs:import schemaLocation="ExtraTypes.xsd" namespace="http://www.tibco.com/CLEver/ExtraTypes"></xs:import>
+	<xs:element name="Exception">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ID" type="xs:string" />
+
+                <xs:element ref="ns0:ProcessContext"></xs:element>
+                <xs:element ref="ExceptionDetail" />
+
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Exceptions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element maxOccurs="unbounded" minOccurs="0"
+					ref="Exception" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ExceptionSeverity">
+		<xs:simpleType>
+			<xs:restriction base="xs:string">
+				<xs:enumeration value="INFO" />
+				<xs:enumeration value="DEBUG" />
+				<xs:enumeration value="WARN" />
+				<xs:enumeration value="ERROR" />
+				<xs:enumeration value="FATAL" />
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:element>
+	<xs:element name="ExceptionDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element minOccurs="0" name="ExceptionCategory"
+					type="xs:string" />
+				<xs:element minOccurs="0" ref="ExceptionSeverity" />
+				<xs:element minOccurs="0" name="ExceptionType"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="ExceptionCode"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="Message"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="ReplyDestination"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="TransactionData"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="DumpAnalysis"
+					type="xs:string" />
+				<xs:element minOccurs="0" name="Status"
+					type="xs:string" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+
+</xs:schema>

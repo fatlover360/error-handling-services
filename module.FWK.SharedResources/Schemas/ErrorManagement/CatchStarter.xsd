@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+	targetNamespace="http://Polarising/SharedResources/Schemas/ErrorManagement/CatchStarter"
+	xmlns:tns="http://Polarising/SharedResources/Schemas/ErrorManagement/CatchStarter"
+	elementFormDefault="qualified"
+	xmlns:logging="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"
+	xmlns:logical="http://ns.corelio.be/common/logical/1.0">
+
+    <import namespace="http://module.Framework.Shared.Resources.Shemas.EAIMessaging.Logging"/>
+    <import namespace="http://ns.corelio.be/common/logical/1.0"/>
+	
+	<element name="In" type="tns:In"/>
+	<element name="Out" type="tns:Out"/>
+
+	<complexType name="In">
+		<sequence>
+			<element ref="logical:input" minOccurs="0"/>
+			<element ref="logical:output" minOccurs="0"/>
+			<element name="FaultDetails" type="logging:FaultDetails" maxOccurs="1" minOccurs="0"/>
+		</sequence>
+	</complexType>
+	
+	<complexType name="Out">
+		<sequence>
+			<element ref="logical:output" minOccurs="0"/>
+		</sequence>
+	</complexType>
+</schema>
