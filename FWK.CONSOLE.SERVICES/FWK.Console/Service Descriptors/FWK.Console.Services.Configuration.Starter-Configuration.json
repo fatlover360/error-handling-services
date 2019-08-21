@@ -254,25 +254,36 @@
   "definitions" : {
     "Configuration" : {
       "type" : "object",
-      "required" : [ "DELTA_TIME_SECS", "MAX_RETRIES", "DELTA_PERCENTAGE", "EAI_ERROR_CODE_ID", "WAIT_TIME_SECS", "EAI_CATALOG_ID" ],
       "properties" : {
+        "ID" : {
+          "type" : "string"
+        },
         "EAI_CATALOG_ID" : {
-          "type" : "integer"
+          "type" : "string"
+        },
+        "SERVICE_NAME" : {
+          "type" : "string"
         },
         "EAI_ERROR_CODE_ID" : {
-          "type" : "integer"
+          "type" : "string"
         },
         "MAX_RETRIES" : {
-          "type" : "integer"
+          "type" : "string"
         },
         "WAIT_TIME_SECS" : {
-          "type" : "integer"
+          "type" : "string"
         },
         "DELTA_TIME_SECS" : {
-          "type" : "integer"
+          "type" : "string"
         },
         "DELTA_PERCENTAGE" : {
-          "type" : "integer"
+          "type" : "string"
+        },
+        "Catalog" : {
+          "$ref" : "#/definitions/Catalog"
+        },
+        "ErrorCode" : {
+          "$ref" : "#/definitions/ErrorCode"
         }
       }
     },
@@ -285,6 +296,64 @@
             "$ref" : "#/definitions/Configuration",
             "uniqueItems" : false
           }
+        }
+      }
+    },
+    "ErrorCode" : {
+      "type" : "object",
+      "properties" : {
+        "EAI_ERROR_CODE_ID" : {
+          "type" : "integer"
+        },
+        "EAI_ERROR_CODE" : {
+          "type" : "string"
+        },
+        "EAI_ERROR_CODE_DESC" : {
+          "type" : "string"
+        },
+        "IS_ERROR" : {
+          "type" : "string"
+        }
+      }
+    },
+    "Catalog" : {
+      "type" : "object",
+      "properties" : {
+        "EAI_CATALOG_ID" : {
+          "type" : "integer"
+        },
+        "SYSTEM" : {
+          "type" : "string"
+        },
+        "SERVICE_NAME" : {
+          "type" : "string"
+        },
+        "APPLICATION_NAME" : {
+          "type" : "string"
+        },
+        "SERVICE_TYPE" : {
+          "type" : "string"
+        },
+        "SERVICE_FUNCTION" : {
+          "type" : "string"
+        },
+        "SERVICE_OPERATION" : {
+          "type" : "string"
+        },
+        "SERVICE_VERSION" : {
+          "type" : "string"
+        },
+        "RECEIVER_TYPE" : {
+          "type" : "string"
+        },
+        "RECEIVER_DESTINATION" : {
+          "type" : "string"
+        },
+        "HAS_HANDLING" : {
+          "type" : "string"
+        },
+        "HAS_SEQUENCE" : {
+          "type" : "string"
         }
       }
     }

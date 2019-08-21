@@ -999,9 +999,8 @@
                                     name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value
-                                    maxRows="1000"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT *&#xd;&#xa;  FROM [advantage].[dbo].[T_EAI_CATALOG] WHERE [APPLICATION_NAME] = ?"
+                                    sqlStatement="SELECT *&#xd;&#xa;  FROM [dbo].[T_EAI_CATALOG] WHERE [APPLICATION_NAME] = ?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters

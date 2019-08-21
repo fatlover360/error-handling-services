@@ -938,7 +938,7 @@
                                     <value
                                     maxRows="1000"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT [APPLICATION_NAME]&#xa;  FROM [advantage].[dbo].[T_EAI_CATALOG] where [APPLICATION_NAME] like '%' + ? + '%'  group by [APPLICATION_NAME]"
+                                    sqlStatement="SELECT [APPLICATION_NAME]&#xa;  FROM [dbo].[T_EAI_CATALOG] where [APPLICATION_NAME] like '%' + ? + '%'  group by [APPLICATION_NAME]"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
 
                                     <PreparedParameters

@@ -1007,7 +1007,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value maxRows="100"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT ROW_NUMBER() OVER(ORDER BY (SELECT NULL)) as ID&#xa;&#x9;  ,x.APPLICATION_NAME as APP_NAME&#xa;&#x9;  ,k.*&#xa;      ,[SYSTEM_NATIVE_CODE],&#xa;&#x9;  e.*&#xa;      ,x.[IS_ERROR] AS IS_ERROR_ES&#xa;  FROM [advantage].[dbo].[T_EAI_ERROR_SERVICE] x JOIN [advantage].[dbo].[T_EAI_CATALOG] k ON x.EAI_CATALOG_ID = k.EAI_CATALOG_ID&#xa;  JOIN [advantage].[dbo].T_EAI_ERROR_CODE e ON x.EAI_ERROR_CODE_ID = e.EAI_ERROR_CODE_ID&#xa;"
+                                    sqlStatement="SELECT ROW_NUMBER() OVER(ORDER BY (SELECT NULL)) as ID&#xa;&#x9;  ,x.APPLICATION_NAME as APP_NAME&#xa;&#x9;  ,k.*&#xa;      ,[SYSTEM_NATIVE_CODE],&#xa;&#x9;  e.*&#xa;      ,x.[IS_ERROR] AS IS_ERROR_ES&#xa;  FROM [dbo].[T_EAI_ERROR_SERVICE] x JOIN [dbo].[T_EAI_CATALOG] k ON x.EAI_CATALOG_ID = k.EAI_CATALOG_ID&#xa;  JOIN [dbo].T_EAI_ERROR_CODE e ON x.EAI_ERROR_CODE_ID = e.EAI_ERROR_CODE_ID&#xa;"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
                                     <columnMetadata columnName="ID"
                                     dataType="-5"

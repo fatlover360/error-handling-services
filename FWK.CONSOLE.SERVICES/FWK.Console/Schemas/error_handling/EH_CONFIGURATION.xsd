@@ -1,14 +1,38 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ERROR_HANDLING/EH_CONFIGURATION" xmlns:tns="ERROR_HANDLING/EH_CONFIGURATION" elementFormDefault="qualified">
+<schema xmlns="http://www.w3.org/2001/XMLSchema" targetNamespace="ERROR_HANDLING/EH_CONFIGURATION" xmlns:tns="ERROR_HANDLING/EH_CONFIGURATION" elementFormDefault="qualified" xmlns:Q1="ERROR_HANDLING/EAI_CATALOG" xmlns:Q2="ERROR_HANDLING/EAI_ERROR_CODE">
 
+    <import namespace="ERROR_HANDLING/EAI_ERROR_CODE"></import>
+    <import namespace="ERROR_HANDLING/EAI_CATALOG"></import>
     <complexType name="Configuration">
     	<sequence>
-    		<element name="EAI_CATALOG_ID" type="int"></element>
-    		<element name="EAI_ERROR_CODE_ID" type="int"></element>
-    		<element name="MAX_RETRIES" type="int"></element>
-    		<element name="WAIT_TIME_SECS" type="int"></element>
-    		<element name="DELTA_TIME_SECS" type="int"></element>
-    		<element name="DELTA_PERCENTAGE" type="int"></element>
+    		<element name="ID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="EAI_CATALOG_ID" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+            <element name="SERVICE_NAME" type="string" minOccurs="0" maxOccurs="1"></element>
+            <element name="EAI_ERROR_CODE_ID" type="string"
+    			maxOccurs="1" minOccurs="0">
+    		</element>
+    		<element name="MAX_RETRIES" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="WAIT_TIME_SECS" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DELTA_TIME_SECS" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="DELTA_PERCENTAGE" type="string" maxOccurs="1"
+    			minOccurs="0">
+    		</element>
+    		<element name="Catalog" type="Q1:Catalog" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+    		<element name="ErrorCode" type="Q2:ErrorCode" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
     	</sequence>
     </complexType>
     
