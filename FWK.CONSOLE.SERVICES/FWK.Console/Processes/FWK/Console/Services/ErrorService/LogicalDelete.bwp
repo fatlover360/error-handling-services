@@ -188,12 +188,6 @@
                             name="EAI_CATALOG_ID" nillable="true" type="int"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="EAI_ERROR_CODE_ID" nillable="true" type="int"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="APPLICATION_NAME" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="SYSTEM_NATIVE_CODE" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="IS_ERROR" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -1066,7 +1060,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+3157a45e-8fe2-4a7a-ae50-8e77fe28ae84+input&quot; xmlns:tns1=&quot;http://xmlns.example.com/ErrorService/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns:jdbcUpdateActivityInput>&lt;EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:eai_catalog_id)&quot;/>&lt;/EAI_CATALOG_ID>&lt;EAI_ERROR_CODE_ID>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:error_code_id)&quot;/>&lt;/EAI_ERROR_CODE_ID>&lt;APPLICATION_NAME>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:application_name)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:application_name&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/APPLICATION_NAME>&lt;SYSTEM_NATIVE_CODE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:system_native_code)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:system_native_code&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/SYSTEM_NATIVE_CODE>&lt;IS_ERROR>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:iserror)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:iserror&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/IS_ERROR>&lt;/tns:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+3157a45e-8fe2-4a7a-ae50-8e77fe28ae84+input&quot; xmlns:tns1=&quot;http://xmlns.example.com/ErrorService/parameters&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns:jdbcUpdateActivityInput>&lt;EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:eai_catalog_id)&quot;/>&lt;/EAI_CATALOG_ID>&lt;EAI_ERROR_CODE_ID>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:error_code_id)&quot;/>&lt;/EAI_ERROR_CODE_ID>&lt;/tns:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1079,21 +1073,12 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="DELETE FROM [dbo].[T_EAI_ERROR_SERVICE]&#xa;      WHERE EAI_CATALOG_ID = ? AND EAI_ERROR_CODE_ID = ? AND APPLICATION_NAME = ?&#xa;      AND SYSTEM_NATIVE_CODE = ? AND IS_ERROR = ?"
+                                    sqlStatement="DELETE FROM [dbo].[T_EAI_ERROR_SERVICE]&#xa;      WHERE EAI_CATALOG_ID = ? AND EAI_ERROR_CODE_ID = ? "
                                     timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
                                     <PreparedParameters DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="EAI_CATALOG_ID"/>
                                     <PreparedParameters DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="EAI_ERROR_CODE_ID"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="APPLICATION_NAME"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="SYSTEM_NATIVE_CODE"/>
-                                    <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="IS_ERROR"/>
                                     </value>
                                 </properties>
                             </activityConfig>

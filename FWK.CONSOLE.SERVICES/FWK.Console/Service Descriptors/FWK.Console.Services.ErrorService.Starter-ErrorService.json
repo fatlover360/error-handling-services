@@ -263,7 +263,7 @@
           "description" : "",
           "type" : "integer",
           "format" : "int32",
-          "required" : false
+          "required" : true
         }, {
           "name" : "system_native_code",
           "in" : "query",

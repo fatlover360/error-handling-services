@@ -959,7 +959,7 @@
                             <activityConfig>
                                 <properties name="config" xsi:type="activityconfig:EMFProperty">
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
-                                    <value maxRows="100"
+                                    <value
                                     sharedResourceProperty="jdbcProperty"
                                     sqlStatement="SELECT *&#xa;  FROM [dbo].[T_EAI_ERROR_CODE]&#xa;"
                                     timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">

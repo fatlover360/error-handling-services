@@ -106,7 +106,7 @@
       <operation xmi:id="_xPs54zQfEemkkuSub-YhHA" operationName="delete" nickname="delete-errorservice" httpMethod="DELETE" responseStyle="element">
         <parameters xmi:id="_ydcMcDQsEemKYsizTPVenw">
           <parameterMapping xmi:id="_ydcMcTQsEemKYsizTPVenw" parameterName="error_code_id" parameterType="Query" dataType="integer#int32" required="true"/>
-          <parameterMapping xmi:id="_Lh85IDQ1EemKYsizTPVenw" parameterName="eai_catalog_id" parameterType="Query" dataType="integer#int32"/>
+          <parameterMapping xmi:id="_Lh85IDQ1EemKYsizTPVenw" parameterName="eai_catalog_id" parameterType="Query" dataType="integer#int32" required="true"/>
           <parameterMapping xmi:id="_xz7akL9DEemx34bcIUWoew" parameterName="application_name" parameterType="Query" dataType="string"/>
           <parameterMapping xmi:id="_0HpwsL9DEemx34bcIUWoew" parameterName="system_native_code" parameterType="Query" dataType="string"/>
           <parameterMapping xmi:id="_4ZfZUL9DEemx34bcIUWoew" parameterName="iserror" parameterType="Query" dataType="string"/>
@@ -334,6 +334,10 @@
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
       <operation xmi:id="_fotskDW1EemPyoX1o5CRxg" operationName="put" nickname="put-configuration" httpMethod="PUT" responseStyle="element" requestStyle="element">
+        <parameters xmi:id="_c_GFIMz2EemBbo0nfPCGCA">
+          <parameterMapping xmi:id="_c_GsMMz2EemBbo0nfPCGCA" parameterName="eai_catalog_id" parameterType="Query" dataType="string"/>
+          <parameterMapping xmi:id="_dRv7YMz2EemBbo0nfPCGCA" parameterName="eai_error_code_id" parameterType="Query" dataType="string"/>
+        </parameters>
         <responseStatus xmi:id="_qhm28EooEemXI9sJmHLgkw" statusCode="200" reasonPhrase="OK" dataType="string"/>
         <responseStatus xmi:id="_qjGEsEooEemXI9sJmHLgkw" statusCode="201" reasonPhrase="Created" dataType="string"/>
         <responseStatus xmi:id="_qkucYEooEemXI9sJmHLgkw" statusCode="202" reasonPhrase="Accepted" dataType="string"/>

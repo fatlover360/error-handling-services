@@ -196,6 +196,10 @@
                             name="EAI_CATALOG_ID" nillable="true" type="int"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="EAI_ERROR_CODE_ID" nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="EAI_CATALOG_ID_UPD" nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="EAI_ERROR_CODE_ID_UPD" nillable="true" type="int"/>
                         <element maxOccurs="1" minOccurs="0"
                             name="ServerTimeZone" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -892,6 +896,10 @@
         <tibex:namespaceItem
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem namespace="ERROR_HANDLING/EH_CONFIGURATION" prefix="tns4"/>
+        <tibex:namespaceItem
+            namespace="http://www.w3.org/2001/XMLSchema-instance" prefix="xsi"/>
+        <tibex:namespaceItem namespace="ERROR_HANDLING/EAI_ERROR_CODE" prefix="tns6"/>
+        <tibex:namespaceItem namespace="ERROR_HANDLING/EAI_CATALOG" prefix="tns5"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EH_CONFIGURATION"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Results"/>
@@ -1067,7 +1075,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+d24b83f8-332f-4216-b586-b38c6b952d56+input&quot; xmlns:tns4=&quot;ERROR_HANDLING/EH_CONFIGURATION&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns1:jdbcUpdateActivityInput>&lt;MAX_RETRY>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:MAX_RETRIES)&quot;/>&lt;/MAX_RETRY>&lt;WAIT_TIME_SECS>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:WAIT_TIME_SECS)&quot;/>&lt;/WAIT_TIME_SECS>&lt;DELTA_TIME_SECS>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:DELTA_TIME_SECS)&quot;/>&lt;/DELTA_TIME_SECS>&lt;DELTA_PERCENTAGE>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:DELTA_PERCENTAGE)&quot;/>&lt;/DELTA_PERCENTAGE>&lt;EAI_CATALOG_ID>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:EAI_CATALOG_ID)&quot;/>&lt;/EAI_CATALOG_ID>&lt;EAI_ERROR_CODE_ID>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:EAI_ERROR_CODE_ID)&quot;/>&lt;/EAI_ERROR_CODE_ID>&lt;/tns1:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+d24b83f8-332f-4216-b586-b38c6b952d56+input&quot; xmlns:tns4=&quot;ERROR_HANDLING/EH_CONFIGURATION&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns5=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns6=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns1:jdbcUpdateActivityInput>&lt;MAX_RETRY>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:MAX_RETRIES)&quot;/>&lt;/MAX_RETRY>&lt;WAIT_TIME_SECS>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:WAIT_TIME_SECS)&quot;/>&lt;/WAIT_TIME_SECS>&lt;DELTA_TIME_SECS>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:DELTA_TIME_SECS)&quot;/>&lt;/DELTA_TIME_SECS>&lt;DELTA_PERCENTAGE>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:DELTA_PERCENTAGE)&quot;/>&lt;/DELTA_PERCENTAGE>&lt;EAI_CATALOG_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns4:Catalog/tns5:EAI_CATALOG_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns4:Catalog/tns5:EAI_CATALOG_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_CATALOG_ID>&lt;EAI_ERROR_CODE_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns4:ErrorCode/tns6:EAI_ERROR_CODE_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns4:ErrorCode/tns6:EAI_ERROR_CODE_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_ERROR_CODE_ID>&lt;EAI_CATALOG_ID_UPD>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:EAI_CATALOG_ID)&quot;/>&lt;/EAI_CATALOG_ID_UPD>&lt;EAI_ERROR_CODE_ID_UPD>&lt;xsl:value-of select=&quot;xsd:int($Start/tns4:EAI_ERROR_CODE_ID)&quot;/>&lt;/EAI_ERROR_CODE_ID_UPD>&lt;/tns1:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1080,7 +1088,7 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="UPDATE [dbo].[T_EH_CONFIGURATION]&#xa;   SET MAX_RETRY = ?&#xa;      ,WAIT_TIME_SECS = ?&#xa;      ,DELTA_TIME_SECS = ?&#xa;      ,DELTA_PERCENTAGE = ?&#xa; WHERE EAI_CATALOG_ID = ? AND EAI_ERROR_CODE_ID = ?"
+                                    sqlStatement="UPDATE [dbo].[T_EH_CONFIGURATION]&#xa;   SET MAX_RETRY = ?&#xa;      ,WAIT_TIME_SECS = ?&#xa;      ,DELTA_TIME_SECS = ?&#xa;      ,DELTA_PERCENTAGE = ?&#xa;      ,EAI_CATALOG_ID = ?&#xa;      ,EAI_ERROR_CODE_ID = ?&#xa; WHERE EAI_CATALOG_ID = ? AND EAI_ERROR_CODE_ID = ?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
                                     <PreparedParameters DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="MAX_RETRY"/>
@@ -1094,6 +1102,10 @@
                                     DataTypeDisplayValue="INTEGER" ParameterName="EAI_CATALOG_ID"/>
                                     <PreparedParameters DataType="4"
                                     DataTypeDisplayValue="INTEGER" ParameterName="EAI_ERROR_CODE_ID"/>
+                                    <PreparedParameters DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="EAI_CATALOG_ID_UPD"/>
+                                    <PreparedParameters DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="EAI_ERROR_CODE_ID_UPD"/>
                                     </value>
                                 </properties>
                             </activityConfig>
