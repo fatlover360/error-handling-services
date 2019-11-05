@@ -317,6 +317,9 @@
         "EAI_ERROR_CODE_ID" : {
           "type" : "integer"
         },
+        "SYSTEM" : {
+          "type" : "string"
+        },
         "EAI_ERROR_CODE" : {
           "type" : "string"
         },

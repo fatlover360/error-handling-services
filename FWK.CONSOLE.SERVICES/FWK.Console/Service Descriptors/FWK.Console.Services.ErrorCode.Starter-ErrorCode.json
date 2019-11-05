@@ -274,6 +274,9 @@
     "ErrorCodeRequest" : {
       "type" : "object",
       "properties" : {
+        "SYSTEM" : {
+          "type" : "string"
+        },
         "EAI_ERROR_CODE" : {
           "type" : "string"
         },
@@ -290,6 +293,9 @@
       "properties" : {
         "EAI_ERROR_CODE_ID" : {
           "type" : "integer"
+        },
+        "SYSTEM" : {
+          "type" : "string"
         },
         "EAI_ERROR_CODE" : {
           "type" : "string"

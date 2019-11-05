@@ -75,7 +75,7 @@
 		</globalVariable>
 		<globalVariable>
 			<name>//FWK.Console///HTTP/port</name>
-			<value>8080</value>
+			<value>9395</value>
 			<deploymentSettable>false</deploymentSettable>
 			<serviceSettable>false</serviceSettable>
 			<type>Integer</type>

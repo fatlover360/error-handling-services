@@ -204,6 +204,8 @@
                                 <sequence>
                                     <element maxOccurs="1" minOccurs="1"
                                     name="EAI_ERROR_CODE_ID" type="int"/>
+                                    <element maxOccurs="1" minOccurs="0"
+                                    name="SYSTEM" nillable="false" type="string"/>
                                     <element maxOccurs="1" minOccurs="1"
                                     name="EAI_ERROR_CODE" type="string"/>
                                     <element maxOccurs="1" minOccurs="0"
@@ -782,6 +784,7 @@
             namespace="http://www.w3.org/2001/XMLSchema" prefix="xsd"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/pe/WriteToLogActivitySchema" prefix="tns1"/>
+        <tibex:namespaceItem namespace="http://tns.tibco.com/bw/REST" prefix="tns2"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EAI_ERROR_CODE"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://tns.tibco.com/bw/REST"/>
@@ -868,7 +871,7 @@
                                 </bpws:targets>
                                 <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;_error&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns:message>&lt;code>&lt;xsl:value-of select=&quot;500&quot;/>&lt;/code>&lt;tns:messageBody>&lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&lt;/tns:messageBody>&lt;/tns:message>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;_error&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:message>&#xa;            &lt;code>&#xa;                &lt;xsl:value-of select=&quot;500&quot;/>&#xa;            &lt;/code>&#xa;            &lt;tns2:messageBody>&#xa;                &lt;xsl:value-of select=&quot;$_error/Msg&quot;/>&#xa;            &lt;/tns2:messageBody>&#xa;        &lt;/tns2:message>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:config>
                                     <bwext:BWActivity
@@ -918,7 +921,7 @@
                     </bpws:targets>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; xmlns:tns1=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:import-schema namespace=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; schema-location=&quot;../../../../../Schemas/error_handling/EAI_ERROR_CODE.xsd&quot;/>&#xa;    &lt;xsl:param name=&quot;JDBCQuery&quot;/>&#xa;    &lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns1:message>&#xa;            &lt;code>&#xa;                &lt;xsl:value-of select=&quot;200&quot;/>&#xa;            &lt;/code>&#xa;            &lt;tns:ErrorCodeArray>&#xa;                &lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&#xa;                    &lt;tns:ErrorCode>&#xa;                        &lt;tns:EAI_ERROR_CODE_ID>&#xa;                            &lt;xsl:value-of select=&quot;EAI_ERROR_CODE_ID&quot;/>&#xa;                        &lt;/tns:EAI_ERROR_CODE_ID>&#xa;                        &lt;tns:EAI_ERROR_CODE>&#xa;                            &lt;xsl:value-of select=&quot;EAI_ERROR_CODE&quot;/>&#xa;                        &lt;/tns:EAI_ERROR_CODE>&#xa;                        &lt;xsl:if test=&quot;EAI_ERROR_CODE_DESCRIPTION&quot;>&#xa;                            &lt;tns:EAI_ERROR_CODE_DESC>&#xa;                                &lt;xsl:value-of select=&quot;EAI_ERROR_CODE_DESCRIPTION&quot;/>&#xa;                            &lt;/tns:EAI_ERROR_CODE_DESC>&#xa;                        &lt;/xsl:if>&#xa;                        &lt;tns:IS_ERROR>&#xa;                            &lt;xsl:value-of select=&quot;IS_ERROR&quot;/>&#xa;                        &lt;/tns:IS_ERROR>&#xa;                    &lt;/tns:ErrorCode>&#xa;                &lt;/xsl:for-each>&#xa;            &lt;/tns:ErrorCodeArray>&#xa;        &lt;/tns1:message>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; xmlns:tns2=&quot;http://tns.tibco.com/bw/REST&quot; version=&quot;2.0&quot;>&lt;xsl:import-schema namespace=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; schema-location=&quot;../../../../../Schemas/error_handling/EAI_ERROR_CODE.xsd&quot;/>&lt;xsl:param name=&quot;JDBCQuery&quot;/>&lt;xsl:template name=&quot;End-input&quot; match=&quot;/&quot;>&lt;tns2:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;tns:ErrorCodeArray>&lt;xsl:for-each select=&quot;$JDBCQuery/Record&quot;>&lt;tns:ErrorCode>&lt;tns:EAI_ERROR_CODE_ID>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE_ID&quot;/>&lt;/tns:EAI_ERROR_CODE_ID>&lt;xsl:if test=&quot;SYSTEM&quot;>&lt;tns:SYSTEM>&lt;xsl:value-of select=&quot;SYSTEM&quot;/>&lt;/tns:SYSTEM>&lt;/xsl:if>&lt;tns:EAI_ERROR_CODE>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE&quot;/>&lt;/tns:EAI_ERROR_CODE>&lt;xsl:if test=&quot;EAI_ERROR_CODE_DESCRIPTION&quot;>&lt;tns:EAI_ERROR_CODE_DESC>&lt;xsl:value-of select=&quot;EAI_ERROR_CODE_DESCRIPTION&quot;/>&lt;/tns:EAI_ERROR_CODE_DESC>&lt;/xsl:if>&lt;tns:IS_ERROR>&lt;xsl:value-of select=&quot;IS_ERROR&quot;/>&lt;/tns:IS_ERROR>&lt;/tns:ErrorCode>&lt;/xsl:for-each>&lt;/tns:ErrorCodeArray>&lt;/tns2:message>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -948,7 +951,7 @@
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns2=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e9d6d8e7-7abc-4fb8-912c-87a4d75a8656+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns2:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns3=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+e9d6d8e7-7abc-4fb8-912c-87a4d75a8656+input&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;JDBCQuery-input&quot; match=&quot;/&quot;>&#xa;        &lt;tns3:jdbcQueryActivityInput/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -966,6 +969,10 @@
                                     <columnMetadata
                                     columnName="EAI_ERROR_CODE_ID"
                                     dataType="4" typeName="int"/>
+                                    <columnMetadata
+                                    columnName="SYSTEM"
+                                    dataType="12"
+                                    status="OptionalElement" typeName="varchar"/>
                                     <columnMetadata
                                     columnName="EAI_ERROR_CODE"
                                     dataType="12" typeName="varchar"/>

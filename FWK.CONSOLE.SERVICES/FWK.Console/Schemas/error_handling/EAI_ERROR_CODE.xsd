@@ -5,10 +5,19 @@
     
     <complexType name="ErrorCode">
     	<sequence>
-    		<element name="EAI_ERROR_CODE_ID" type="int" minOccurs="0" maxOccurs="1"></element>
-    		<element name="EAI_ERROR_CODE" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
-    		<element name="EAI_ERROR_CODE_DESC" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
-    		<element name="IS_ERROR" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
+    		<element name="EAI_ERROR_CODE_ID" type="int" minOccurs="0"
+    			maxOccurs="1">
+    		</element>
+            <element name="SYSTEM" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="EAI_ERROR_CODE" type="string" nillable="true"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="EAI_ERROR_CODE_DESC" type="string"
+    			nillable="true" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="IS_ERROR" type="string" nillable="true"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
     	</sequence>
     </complexType>
 
@@ -24,9 +33,16 @@
 
     <complexType name="ErrorCodeRequest">
     	<sequence>
-    		<element name="EAI_ERROR_CODE" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
-    		<element name="EAI_ERROR_CODE_DESC" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
-    		<element name="IS_ERROR" type="string" nillable="true" minOccurs="0" maxOccurs="1"></element>
+            <element name="SYSTEM" type="string" maxOccurs="1" minOccurs="0"></element>
+            <element name="EAI_ERROR_CODE" type="string" nillable="true"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="EAI_ERROR_CODE_DESC" type="string"
+    			nillable="true" minOccurs="0" maxOccurs="1">
+    		</element>
+    		<element name="IS_ERROR" type="string" nillable="true"
+    			minOccurs="0" maxOccurs="1">
+    		</element>
     	</sequence>
     </complexType>
 
