@@ -716,10 +716,13 @@
                                     fontName="Segoe UI"
                                     lineColor="0" xsi:type="notation:ShapeStyle"/>
                                     <styles xsi:type="bwnotation:BackgroundStyle"/>
-                                    <styles xsi:type="bwnotation:ResizingStyle"/>
+                                    <styles
+                                    restoreHeight="148"
+                                    restoreWidth="486"
+                                    restoreX="2" xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.0"/>
                                     <layoutConstraint
-                                    height="145"
+                                    height="148"
                                     width="486"
                                     x="2" xsi:type="notation:Bounds"/>
                                     </children>
@@ -1027,10 +1030,10 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.1"/>
                                     <layoutConstraint
-                                    height="147"
+                                    height="150"
                                     width="486"
                                     x="2"
-                                    xsi:type="notation:Bounds" y="141"/>
+                                    xsi:type="notation:Bounds" y="147"/>
                                     </children>
                                     <children type="4011">
                                     <children type="3012">
@@ -1336,10 +1339,10 @@
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0/@messages.2"/>
                                     <layoutConstraint
-                                    height="145"
+                                    height="148"
                                     width="486"
                                     x="2"
-                                    xsi:type="notation:Bounds" y="293"/>
+                                    xsi:type="notation:Bounds" y="296"/>
                                     </children>
                                     <children type="4011">
                                     <children type="3012">
@@ -1671,7 +1674,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="642"
+                                    <layoutConstraint height="665"
                                     width="515" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>

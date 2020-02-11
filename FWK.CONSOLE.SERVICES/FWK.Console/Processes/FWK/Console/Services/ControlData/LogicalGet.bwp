@@ -1416,8 +1416,8 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCQueryActivity"/>
                                     <value overrideSQLSTMT="true"
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="SELECT x.*,k.SYSTEM, k.APPLICATION_NAME, k.SERVICE_NAME, k.SERVICE_FUNCTION, k.SERVICE_OPERATION, k.SERVICE_TYPE, k.SERVICE_VERSION FROM [dbo].[T_EH_CONTROL_DATA] x JOIN [tibcobw6-eai].[dbo].[T_EAI_CATALOG] k ON&#xd;&#xa; x.EAI_CATALOG_ID = k.EAI_CATALOG_ID"
-                                    timeout="10" xsi:type="jdbcPalette:JDBCQueryActivity">
+                                    sqlStatement="SELECT x.*,k.SYSTEM, k.APPLICATION_NAME, k.SERVICE_NAME, k.SERVICE_FUNCTION, k.SERVICE_OPERATION, k.SERVICE_TYPE, k.SERVICE_VERSION FROM [dbo].[T_EH_CONTROL_DATA] x JOIN [tibcobw6-eai].[dbo].[T_EAI_CATALOG] k ON&#xd;&#xa; x.EAI_CATALOG_ID = k.EAI_CATALOG_ID order by x.EH_PUBLISH_DATE desc"
+                                    timeout="60" xsi:type="jdbcPalette:JDBCQueryActivity">
                                     <columnMetadata
                                     columnName="EH_CONTROL_DATA_ID"
                                     dataType="12" typeName="varchar"/>
@@ -1596,7 +1596,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="0089e95a-1e51-42eb-84bd-ee39389fe369">
+            <bpws:scope name="Iterate" tibex:group="iterate"
+                tibex:indexToGlobal="false" tibex:xpdlId="0089e95a-1e51-42eb-84bd-ee39389fe369">
                 <bpws:targets>
                     <bpws:target linkName="Assign1ToIterate"/>
                 </bpws:targets>
@@ -1691,7 +1692,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.example.org/SQL_STATEMENT&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SQLSTATEMENT&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;index&quot;/>&lt;xsl:template name=&quot;Mapper1-input&quot; match=&quot;/&quot;>&lt;tns6:SQLSTATEMENT>&lt;xsl:choose>&lt;xsl:when test=&quot;$index = 1&quot;>&lt;tns6:select>&lt;xsl:value-of select=&quot;concat($SQLSTATEMENT, 'WHERE ', $currentElement)&quot;/>&lt;/tns6:select>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns6:select>&lt;xsl:value-of select=&quot;concat($SQLSTATEMENT, ' AND ', $currentElement)&quot;/>&lt;/tns6:select>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/tns6:SQLSTATEMENT>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns6=&quot;http://www.example.org/SQL_STATEMENT&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;SQLSTATEMENT&quot;/>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:param name=&quot;index&quot;/>&lt;xsl:param name=&quot;Mapper&quot;/>&lt;xsl:template name=&quot;Mapper1-input&quot; match=&quot;/&quot;>&lt;tns6:SQLSTATEMENT>&lt;xsl:choose>&lt;xsl:when test=&quot;$index = 1 and count($Mapper/tns6:whereClause) = 1&quot;>&lt;tns6:select>&lt;xsl:value-of select=&quot;concat($SQLSTATEMENT, 'WHERE ', $currentElement,' order by x.INSERT_DATETIME desc')&quot;/>&lt;/tns6:select>&lt;/xsl:when>&lt;xsl:when test=&quot;$index = count($Mapper/tns6:whereClause) and $index > 1&quot;>&lt;tns6:select>&lt;xsl:value-of select=&quot;concat($SQLSTATEMENT, ' AND ', $currentElement,' order by x.INSERT_DATETIME desc')&quot;/>&lt;/tns6:select>&lt;/xsl:when>&lt;xsl:when test=&quot;$index = 1 and count($Mapper/tns6:whereClause) > 1&quot;>&lt;tns6:select>&lt;xsl:value-of select=&quot;concat($SQLSTATEMENT, 'WHERE ', $currentElement)&quot;/>&lt;/tns6:select>&lt;/xsl:when>&lt;xsl:otherwise>&lt;tns6:select>&lt;xsl:value-of select=&quot;concat($SQLSTATEMENT, ' AND ', $currentElement)&quot;/>&lt;/tns6:select>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/tns6:SQLSTATEMENT>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
