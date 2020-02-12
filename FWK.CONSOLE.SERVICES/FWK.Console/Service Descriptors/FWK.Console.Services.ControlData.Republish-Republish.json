@@ -91,6 +91,36 @@
         "UPDATE_DATETIME" : {
           "type" : "string"
         },
+        "SYSTEM" : {
+          "type" : "string"
+        },
+        "APPLICATION_NAME" : {
+          "type" : "string"
+        },
+        "SERVICE_TYPE" : {
+          "type" : "string"
+        },
+        "SERVICE_FUNCTION" : {
+          "type" : "string"
+        },
+        "SERVICE_OPERATION" : {
+          "type" : "string"
+        },
+        "SERVICE_VERSION" : {
+          "type" : "string"
+        },
+        "RECEIVER_TYPE" : {
+          "type" : "string"
+        },
+        "RECEIVER_DESTINATION" : {
+          "type" : "string"
+        },
+        "HAS_HANDLING" : {
+          "type" : "string"
+        },
+        "HAS_SEQUENCE" : {
+          "type" : "string"
+        },
         "Catalog" : {
           "$ref" : "#/definitions/Catalog"
         }

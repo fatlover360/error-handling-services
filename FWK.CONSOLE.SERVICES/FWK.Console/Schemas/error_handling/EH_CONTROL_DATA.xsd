@@ -33,6 +33,40 @@
     		</element>
     		<element name="INSERT_DATETIME" type="dateTime" maxOccurs="1" minOccurs="0"></element>
     		<element name="UPDATE_DATETIME" type="dateTime" maxOccurs="1" minOccurs="0"></element>
+    		
+			<element maxOccurs="1" minOccurs="0" name="SYSTEM" type="string" nillable="true" />
+			
+			<element maxOccurs="1" minOccurs="0" name="APPLICATION_NAME"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="SERVICE_TYPE"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="SERVICE_FUNCTION"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="SERVICE_OPERATION"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="SERVICE_VERSION"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="RECEIVER_TYPE"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="RECEIVER_DESTINATION"
+				type="string" nillable="true" />
+			<element maxOccurs="1" minOccurs="0" name="HAS_HANDLING">
+				<simpleType>
+					<restriction base="string">
+
+						<length value="1"></length>
+					</restriction>
+				</simpleType>
+			</element>
+			<element maxOccurs="1" minOccurs="0" name="HAS_SEQUENCE">
+				<simpleType>
+					<restriction base="string">
+
+						<length value="1"></length>
+					</restriction>
+				</simpleType>
+			</element>
+    		
     		<element name="Catalog" type="Q1:Catalog" minOccurs="0" maxOccurs="1"></element>
     	</sequence>
     </complexType>
