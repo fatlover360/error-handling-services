@@ -195,8 +195,7 @@
                     name="httpHeaders" tibex:source="bw.rest"/>
             </wsdl:message>
             <wsdl:message name="putResponse">
-                <wsdl:part name="item"
-                    tibex:hasMultipleNamespaces="false" type="xsd:string"/>
+                <wsdl:part element="extns1:ControlDataArray" name="item" tibex:hasMultipleNamespaces="true"/>
             </wsdl:message>
             <wsdl:message name="put4XXFaultMessage">
                 <wsdl:part element="extns:client4XXError" name="clientError"/>
@@ -640,7 +639,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="460" width="860" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="296" width="860" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -674,7 +673,7 @@
         <bpws:variable messageType="ns:putResponse" name="putOut-input" sca-bpel:internal="true"/>
         <bpws:variable element="ns1:ControlDataUpdate"
             name="LogicalPut-input" sca-bpel:internal="true"/>
-        <bpws:variable element="ns2:message" name="LogicalPut" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:ControlDataArray" name="LogicalPut" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -706,10 +705,10 @@
                                 tibex:xpdlId="a18bc45e-2c6e-4a31-95a2-d980011d8a41" variable="putOut-input">
                                 <tibex:inputBindings>
                                     <tibex:partBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20190819151002PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:template name=&quot;putOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;item>&#xa;            &lt;xsl:value-of select=&quot;'ok'&quot;/>&#xa;        &lt;/item>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;http://xmlns.example.com/20190819151002PLT&quot; version=&quot;2.0&quot;>&#xa;    &lt;xsl:param name=&quot;LogicalPut&quot;/>&#xa;    &lt;xsl:template name=&quot;putOut-input&quot; match=&quot;/&quot;>&#xa;        &lt;xsl:copy-of select=&quot;$LogicalPut&quot;/>&#xa;    &lt;/xsl:template>&#xa;&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                 </tibex:inputBindings>
                                 <tibex:inputBinding expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0">&lt;?xml version="1.0" encoding="UTF-8"?&gt;
-&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20190819151002PLT" version="2.0"&gt;&lt;xsl:template name="putOut-input" match="/"&gt;&lt;tns1:putResponse&gt;&lt;item&gt;&lt;xsl:value-of select="'ok'"/&gt;&lt;/item&gt;&lt;/tns1:putResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
+&lt;xsl:stylesheet xmlns:xsl="http://www.w3.org/1999/XSL/Transform" xmlns:tns1="http://xmlns.example.com/20190819151002PLT" version="2.0"&gt;&lt;xsl:param name="LogicalPut"/&gt;&lt;xsl:template name="putOut-input" match="/"&gt;&lt;tns1:putResponse&gt;&lt;item&gt;&lt;xsl:copy-of select="$LogicalPut"/&gt;&lt;/item&gt;&lt;/tns1:putResponse&gt;&lt;/xsl:template&gt;&lt;/xsl:stylesheet&gt;</tibex:inputBinding>
                                 <bpws:targets>
                                     <bpws:target linkName="LogicalPutToputOut"/>
                                 </bpws:targets>

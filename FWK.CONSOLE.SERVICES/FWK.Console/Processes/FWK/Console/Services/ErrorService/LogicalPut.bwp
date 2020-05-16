@@ -14,6 +14,7 @@
     xmlns:ns5="http://www.tibco.com/pe/WriteToLogActivitySchema"
     xmlns:ns6="http://tns.tibco.com/bw/REST"
     xmlns:ns7="http://www.tibco.com/namespaces/tnt/plugins/jdbc+0c0cff8d-fc5a-45db-8586-32b433413201+input"
+    xmlns:ns8="http://www.tibco.com/namespaces/tnt/plugins/jdbc+2e002c59-07e3-40d0-b910-e6f1a662b30f+input"
     xmlns:sca="http://docs.oasis-open.org/ns/opencsa/sca/200912"
     xmlns:sca-bpel="http://docs.oasis-open.org/ns/opencsa/sca-bpel/200801"
     xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"
@@ -439,6 +440,37 @@
                 </complexType>
             </element>
         </schema>
+        <schema
+            targetNamespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+2e002c59-07e3-40d0-b910-e6f1a662b30f+input"
+            xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.tibco.com/namespaces/tnt/plugins/jdbc+2e002c59-07e3-40d0-b910-e6f1a662b30f+input">
+            <element name="jdbcUpdateActivityInput">
+                <complexType>
+                    <sequence>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="APPLICATION_NAME" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="EAI_CATALOG_ID" nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="SYSTEM_NATIVE_CODE" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="EAI_ERROR_CODE_ID" nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="IS_ERROR" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="EAI_ERROR_CODE_ID_TO_UPDATE"
+                            nillable="true" type="int"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="NATIVE_TO_UPDATE" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="1"
+                            name="IS_ERROR_TO_UPDATE" nillable="true" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="ServerTimeZone" type="string"/>
+                        <element maxOccurs="1" minOccurs="0"
+                            name="timeout" type="long"/>
+                    </sequence>
+                </complexType>
+            </element>
+        </schema>
         <wsdl:definitions
             targetNamespace="http://xmlns.example.com/20190219092954"
             xmlns:tns="http://xmlns.example.com/20190219092954"
@@ -648,6 +680,41 @@
                                     <layoutConstraint x="250"
                                     xsi:type="notation:Bounds" y="87"/>
                                     </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.5"/>
+                                    <layoutConstraint x="250"
+                                    xsi:type="notation:Bounds" y="183"/>
+                                    </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
                                     <styles xsi:type="notation:FilteringStyle"/>
@@ -660,7 +727,7 @@
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <styles xsi:type="bwnotation:ResizingStyle"/>
                                     <element href="//0/@process/@activity/@activity"/>
-                                    <layoutConstraint height="172"
+                                    <layoutConstraint height="278"
                                     width="791" xsi:type="notation:Bounds"/>
                                 </children>
                                 <styles xsi:type="notation:SortingStyle"/>
@@ -670,7 +737,7 @@
                             <styles xsi:type="bwnotation:BackgroundStyle"/>
                             <styles xsi:type="bwnotation:ResizingStyle"/>
                             <element href="//0/@process/@activity"/>
-                            <layoutConstraint height="137" width="794" xsi:type="notation:Bounds"/>
+                            <layoutConstraint height="278" width="794" xsi:type="notation:Bounds"/>
                         </children>
                         <children type="4022">
                             <children type="3022">
@@ -814,7 +881,7 @@
                     <styles xsi:type="bwnotation:BackgroundStyle"/>
                     <styles xsi:type="bwnotation:ResizingStyle"/>
                     <element href="//0/@process/@activity"/>
-                    <layoutConstraint height="373" width="794" x="1"
+                    <layoutConstraint height="479" width="794" x="1"
                         xsi:type="notation:Bounds" y="1"/>
                 </children>
                 <styles xsi:type="notation:SortingStyle"/>
@@ -823,7 +890,7 @@
             </children>
             <styles fontName="Segoe UI" lineColor="0" xsi:type="notation:ShapeStyle"/>
             <element href="//0/@process"/>
-            <layoutConstraint height="425" width="1136" xsi:type="notation:Bounds"/>
+            <layoutConstraint height="531" width="1136" xsi:type="notation:Bounds"/>
         </children>
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
@@ -893,6 +960,30 @@
             <element href="//0/@process/@activity/@activity/@links/@children.4"/>
             <bendpoints points="[25, -19, -84, 66]$[85, -66, -24, 19]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.5"/>
+            <bendpoints
+                points="[25, 18, -223, -163]$[224, 163, -24, -18]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.5"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.6"/>
+            <bendpoints
+                points="[25, 13, -84, 194]$[104, 13, -5, 194]$[104, -156, -5, 25]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem
@@ -915,6 +1006,8 @@
         <tibex:namespaceItem namespace="ERROR_HANDLING/EAI_CATALOG" prefix="tns4"/>
         <tibex:namespaceItem
             namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+0c0cff8d-fc5a-45db-8586-32b433413201+input" prefix="tns7"/>
+        <tibex:namespaceItem
+            namespace="http://www.tibco.com/namespaces/tnt/plugins/jdbc+2e002c59-07e3-40d0-b910-e6f1a662b30f+input" prefix="tns8"/>
     </tibex:NamespaceRegistry>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EAI_ERROR_SERVICE"/>
     <bpws:import importType="http://www.w3.org/2001/XMLSchema" namespace="http://www.example.org/Results"/>
@@ -951,6 +1044,12 @@
             name="SERVICE_IS_NULL" sca-bpel:internal="true"/>
         <bpws:variable element="ns2:ActivityErrorData"
             name="_error_SERVICE_IS_NULL" sca-bpel:internal="true"/>
+        <bpws:variable element="ns8:jdbcUpdateActivityInput"
+            name="SERVICE_IS_NULL_APP_IS_NULL-input" sca-bpel:internal="true"/>
+        <bpws:variable element="ns1:jdbcUpdateActivityOutput"
+            name="SERVICE_IS_NULL_APP_IS_NULL" sca-bpel:internal="true"/>
+        <bpws:variable element="ns2:ActivityErrorData"
+            name="_error_SERVICE_IS_NULL_APP_IS_NULL" sca-bpel:internal="true"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1040,6 +1139,8 @@
                 <bpws:link name="MapperToEnd" tibex:linkType="SUCCESS"/>
                 <bpws:link name="StartToSERVICE_IS_NULL" tibex:linkType="SUCCESSWITHNOCONDITION"/>
                 <bpws:link name="SERVICE_IS_NULLToMapper" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToCopy_1_SERVICE_IS_NULL" tibex:linkType="SUCCESSWITHCONDITION"/>
+                <bpws:link name="Copy_1_SERVICE_IS_NULLToMapper" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1060,6 +1161,13 @@
                                     expression="##otherwise##" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                             </tibex:DesignExpression>
                             <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[##otherwise##]]></bpws:transitionCondition>
+                        </bpws:source>
+                        <bpws:source linkName="StartToCopy_1_SERVICE_IS_NULL">
+                            <tibex:DesignExpression>
+                                <tibex:expression
+                                    expression="$Start/ns3:CATALOG_ID_UPD = 'undefined' and $Start/ns3:APP_NAME_UPD = 'undefined'" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                            </tibex:DesignExpression>
+                            <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$Start/ns3:CATALOG_ID_UPD = 'undefined' and $Start/ns3:APP_NAME_UPD = 'undefined']]></bpws:transitionCondition>
                         </bpws:source>
                     </bpws:sources>
                     <tibex:eventSource>
@@ -1162,13 +1270,14 @@
                     <bpws:targets>
                         <bpws:target linkName="JDBCUpdateToMapper"/>
                         <bpws:target linkName="SERVICE_IS_NULLToMapper"/>
+                        <bpws:target linkName="Copy_1_SERVICE_IS_NULLToMapper"/>
                     </bpws:targets>
                     <bpws:sources>
                         <bpws:source linkName="MapperToEnd"/>
                     </bpws:sources>
                     <tibex:inputBindings>
                         <tibex:inputBinding
-                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;JDBCUpdate&quot;/>&lt;xsl:param name=&quot;SERVICE_IS_NULL&quot;/>&lt;xsl:template name=&quot;Mapper-input&quot; match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$SERVICE_IS_NULL/noOfUpdates > 0&quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with for application: &amp;quot;, $Start/tns1:ErrorService/tns1:APPLICATION_NAME , &amp;quot; updated with success.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:when test=&quot;$JDBCUpdate/noOfUpdates > 0 &quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with Catalog ID: &amp;quot;, $Start/tns1:CATALOG_ID_UPD , &amp;quot; updated with success.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:otherwise>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;404&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with ID: &amp;quot;, $Start/tns1:CATALOG_ID_UPD, &amp;quot; doesn't exist.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:ns=&quot;http://tns.tibco.com/bw/REST&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:param name=&quot;JDBCUpdate&quot;/>&lt;xsl:param name=&quot;SERVICE_IS_NULL&quot;/>&lt;xsl:param name=&quot;SERVICE_IS_NULL_APP_IS_NULL&quot;/>&lt;xsl:template name=&quot;Mapper-input&quot; match=&quot;/&quot;>&lt;xsl:choose>&lt;xsl:when test=&quot;$SERVICE_IS_NULL_APP_IS_NULL/noOfUpdates > 0&quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;&amp;quot;Error Service updated with success.&amp;quot;&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:when test=&quot;$SERVICE_IS_NULL/noOfUpdates > 0&quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with for application: &amp;quot;, $Start/tns1:ErrorService/tns1:APPLICATION_NAME , &amp;quot; updated with success.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:when test=&quot;$JDBCUpdate/noOfUpdates > 0&quot;>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;200&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with Catalog ID: &amp;quot;, $Start/tns1:CATALOG_ID_UPD , &amp;quot; updated with success.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:when>&lt;xsl:otherwise>&lt;ns:message>&lt;code>&lt;xsl:value-of select=&quot;404&quot;/>&lt;/code>&lt;ns:messageBody>&lt;xsl:value-of select=&quot;concat(&amp;quot;Error Service with ID: &amp;quot;, $Start/tns1:CATALOG_ID_UPD, &amp;quot; doesn't exist.&amp;quot;)&quot;/>&lt;/ns:messageBody>&lt;/ns:message>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                     </tibex:inputBindings>
                     <tibex:config>
                         <bwext:BWActivity
@@ -1235,6 +1344,63 @@
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="APP_NAME_TO_UPDATE"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="NATIVE_TO_UPDATE"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="IS_ERROR_TO_UPDATE"/>
+                                    </value>
+                                </properties>
+                            </activityConfig>
+                        </bwext:BWActivity>
+                    </tibex:config>
+                </tibex:activityExtension>
+            </bpws:extensionActivity>
+            <bpws:extensionActivity>
+                <tibex:activityExtension
+                    inputVariable="SERVICE_IS_NULL_APP_IS_NULL-input"
+                    name="SERVICE_IS_NULL_APP_IS_NULL"
+                    outputVariable="SERVICE_IS_NULL_APP_IS_NULL"
+                    tibex:xpdlId="2e002c59-07e3-40d0-b910-e6f1a662b30f" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="StartToCopy_1_SERVICE_IS_NULL"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="Copy_1_SERVICE_IS_NULLToMapper"/>
+                    </bpws:sources>
+                    <tibex:inputBindings>
+                        <tibex:inputBinding
+                            expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns1=&quot;ERROR_HANDLING/EAI_ERROR_SERVICE&quot; xmlns:tns8=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+2e002c59-07e3-40d0-b910-e6f1a662b30f+input&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; xmlns:tns6=&quot;ERROR_HANDLING/EAI_ERROR_CODE&quot; xmlns:tns4=&quot;ERROR_HANDLING/EAI_CATALOG&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;Start&quot;/>&lt;xsl:template name=&quot;SERVICE_IS_NULL_APP_IS_NULL-input&quot; match=&quot;/&quot;>&lt;tns8:jdbcUpdateActivityInput>&lt;APPLICATION_NAME>&lt;xsl:copy-of select=&quot;$Start/tns1:ErrorService/tns1:APPLICATION_NAME/@xsi:nil&quot;/>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:APPLICATION_NAME&quot;/>&lt;/APPLICATION_NAME>&lt;EAI_CATALOG_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ErrorService/tns1:Catalog/tns4:EAI_CATALOG_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:Catalog/tns4:EAI_CATALOG_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_CATALOG_ID>&lt;SYSTEM_NATIVE_CODE>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:SYSTEM_NATIVE_CODE&quot;/>&lt;/SYSTEM_NATIVE_CODE>&lt;EAI_ERROR_CODE_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ErrorService/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ErrorService/tns1:ErrorCode/tns6:EAI_ERROR_CODE_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EAI_ERROR_CODE_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;$Start/tns1:ErrorService/tns1:IS_ERROR = &amp;quot;true&amp;quot;&quot;>&lt;IS_ERROR>&lt;xsl:value-of select=&quot;'Y'&quot;/>&lt;/IS_ERROR>&lt;/xsl:when>&lt;xsl:otherwise>&lt;IS_ERROR>&lt;xsl:value-of select=&quot;'N'&quot;/>&lt;/IS_ERROR>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;EAI_ERROR_CODE_ID_TO_UPDATE>&lt;xsl:value-of select=&quot;xsd:int($Start/tns1:ERROR_ID_UPD)&quot;/>&lt;/EAI_ERROR_CODE_ID_TO_UPDATE>&lt;NATIVE_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:NATIVE_UPD)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:NATIVE_UPD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/NATIVE_TO_UPDATE>&lt;IS_ERROR_TO_UPDATE>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($Start/tns1:ISERROR_UPD)&quot;>&lt;xsl:value-of select=&quot;$Start/tns1:ISERROR_UPD&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/IS_ERROR_TO_UPDATE>&lt;/tns8:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                    </tibex:inputBindings>
+                    <tibex:config>
+                        <bwext:BWActivity
+                            activityTypeID="bw.jdbc.update"
+                            xmlns:activityconfig="http://tns.tibco.com/bw/model/activityconfig"
+                            xmlns:bwext="http://tns.tibco.com/bw/model/core/bwext"
+                            xmlns:jdbcPalette="http://ns.tibco.com/bw/palette/jdbc" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+                            <activityConfig>
+                                <properties name="config" xsi:type="activityconfig:EMFProperty">
+                                    <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
+                                    <value
+                                    sharedResourceProperty="jdbcProperty"
+                                    sqlStatement="UPDATE [dbo].[T_EAI_ERROR_SERVICE]&#xa;   SET [APPLICATION_NAME] = ?&#xa;      ,[EAI_CATALOG_ID] = ?&#xa;      ,[SYSTEM_NATIVE_CODE] = ?&#xa;      ,[EAI_ERROR_CODE_ID] = ?&#xa;      ,[IS_ERROR] = ?&#xa; WHERE EAI_CATALOG_ID is null and EAI_ERROR_CODE_ID = ?  and&#xa; SYSTEM_NATIVE_CODE = ? and IS_ERROR = ?"
+                                    timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="APPLICATION_NAME"/>
+                                    <PreparedParameters DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="EAI_CATALOG_ID"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="SYSTEM_NATIVE_CODE"/>
+                                    <PreparedParameters DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="EAI_ERROR_CODE_ID"/>
+                                    <PreparedParameters
+                                    DataType="12"
+                                    DataTypeDisplayValue="VARCHAR" ParameterName="IS_ERROR"/>
+                                    <PreparedParameters DataType="4"
+                                    DataTypeDisplayValue="INTEGER" ParameterName="EAI_ERROR_CODE_ID_TO_UPDATE"/>
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="NATIVE_TO_UPDATE"/>

@@ -1,4 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <jsv:DocumentRoot xmlns:jsv="http://tns.tibco.com/bw/model/core/jobSV">
-  <jobSharedVariables/>
+  <jobSharedVariables>
+    <jobSharedVariable name="jobSharedVariable" type="{ERROR_HANDLING/EH_CONTROL_DATA}ControlData" initialValueMode="none"/>
+  </jobSharedVariables>
+  <import importType="http://www.w3.org/2001/XMLSchema" namespace="ERROR_HANDLING/EH_CONTROL_DATA" location="../Schemas/error_handling/EH_CONTROL_DATA.xsd"/>
 </jsv:DocumentRoot>

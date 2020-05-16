@@ -27,9 +27,9 @@
         } ],
         "responses" : {
           "200" : {
-            "description" : "a string to be returned",
+            "description" : "a ControlDataArray to be returned",
             "schema" : {
-              "type" : "string"
+              "$ref" : "#/definitions/ControlDataArray"
             }
           }
         }
@@ -123,6 +123,18 @@
         },
         "Catalog" : {
           "$ref" : "#/definitions/Catalog"
+        }
+      }
+    },
+    "ControlDataArray" : {
+      "type" : "object",
+      "properties" : {
+        "ControlData" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/ControlData",
+            "uniqueItems" : false
+          }
         }
       }
     },

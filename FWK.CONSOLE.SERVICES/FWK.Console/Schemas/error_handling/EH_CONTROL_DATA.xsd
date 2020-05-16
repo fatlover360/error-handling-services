@@ -81,6 +81,15 @@
     		
     	</sequence>
     </complexType>
+    
+     <complexType name="ControlDataArrayArray">
+    	<sequence>
+    		<element ref="tns:ControlDataArray" maxOccurs="unbounded"
+    			minOccurs="0">
+    		</element>
+    		
+    	</sequence>
+    </complexType>
 
     <element name="ControlDataArray" type="tns:ControlDataArray"></element>
 
@@ -108,4 +117,6 @@
     	</sequence>
     </complexType>
 
+
+    <element name="ControlDataArrayArray" type="tns:ControlDataArrayArray"></element>
 </schema>
