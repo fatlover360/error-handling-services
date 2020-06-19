@@ -28,5 +28,10 @@
         "jsonSchemaLocation": "/FWK.Console/Service Descriptors/FWK.Console.Services.ControlData.Republish-Republish.json",
         "conversionType": "linked",
         "xsdSchemaTargetNamespace": "ERROR_HANDLING/EH_CONTROL_DATA"
+    },
+    {
+        "jsonSchemaLocation": "/FWK.Console/Service Descriptors/FWK.Console.Services.Sync.starter-sync.json",
+        "conversionType": "linked",
+        "xsdSchemaTargetNamespace": "http://tns.tibco.com/bw/json/1592497285224"
     }
 ]}

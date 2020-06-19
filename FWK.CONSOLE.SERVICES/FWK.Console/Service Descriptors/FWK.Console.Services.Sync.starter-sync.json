@@ -1,0 +1,76 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "1.0",
+    "title" : "Sync of shared variables for FWK",
+    "description" : "Sync of shared variables for FWK"
+  },
+  "host" : "localhost:8080",
+  "basePath" : "/",
+  "schemes" : [ "http" ],
+  "paths" : {
+    "/sync" : {
+      "post" : {
+        "summary" : "",
+        "description" : "",
+        "operationId" : "post-sync",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "body",
+          "in" : "body",
+          "description" : "",
+          "schema" : {
+            "$ref" : "#/definitions/syncElement"
+          },
+          "required" : true
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "a string to be returned",
+            "schema" : {
+              "type" : "string"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "domains" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        }
+      }
+    },
+    "syncElement" : {
+      "type" : "object",
+      "properties" : {
+        "domains" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/domains",
+            "uniqueItems" : false
+          }
+        },
+        "machines" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/machines",
+            "uniqueItems" : false
+          }
+        }
+      }
+    },
+    "machines" : {
+      "type" : "object",
+      "properties" : {
+        "name" : {
+          "type" : "string"
+        }
+      }
+    }
+  }
+}

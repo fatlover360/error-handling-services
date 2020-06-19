@@ -188,10 +188,6 @@
                         <element maxOccurs="1" minOccurs="1"
                             name="EH_STATUS" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
-                            name="SERVICE_START_MSG" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
-                            name="HEADERS" nillable="true" type="string"/>
-                        <element maxOccurs="1" minOccurs="1"
                             name="EH_PUBLISH_DATE" nillable="true" type="dateTime"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="EH_CONTROL_DATA_ID" nillable="true" type="string"/>
@@ -490,7 +486,7 @@
                                     gradientEndColor="50431"
                                     gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
                                     <element href="//0/@process/@activity/@activity/@activities.0"/>
-                                    <layoutConstraint x="-24"
+                                    <layoutConstraint x="-67"
                                     xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <children type="4002">
@@ -759,7 +755,7 @@
                                     <element href="//0/@process/@activity/@activity/@activities.2/@activity/@activities.1/@activity/@activity/@activities.5"/>
 
                                     <layoutConstraint
-                                    x="5"
+                                    x="61"
                                     xsi:type="notation:Bounds" y="192"/>
                                     </children>
 
@@ -939,6 +935,41 @@
                                     height="509" width="601"
                                     x="162"
                                     xsi:type="notation:Bounds" y="5"/>
+                                    </children>
+                                    <children type="4002">
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <children type="4017">
+                                    <styles
+                                    fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <layoutConstraint xsi:type="notation:Bounds"/>
+                                    </children>
+                                    <styles fontName="Segoe UI"
+                                    lineColor="0" xsi:type="notation:ShapeStyle"/>
+                                    <styles
+                                    backgroundColor="16777215"
+                                    gradientEndColor="50431"
+                                    gradientStartColor="16777215" xsi:type="bwnotation:BackgroundStyle"/>
+                                    <element href="//0/@process/@activity/@activity/@activities.3"/>
+                                    <layoutConstraint x="16"
+                                    xsi:type="notation:Bounds" y="2"/>
                                     </children>
                                     <styles xsi:type="notation:DrawerStyle"/>
                                     <styles xsi:type="notation:SortingStyle"/>
@@ -1121,17 +1152,6 @@
         <styles xsi:type="notation:DiagramStyle"/>
         <element href="//0"/>
         <edges
-            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
-            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
-            <children type="6002">
-                <layoutConstraint xsi:type="notation:Location" y="40"/>
-            </children>
-            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
-            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
-            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
-        </edges>
-        <edges
             source="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.0"
             target="//@children.0/@children.3/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1/@children.0/@children.0/@children.1" type="4006">
             <children type="6002">
@@ -1185,7 +1205,7 @@
             </children>
             <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
             <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
-            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.0"/>
             <bendpoints
                 points="[283, 0, -173, 213]$[456, 0, 0, 213]$[456, -188, 0, 25]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
@@ -1246,6 +1266,29 @@
             <bendpoints
                 points="[25, 0, -361, 112]$[298, 0, -88, 112]$[298, -112, -88, 0]$[374, -112, -12, 0]" xsi:type="notation:RelativeBendpoints"/>
         </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.1"/>
+            <bendpoints points="[0, 0, 0, 0]$[0, 0, 0, 0]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
+        <edges
+            source="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.3"
+            target="//@children.0/@children.3/@children.0/@children.0/@children.0/@children.0/@children.0/@children.0/@children.2" type="4006">
+            <children type="6002">
+                <layoutConstraint xsi:type="notation:Location" y="40"/>
+            </children>
+            <styles lineColor="0" xsi:type="notation:ConnectorStyle"/>
+            <styles fontName="Segoe UI" xsi:type="notation:FontStyle"/>
+            <element href="//0/@process/@activity/@activity/@links/@children.2"/>
+            <bendpoints
+                points="[25, 10, -342, -133]$[84, 33, -283, -110]" xsi:type="notation:RelativeBendpoints"/>
+        </edges>
     </notation:Diagram>
     <tibex:NamespaceRegistry enabled="true">
         <tibex:namespaceItem namespace="ERROR_HANDLING/EH_CONTROL_DATA" prefix="tns1"/>
@@ -1300,6 +1343,7 @@
         <bpws:variable element="ns7:AccumulatedOutput" name="Accumulate" sca-bpel:internal="true"/>
         <bpws:variable element="ns3:ControlDataArray" name="End-input"
             sca-bpel:internal="true" tibex:parameter="out"/>
+        <bpws:variable name="GetSharedVariable" sca-bpel:internal="true" type="xsd:boolean"/>
     </bpws:variables>
     <bpws:extensions>
         <bpws:extension mustUnderstand="no" namespace="http://www.eclipse.org/gmf/runtime/1.0.2/notation"/>
@@ -1384,8 +1428,9 @@
         </bpws:faultHandlers>
         <bpws:flow name="flow">
             <bpws:links>
-                <bpws:link name="StartToIterate" tibex:linkType="SUCCESS"/>
                 <bpws:link name="IterateToEnd" tibex:linkType="SUCCESS"/>
+                <bpws:link name="StartToGetSharedVariable" tibex:linkType="SUCCESS"/>
+                <bpws:link name="GetSharedVariableToIterate" tibex:linkType="SUCCESS"/>
             </bpws:links>
             <bpws:extensionActivity>
                 <tibex:receiveEvent createInstance="yes"
@@ -1393,7 +1438,7 @@
                     tibex:xpdlId="7ba39e97-fc61-4717-a79d-58addd8b8202"
                     variable="Start" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
                     <bpws:sources>
-                        <bpws:source linkName="StartToIterate"/>
+                        <bpws:source linkName="StartToGetSharedVariable"/>
                     </bpws:sources>
                     <tibex:eventSource>
                         <tibex:StartEvent xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
@@ -1427,10 +1472,9 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate"
-                tibex:indexToGlobal="false" tibex:xpdlId="cd9bd437-78f2-4b43-8cba-5a07e9906efb">
+            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="cd9bd437-78f2-4b43-8cba-5a07e9906efb">
                 <bpws:targets>
-                    <bpws:target linkName="StartToIterate"/>
+                    <bpws:target linkName="GetSharedVariableToIterate"/>
                 </bpws:targets>
                 <bpws:sources>
                     <bpws:source linkName="IterateToEnd"/>
@@ -1527,7 +1571,7 @@
                                     </bpws:sources>
                                     <tibex:inputBindings>
                                     <tibex:inputBinding
-                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2c0b13d-3c22-4771-a0b8-2e50d97a7643+input&quot; xmlns:tns1=&quot;ERROR_HANDLING/EH_CONTROL_DATA&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns:jdbcUpdateActivityInput>&lt;EH_STATUS>&lt;xsl:value-of select=&quot;'AUTO'&quot;/>&lt;/EH_STATUS>&lt;SERVICE_START_MSG>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($currentElement/tns1:SERVICE_START_MSG)&quot;>&lt;xsl:value-of select=&quot;$currentElement/tns1:SERVICE_START_MSG&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/SERVICE_START_MSG>&lt;HEADERS>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($currentElement/tns1:HEADERS)&quot;>&lt;xsl:value-of select=&quot;$currentElement/tns1:HEADERS&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/HEADERS>&lt;EH_PUBLISH_DATE>&lt;xsl:value-of select=&quot;current-dateTime()&quot;/>&lt;/EH_PUBLISH_DATE>&lt;EH_CONTROL_DATA_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($currentElement/tns1:EH_CONTROL_DATA_ID)&quot;>&lt;xsl:value-of select=&quot;$currentElement/tns1:EH_CONTROL_DATA_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EH_CONTROL_DATA_ID>&lt;/tns:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
+                                    expression="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?>&#xa;&lt;xsl:stylesheet xmlns:xsl=&quot;http://www.w3.org/1999/XSL/Transform&quot; xmlns:tns=&quot;http://www.tibco.com/namespaces/tnt/plugins/jdbc+f2c0b13d-3c22-4771-a0b8-2e50d97a7643+input&quot; xmlns:tns1=&quot;ERROR_HANDLING/EH_CONTROL_DATA&quot; xmlns:xsd=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:xsi=&quot;http://www.w3.org/2001/XMLSchema-instance&quot; version=&quot;2.0&quot;>&lt;xsl:param name=&quot;currentElement&quot;/>&lt;xsl:template name=&quot;JDBCUpdate-input&quot; match=&quot;/&quot;>&lt;tns:jdbcUpdateActivityInput>&lt;EH_STATUS>&lt;xsl:value-of select=&quot;'AUTO'&quot;/>&lt;/EH_STATUS>&lt;EH_PUBLISH_DATE>&lt;xsl:value-of select=&quot;current-dateTime()&quot;/>&lt;/EH_PUBLISH_DATE>&lt;EH_CONTROL_DATA_ID>&lt;xsl:choose>&lt;xsl:when test=&quot;exists($currentElement/tns1:EH_CONTROL_DATA_ID)&quot;>&lt;xsl:value-of select=&quot;$currentElement/tns1:EH_CONTROL_DATA_ID&quot;/>&lt;/xsl:when>&lt;xsl:otherwise>&lt;xsl:attribute name=&quot;xsi:nil&quot;>true&lt;/xsl:attribute>&lt;/xsl:otherwise>&lt;/xsl:choose>&lt;/EH_CONTROL_DATA_ID>&lt;/tns:jdbcUpdateActivityInput>&lt;/xsl:template>&lt;/xsl:stylesheet>" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xslt1.0"/>
                                     </tibex:inputBindings>
                                     <tibex:config>
                                     <bwext:BWActivity
@@ -1541,20 +1585,12 @@
                                     <type href="http://ns.tibco.com/bw/palette/jdbc#//JDBCUpdateActivity"/>
                                     <value
                                     sharedResourceProperty="jdbcProperty"
-                                    sqlStatement="UPDATE [dbo].[T_EH_CONTROL_DATA]&#xa;   SET &#xa;      [EH_STATUS] = ?&#xa;      ,[SERVICE_START_MSG] = ?&#xa;      ,[HEADERS] = ?&#xa;      ,[EH_PUBLISH_DATE] = ?&#xa; WHERE EH_CONTROL_DATA_ID = ?"
+                                    sqlStatement="UPDATE [dbo].[T_EH_CONTROL_DATA]&#xa;   SET &#xa;      [EH_STATUS] = ?&#xa;      &#xa;      &#xa;      ,[EH_PUBLISH_DATE] = ?&#xa; WHERE EH_CONTROL_DATA_ID = ?"
                                     timeout="10" xsi:type="jdbcPalette:JDBCUpdateActivity">
 
                                     <PreparedParameters
                                     DataType="12"
                                     DataTypeDisplayValue="VARCHAR" ParameterName="EH_STATUS"/>
-
-                                    <PreparedParameters
-                                    DataType="2009"
-                                    DataTypeDisplayValue="SQLXML" ParameterName="SERVICE_START_MSG"/>
-
-                                    <PreparedParameters
-                                    DataType="2009"
-                                    DataTypeDisplayValue="SQLXML" ParameterName="HEADERS"/>
 
                                     <PreparedParameters
                                     DataType="93"
@@ -1635,9 +1671,9 @@
                                     <bpws:source linkName="EmptyToJDBCUpdate">
                                     <tibex:DesignExpression>
                                     <tibex:expression
-                                    expression="$currentElement/ns3:SYSTEM = 'Tibco6NL'" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
+                                    expression="$currentElement/ns3:SYSTEM = 'Tibco6NL' or ($currentElement/ns3:SYSTEM = 'TIBCO5' and $GetSharedVariable = true())" expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"/>
                                     </tibex:DesignExpression>
-                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$currentElement/ns3:SYSTEM = 'Tibco6NL']]></bpws:transitionCondition>
+                                    <bpws:transitionCondition expressionLanguage="urn:oasis:names:tc:wsbpel:2.0:sublang:xpath2.0"><![CDATA[$currentElement/ns3:SYSTEM = 'Tibco6NL' or ($currentElement/ns3:SYSTEM = 'TIBCO5' and $GetSharedVariable = true())]]></bpws:transitionCondition>
                                     </bpws:source>
                                     <bpws:source linkName="EmptyToSequenceChecker">
                                     <tibex:DesignExpression>
@@ -1668,6 +1704,21 @@
                     </bpws:forEach>
                 </bpws:sequence>
             </bpws:scope>
+            <bpws:extensionActivity>
+                <tibex:extActivity name="GetSharedVariable"
+                    outputVariable="GetSharedVariable"
+                    tibex:xpdlId="0318b590-32c8-4cfe-af60-727ade66e0bc"
+                    type="bw.internal.getSharedVariable" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions">
+                    <bpws:targets>
+                        <bpws:target linkName="StartToGetSharedVariable"/>
+                    </bpws:targets>
+                    <bpws:sources>
+                        <bpws:source linkName="GetSharedVariableToIterate"/>
+                    </bpws:sources>
+                    <tibex:GetSharedVariable inline="true"
+                        variableName="parameter" xmlns:tibex="http://www.tibco.com/bpel/2007/extensions"/>
+                </tibex:extActivity>
+            </bpws:extensionActivity>
         </bpws:flow>
     </bpws:scope>
 </bpws:process>

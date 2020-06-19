@@ -72,6 +72,10 @@
         {
             "location": "Service Descriptors/FWK.Console.Services.ControlData.Republish-Republish.json",
             "type": "generated"
+        },
+        {
+            "location": "Service Descriptors/FWK.Console.Services.Sync.starter-sync.json",
+            "type": "generated"
         }
     ]
 }

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://tns.tibco.com/bw/json/1592497285224" elementFormDefault="qualified" targetNamespace="http://tns.tibco.com/bw/json/1592497285224">
+  <complexType name="syncElementType">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="domains">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="name" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+      <element maxOccurs="unbounded" minOccurs="0" name="machines">
+        <complexType>
+          <sequence>
+            <element maxOccurs="1" minOccurs="0" name="name" type="string"/>
+          </sequence>
+        </complexType>
+      </element>
+    </sequence>
+  </complexType>
+  <element name="syncElement" type="tns:syncElementType"/>
+    <complexType name="syncElementArray">
+    <sequence>
+      <element maxOccurs="unbounded" minOccurs="0" name="syncElement" type="tns:syncElementType"/>
+    </sequence>
+  </complexType>
+    <element name="syncElementArray" type="tns:syncElementArray"/>
+</schema>

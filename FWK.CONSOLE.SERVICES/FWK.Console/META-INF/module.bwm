@@ -402,7 +402,10 @@
   <sca:service xmi:id="_p8QIFMKCEemSndHvgB2K6Q" name="republish" promote="ComponentRepublish/republish">
     <sca:interface.wsdl xmi:id="_p_FZoMKCEemSndHvgB2K6Q" interface="http://xmlns.example.com/20190819151002PLT#wsdl.interface(republish)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/Republish.bwp"/>
     <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_p_FZocKCEemSndHvgB2K6Q" name="RestService8" path="/republish" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="Republish" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.ControlData.Republish-Republish.json" enforceBWServiceResponse="true">
-      <operation xmi:id="_p_FZo8KCEemSndHvgB2K6Q" operationName="put" nickname="put-republish" httpMethod="PUT" responseStyle="element" requestStyle="element">
+      <operation xmi:id="_p_FZo8KCEemSndHvgB2K6Q" operationName="put" nickname="put-republish" httpMethod="PUT" responseStyle="element" requestStyle="element" useEmptyValuesForNullResponse="true">
+        <parameters xmi:id="_Y4P3AJ9ZEeq0T-9efICbaw">
+          <parameterMapping xmi:id="_Y4QeEJ9ZEeq0T-9efICbaw" parameterName="sequence" parameterType="Query" dataType="string" required="true"/>
+        </parameters>
         <clientFormat>json</clientFormat>
         <clientRequestFormat>json</clientRequestFormat>
       </operation>
@@ -410,6 +413,18 @@
       <advancedConfig xmi:id="_p_FZosKCEemSndHvgB2K6Q" blockingQueueSize="2147483647"/>
     </scaext:binding>
     <scact:bindingAdjunct xmi:id="_p_FZpMKCEemSndHvgB2K6Q" bindingName="RestService8"/>
+  </sca:service>
+  <sca:service xmi:id="_Ln41gLFzEeq6G54u9_bNsw" name="sync" promote="Componentstarter/sync">
+    <sca:interface.wsdl xmi:id="_LoG38LFzEeq6G54u9_bNsw" interface="http://xmlns.example.com/20200618165123PLT#wsdl.interface(sync)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Sync/starter.bwp"/>
+    <scaext:binding xsi:type="rest:RestServiceBinding" xmi:id="_LoR3ELFzEeq6G54u9_bNsw" name="RestService9" path="/sync" docBasePath="http://localhost:7777/FWK.Console" docResourcePath="sync" basePath="/" connector="HTTP.Catalog" structuredData="true" technologyVersion="2.0" implementation="Service Descriptors/FWK.Console.Services.Sync.starter-sync.json">
+      <operation xmi:id="_LoTFMLFzEeq6G54u9_bNsw" operationName="post" nickname="post-sync" httpMethod="POST" responseStyle="element" requestStyle="element">
+        <clientFormat>json</clientFormat>
+        <clientRequestFormat>json</clientRequestFormat>
+      </operation>
+      <parameters xmi:id="_LocPILFzEeq6G54u9_bNsw"/>
+      <advancedConfig xmi:id="_LoR3EbFzEeq6G54u9_bNsw" blockingQueueSize="2147483647"/>
+    </scaext:binding>
+    <scact:bindingAdjunct xmi:id="_LoTsQLFzEeq6G54u9_bNsw" bindingName="RestService9"/>
   </sca:service>
   <sca:property xmi:id="_R_MOUCntEemBKr8QxwEOAA" name="BW.DEPLOYMENTUNIT.TYPE" type="XMLSchema:string" scalable="true"/>
   <sca:property xmi:id="_R_nFECntEemBKr8QxwEOAA" name="BW.APPNODE.NAME" type="XMLSchema:string" scalable="true"/>
@@ -476,6 +491,12 @@
     <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_p8QIEcKCEemSndHvgB2K6Q" processName="FWK.Console.Services.ControlData.Republish"/>
     <sca:service xmi:id="_p8QIEsKCEemSndHvgB2K6Q" name="republish">
       <sca:interface.wsdl xmi:id="_p8QIE8KCEemSndHvgB2K6Q" interface="http://xmlns.example.com/20190819151002PLT#wsdl.interface(republish)" scaext:wsdlLocation="../Processes/FWK/Console/Services/ControlData/Republish.bwp"/>
+    </sca:service>
+  </sca:component>
+  <sca:component xmi:id="_Lno94LFzEeq6G54u9_bNsw" name="Componentstarter" compositeext:version="1.0.0.qualifier">
+    <scaext:implementation xsi:type="BW:BWComponentImplementation" xmi:id="_Lno94bFzEeq6G54u9_bNsw" processName="FWK.Console.Services.Sync.starter"/>
+    <sca:service xmi:id="_Ln2ZQLFzEeq6G54u9_bNsw" name="sync">
+      <sca:interface.wsdl xmi:id="_Ln3AULFzEeq6G54u9_bNsw" interface="http://xmlns.example.com/20200618165123PLT#wsdl.interface(sync)" scaext:wsdlLocation="../Processes/FWK/Console/Services/Sync/starter.bwp"/>
     </sca:service>
   </sca:component>
 </sca:composite>

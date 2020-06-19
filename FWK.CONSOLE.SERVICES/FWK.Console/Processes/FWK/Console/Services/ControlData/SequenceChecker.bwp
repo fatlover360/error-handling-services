@@ -524,7 +524,7 @@
                         <element maxOccurs="1" minOccurs="1"
                             name="EH_STATUS" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="1"
-                            name="EH_PUBLISH_DATE" nillable="true" type="string"/>
+                            name="EH_PUBLISH_DATE" nillable="true" type="dateTime"/>
                         <element maxOccurs="1" minOccurs="1"
                             name="EH_CONTROL_DATA_ID" nillable="true" type="string"/>
                         <element maxOccurs="1" minOccurs="0"
@@ -1560,7 +1560,8 @@
                     </tibex:config>
                 </tibex:activityExtension>
             </bpws:extensionActivity>
-            <bpws:scope name="Iterate" tibex:group="iterate" tibex:xpdlId="824ed960-562e-47be-b12c-f97145ef5cd1">
+            <bpws:scope name="Iterate" tibex:group="iterate"
+                tibex:indexToGlobal="false" tibex:xpdlId="824ed960-562e-47be-b12c-f97145ef5cd1">
                 <bpws:targets>
                     <bpws:target linkName="GetRelatedExceptionDataToIterate_X1"/>
                 </bpws:targets>
@@ -1643,8 +1644,8 @@
                                     DataTypeDisplayValue="VARCHAR" ParameterName="EH_STATUS"/>
 
                                     <PreparedParameters
-                                    DataType="12"
-                                    DataTypeDisplayValue="VARCHAR" ParameterName="EH_PUBLISH_DATE"/>
+                                    DataType="93"
+                                    DataTypeDisplayValue="TIMESTAMP" ParameterName="EH_PUBLISH_DATE"/>
 
                                     <PreparedParameters
                                     DataType="12"
